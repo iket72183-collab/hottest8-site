@@ -8,7 +8,10 @@ function card(c,i){const t=key[mode](c);return `<li class="card"><div class="ran
 <div class="tot"><b title="${t.toLocaleString('en-US')} exact">${fmt(t)}</b><small>${{combined:'combined',x:'X followers',ig:'IG followers'}[mode]}</small></div></li>`}
 function render(){const s=[...D.creators].sort((a,b)=>key[mode](b)-key[mode](a));
 list.innerHTML=s.slice(0,8).map(card).join('');list2.innerHTML=s.slice(8).map((c,i)=>card(c,i+8)).join('')}
-fetch('data.json').then(r=>r.json()).catch(()=>window.TC_DATA).then(d=>{D=d;
+let FB=false;
+fetch('data.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{if(!j||!j.creators||!j.creators.length)throw 0;return j}).catch(()=>{FB=true;return window.TC_DATA}).then(d=>{if(!d)return;D=d;
+const fbn=document.getElementById('fallback');if(fbn&&FB){fbn.textContent='Showing backup data from '+new Date(d.as_of+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+' ('+d.as_of_note+'); live data unavailable.';fbn.hidden=false}
+const a2=document.getElementById('asof2');if(a2)a2.textContent=d.as_of_note;
 document.querySelectorAll('[data-sitename]').forEach(e=>e.textContent=d.site_name);
 document.querySelectorAll('.adlink').forEach(a=>a.href='mailto:'+d.contact_email);
 document.getElementById("s-total").textContent=fmt(d.creators.reduce((a,c)=>a+c.x_followers+c.ig_followers,0));

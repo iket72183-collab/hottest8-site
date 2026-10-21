@@ -112,3 +112,4 @@ footer{border-top:1px solid rgba(201,162,75,.3);background:none;color:#9a8f78}
 #newsletter .eoform [data-form] .mastfoot,#newsletter .eoform [data-form] .mastfoot p{color:#cbbd9e!important}
 #newsletter .eoform [data-form] .mastfoot a{color:#c9a24b!important}
 #newsletter .nltip{max-width:520px;margin:12px auto 0;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:16px;line-height:1.5;color:#f3e9d2!important;border-top:1px solid rgba(201,162,75,.4);padding-top:10px}
+#fallback{color:#0a0907!important;background:#c9a24b;padding:8px 12px;font-weight:600}
