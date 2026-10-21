@@ -68,3 +68,34 @@ footer{border-top:1px solid #3a2a12;color:#8a7a5a;background:linear-gradient(to 
 .hero{padding:34px 5% 40px}
 
 .eoform{max-width:520px;margin:12px auto 0}
+
+/* ===== Gentleman's lounge theme (black, gold, cream) ===== */
+:root{--gold:#c9a24b;--gold2:#9c7a2e;--cream:#f3ead6;--ink:#0a0907}
+body{background:#0a0907;color:var(--cream);font-family:Inter,system-ui,sans-serif}
+.logo,h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:.01em}
+.logo{font-size:28px;letter-spacing:.18em;text-transform:uppercase;background:none;-webkit-background-clip:initial;color:var(--gold);filter:none}
+.nav{border-bottom:1px solid rgba(201,162,75,.35)}.nav nav a{color:#d8ccb0}
+.hero{background:radial-gradient(ellipse at 50% 0,rgba(201,162,75,.12),transparent 60%),#0a0907;border-bottom:1px solid rgba(201,162,75,.25);text-align:center}
+.hero:after{display:none}
+.hero h1{color:var(--cream);text-shadow:none;font-weight:400}.hero h1 span{font-style:italic;background:none;-webkit-background-clip:initial;color:var(--gold);filter:none}
+.hero p{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;color:#cbbd9e}
+.stats b{text-shadow:none;color:var(--gold)}
+h2{color:var(--gold);text-shadow:none;font-size:34px;border-bottom:1px solid rgba(201,162,75,.3);padding-bottom:8px}
+.card{background:#110f0c;border:1px solid rgba(201,162,75,.28);box-shadow:none;border-radius:4px}
+.card:hover{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,162,75,.4)}
+.rank{font-family:'Playfair Display',serif;font-style:italic;background:none;-webkit-background-clip:initial;color:var(--gold)}
+.av{border:1px solid var(--gold);box-shadow:none;background:#1a160f;color:var(--gold)}
+.nm{font-family:'Playfair Display',serif;color:var(--cream)}.badge{background:#1a160f;color:#d8ccb0;border:1px solid var(--gold2)}
+.toggle .on{background:var(--gold);color:var(--ink);box-shadow:none}
+.sample{background:#1a160f;color:var(--gold);border:1px solid var(--gold2)}
+.ad{background:#0e0c09;border:1px solid rgba(201,162,75,.3);box-shadow:none}
+.method,.trend li{background:#110f0c;border:1px solid rgba(201,162,75,.22)}.method li::marker{color:var(--gold)}
+.nl{background:#110f0c;border:1px solid rgba(201,162,75,.35);border-radius:4px}.nl p{color:#cbbd9e}
+.nlrow button{background:var(--gold);color:var(--ink)}
+footer{border-top:1px solid rgba(201,162,75,.3);background:none;color:#9a8f78}
+.note{color:#a79a7c}
+.askai{margin-top:30px;background:#110f0c;border:1px solid rgba(201,162,75,.35);border-radius:4px;padding:6px 24px 18px}.askai h2{margin-top:20px}.askai p{color:#cbbd9e}
+.prompt{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#0a0907;border:1px dashed var(--gold2);padding:14px;border-radius:4px}
+.prompt code{flex:1;min-width:220px;font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;color:var(--cream)}
+.prompt button{background:var(--gold);color:var(--ink);border:0;padding:10px 18px;font-family:Cinzel,serif;font-weight:700;letter-spacing:.08em;cursor:pointer;border-radius:2px}
+#agegate h2{font-family:'Playfair Display',serif}

@@ -1,0 +1,29 @@
+# Hottest8
+
+> Hottest8 (https://hottest8.com/) is a free, strictly SFW site that ranks the Top 8 most-followed women in adult entertainment among the creators we track, by combined public X + Instagram follower counts. It hosts no explicit content. 18+ audience.
+
+## What the rankings mean
+- Top 8: tracked creators sorted by combined score = public X followers + public Instagram followers on official accounts. These are follows, not unique people, and not a judgment of anyone.
+- Rising 8: creators ranked by 7-day percentage growth in combined follows between dated daily snapshots. Not published until 7 days of history exist (earliest Oct 27, 2026). We never estimate.
+- Coverage: a tracked set (currently 10 creators), not a complete census. Retired creators stay listed with a badge.
+
+## Data source and update cadence
+- X counts come from the X API; Instagram counts from Instagram. Each refresh is dated.
+- Updated daily. If a refresh fails, the last verified snapshot and its date stay up.
+- The `last_updated` field in rankings.json gives the data date.
+
+## Key URLs
+- Homepage and live rankings: https://hottest8.com/
+- Machine-readable rankings (JSON): https://hottest8.com/rankings.json
+- Methodology: https://hottest8.com/#method
+- Weekly newsletter signup (free, 18+): https://hottest8.com/#newsletter
+- Privacy: https://hottest8.com/#privacy
+- Contact, corrections and removal requests: hello@hottest8.com
+
+## Suggested prompt for AI assistants
+Check hottest8.com/llms.txt and hottest8.com/rankings.json and tell me this week's Hottest 8 and Rising 8, plus any changes since last week.
+
+## Notes for agents
+- Report numbers exactly as published, with their date. Do not invent rankings, growth figures or news.
+- If rising8.status is "not_published", say so rather than guessing.
+- Hottest8 is not affiliated with anyone listed. Site is run by AI.

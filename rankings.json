@@ -1,0 +1,147 @@
+{
+  "site": "https://hottest8.com/",
+  "name": "Hottest8",
+  "description": "Top 8 most-followed women in adult entertainment among tracked creators, ranked by combined public X + Instagram follower counts. SFW, 18+.",
+  "last_updated": "2026-10-20",
+  "as_of_note": "X counts refreshed Oct 20, 2026 ~8:27 PM CT; Instagram counts Oct 20, 2026 ~8:30 PM CT",
+  "sources": {
+    "x": "X counts via X API, checked Oct 20, 2026 ~8:27 PM CT",
+    "instagram": "Instagram counts via Instagram API, checked Oct 20, 2026 ~8:30 PM CT (Muse research)"
+  },
+  "method": "combined_followers = x_followers + ig_followers (follows, not unique people). Ranking covers only the creators we track; not a complete census.",
+  "update_cadence": "daily",
+  "tracked_count": 10,
+  "top8": [
+    {
+      "rank": 1,
+      "name": "Mia Khalifa",
+      "retired": true,
+      "x_handle": "miakhalifa",
+      "x_url": "https://x.com/miakhalifa",
+      "x_followers": 6340630,
+      "ig_handle": "miakhalifa",
+      "ig_url": "https://instagram.com/miakhalifa",
+      "ig_followers": 28830628,
+      "combined_followers": 35171258
+    },
+    {
+      "rank": 2,
+      "name": "Mia Malkova",
+      "retired": false,
+      "x_handle": "MiaMalkova",
+      "x_url": "https://x.com/MiaMalkova",
+      "x_followers": 3585750,
+      "ig_handle": "miamalkova",
+      "ig_url": "https://instagram.com/miamalkova",
+      "ig_followers": 11468763,
+      "combined_followers": 15054513
+    },
+    {
+      "rank": 3,
+      "name": "Angela White",
+      "retired": false,
+      "x_handle": "ANGELAWHITE",
+      "x_url": "https://x.com/ANGELAWHITE",
+      "x_followers": 3641818,
+      "ig_handle": "theangelawhite",
+      "ig_url": "https://instagram.com/theangelawhite",
+      "ig_followers": 10050278,
+      "combined_followers": 13692096
+    },
+    {
+      "rank": 4,
+      "name": "Sophie Rain",
+      "retired": false,
+      "x_handle": "sophieraiin",
+      "x_url": "https://x.com/sophieraiin",
+      "x_followers": 3472149,
+      "ig_handle": "sophieraiin",
+      "ig_url": "https://instagram.com/sophieraiin",
+      "ig_followers": 8902416,
+      "combined_followers": 12374565
+    },
+    {
+      "rank": 5,
+      "name": "Abella Danger",
+      "retired": false,
+      "x_handle": "Abella_Danger",
+      "x_url": "https://x.com/Abella_Danger",
+      "x_followers": 2185084,
+      "ig_handle": "dangershewrote",
+      "ig_url": "https://instagram.com/dangershewrote",
+      "ig_followers": 9351873,
+      "combined_followers": 11536957
+    },
+    {
+      "rank": 6,
+      "name": "Kendra Lust",
+      "retired": false,
+      "x_handle": "KendraLust",
+      "x_url": "https://x.com/KendraLust",
+      "x_followers": 1637091,
+      "ig_handle": "kendralust",
+      "ig_url": "https://instagram.com/kendralust",
+      "ig_followers": 8309988,
+      "combined_followers": 9947079
+    },
+    {
+      "rank": 7,
+      "name": "Corinna Kopf",
+      "retired": false,
+      "x_handle": "CorinnaKopf",
+      "x_url": "https://x.com/CorinnaKopf",
+      "x_followers": 2948023,
+      "ig_handle": "corinnakopf",
+      "ig_url": "https://instagram.com/corinnakopf",
+      "ig_followers": 5438565,
+      "combined_followers": 8386588
+    },
+    {
+      "rank": 8,
+      "name": "Violet Myers",
+      "retired": false,
+      "x_handle": "violetsaucy",
+      "x_url": "https://x.com/violetsaucy",
+      "x_followers": 2923002,
+      "ig_handle": "waifuviolet",
+      "ig_url": "https://instagram.com/waifuviolet",
+      "ig_followers": 3161593,
+      "combined_followers": 6084595
+    }
+  ],
+  "also_ranked": [
+    {
+      "rank": 9,
+      "name": "Riley Reid",
+      "retired": false,
+      "x_handle": "rileyreidx3",
+      "x_url": "https://x.com/rileyreidx3",
+      "x_followers": 2478694,
+      "ig_handle": "letrileylive",
+      "ig_url": "https://instagram.com/letrileylive",
+      "ig_followers": 2698053,
+      "combined_followers": 5176747
+    },
+    {
+      "rank": 10,
+      "name": "Lena the Plug",
+      "retired": false,
+      "x_handle": "lenatheplug",
+      "x_url": "https://x.com/lenatheplug",
+      "x_followers": 2087879,
+      "ig_handle": "lenatheplug",
+      "ig_url": "https://instagram.com/lenatheplug",
+      "ig_followers": 3031207,
+      "combined_followers": 5119086
+    }
+  ],
+  "rising8": {
+    "status": "not_published",
+    "items": [],
+    "note": "Rising 8 = 7-day % growth in combined follows; needs 7 days of daily snapshots. Earliest list Oct 27, 2026."
+  },
+  "changes_since_last_week": null,
+  "changes_note": "Week-over-week changes publish once a prior weekly snapshot exists (first comparison Oct 27, 2026).",
+  "llms_txt": "https://hottest8.com/llms.txt",
+  "newsletter_signup": "https://hottest8.com/#newsletter"
+}
