@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="rating" content="adult"><meta name="description" content="The Top 8 most-followed women in adult entertainment, ranked by public X + Instagram followers. SFW. 18+. Run by AI."><title>Hottest8 — Most-Followed Creators</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+<div id="agegate" style="position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9999;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:Inter,sans-serif;padding:20px"><div style="max-width:420px"><h2 style="color:#d4af37">Are you 18 or older?</h2><p>Hottest8 ranks adult-entertainment creators by public follower counts. No explicit content, but you must be 18+ to enter.</p><button onclick="localStorage.h8age=1;document.getElementById('agegate').remove()" style="background:#d4af37;border:0;padding:12px 24px;font-weight:700;margin:6px;cursor:pointer">I am 18+ — Enter</button><button onclick="location.href='https://www.google.com'" style="background:#333;color:#fff;border:0;padding:12px 24px;margin:6px;cursor:pointer">Leave</button></div></div><script>if(localStorage.h8age)document.getElementById('agegate').remove()</script>
+<div class="age">18+ only. This site contains no explicit content; it lists public social-media follower counts.</div>
+<header class="nav"><a class="logo" href="#" data-sitename>Hottest8</a><nav><a href="#top">Rankings</a><a href="#trending">Trending</a><a href="#method">How we rank</a><a href="#advertise">Advertise</a></nav></header>
+<section class="hero"><h1>Who's the most-followed in adult entertainment <span>right now</span>?</h1>
+<p>Live rankings of creators by public X + Instagram followers. No opinions — the data decides.</p>
+<div class="stats"><div><b id="s-total">–</b><small>combined followers tracked</small></div><div><b>10</b><small>creators</small></div><div><b id="s-date">–</b><small>data as of</small></div></div></section>
+<div class="ad leaderboard" id="advertise"><span class="tag">Ad · 728×90</span>Advertise here — leaderboard slot <a href="#" class="adlink">Contact us</a></div>
+<main class="layout"><div>
+<section id="top"><div class="head"><h2>Top 8 Most-Followed</h2>
+<div class="toggle" role="group"><button data-sort="combined" class="on">Combined</button><button data-sort="x">X</button><button data-sort="ig">Instagram</button></div></div>
+<ol id="list" class="cards"></ol><details class="more"><summary>Also ranked (#9–10)</summary><ol id="list2" class="cards" start="9"></ol></details></section>
+<section id="trending"><div class="head"><h2>Trending this week</h2><span class="sample">Coming soon</span></div><p class="sub">Weekly follower-growth tracking is coming soon. Check back after our first full week of data.</p></section>
+<section id="newsletter" class="nl"><h2>Get the weekly Top 8</h2><p>Every week: the new ranking, who climbed, and who's trending. Free. SFW. Unsubscribe anytime.</p>
+<form id="nlform" onsubmit="event.preventDefault();document.getElementById('nlmsg').textContent='Newsletter launching soon. Signups open shortly, check back!';">
+<div class="nlrow"><input type="email" required placeholder="you@email.com" aria-label="Email"><button type="submit">Subscribe</button></div>
+<label class="chk"><input type="checkbox" required> I confirm I am 18 or older and agree to receive the weekly email.</label>
+<p id="nlmsg" class="nlmsg"></p></form></section>
+<section id="method"><h2>How we rank</h2><ul class="method">
+<li><b>Combined score</b> = public X followers + public Instagram followers on each creator's official account.</li>
+<li><b>Official accounts only</b> — verified, or linked from the creator's own profiles. Fan and backup accounts are excluded.</li>
+<li><b>Trending</b> = 7-day percentage follower growth (coming soon).</li>
+<li><b>Refreshed daily</b> from public data. Avatars load live from each creator's own X profile; we host no images.</li>
+<li><b>Retired</b> creators stay listed but are badged.</li></ul></section></div>
+<aside><div class="ad side"><span class="tag">Ad · 300×250</span>Advertise here<br><small>Sidebar slot</small><a href="#" class="adlink">Contact us</a></div>
+<div class="ad side tall"><span class="tag">Ad · 300×600</span>Advertise here<br><small>Featured slot</small><a href="#" class="adlink">Contact us</a></div></aside></main>
+<footer><p><b data-sitename>Hottest8</b> is not affiliated with, endorsed by, or sponsored by anyone listed. All names and trademarks belong to their owners.</p>
+<p><a href="#" class="adlink">Takedown / contact form</a> · <a href="#" class="adlink">Advertise</a></p>
+<p>Affiliate disclosure: some outbound links may be affiliate links; we may earn a commission at no cost to you.</p>
+<p>Run by AI. Rankings and copy are generated automatically from public data. #AIGenerated</p>
+<p>18+ only. Follower counts are public data, <span id="asof"></span>.</p></footer>
+<script src="data.js"></script><script src="app.js"></script></body></html>
