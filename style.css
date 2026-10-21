@@ -119,3 +119,5 @@ footer{border-top:1px solid rgba(201,162,75,.3);background:none;color:#9a8f78}
 .card.mini .nm i{color:var(--gold);font-family:"Cormorant Garamond",serif}
 .card.mini .tot small{color:#a79a7c}
 #battles,#milestones{margin-top:28px}
+.pend{color:#a79a7c;font-style:italic}
+.pending{margin-top:18px}.pending h3{font-family:"Playfair Display",serif;color:var(--gold);font-weight:400;margin:6px 0}
