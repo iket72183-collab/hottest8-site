@@ -1,0 +1,22 @@
+# Reference config for the hottest8 static site (srv-dbc31ujrjlhs73al9icg).
+# Applies only if the service is synced as a Render Blueprint; otherwise mirror these in Dashboard > Settings.
+services:
+  - type: web
+    runtime: static
+    name: hottest8
+    buildCommand: echo ok
+    staticPublishPath: ./
+    headers:
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /404.html
