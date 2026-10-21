@@ -113,3 +113,9 @@ footer{border-top:1px solid rgba(201,162,75,.3);background:none;color:#9a8f78}
 #newsletter .eoform [data-form] .mastfoot a{color:#c9a24b!important}
 #newsletter .nltip{max-width:520px;margin:12px auto 0;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:16px;line-height:1.5;color:#f3e9d2!important;border-top:1px solid rgba(201,162,75,.4);padding-top:10px}
 #fallback{color:#0a0907!important;background:#c9a24b;padding:8px 12px;font-weight:600}
+.cards.mini{list-style:none;padding:0;display:grid;gap:8px}
+.card.mini{grid-template-columns:44px 1fr auto;padding:10px 14px}
+.card.mini .rank{font-size:15px;line-height:1.1;text-align:center;color:var(--gold)}
+.card.mini .nm i{color:var(--gold);font-family:"Cormorant Garamond",serif}
+.card.mini .tot small{color:#a79a7c}
+#battles,#milestones{margin-top:28px}
