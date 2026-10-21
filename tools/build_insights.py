@@ -19,6 +19,7 @@ out = {"generated_from": [s["date"] for s in snaps], "latest_snapshot": latest["
 by = lambda s: {c["x_handle"].lower(): c for c in s["creators"]}
 L = by(latest)
 def combined(c): return c["x_followers"] + c["ig_followers"]
+def has_ig(c): return c.get("ig_followers") is not None
 # ---- Rising 8
 rows = []
 if base:
@@ -27,7 +28,7 @@ if base:
         b = B.get(h)
         if not b or b.get("x_followers") is None or c.get("x_followers") is None: continue
         dx = c["x_followers"] - b["x_followers"]
-        ig_fresh = c.get("ig_as_of") != b.get("ig_as_of") and not c.get("ig_carried_forward")
+        ig_fresh = has_ig(c) and has_ig(b) and c.get("ig_as_of") != b.get("ig_as_of") and not c.get("ig_carried_forward")
         dig = (c["ig_followers"] - b["ig_followers"]) if ig_fresh else None
         start = b["x_followers"] + (b["ig_followers"] if ig_fresh else 0)
         d = dx + (dig or 0)
@@ -61,19 +62,22 @@ for a, b in zip(snaps, snaps[1:]):
 nxt = []
 for c in L.values():
     for plat, k in (("X", "x_followers"), ("Instagram", "ig_followers")):
-        v = c[k]; m = (v // 1_000_000 + 1) * 1_000_000
+        v = c.get(k)
+        if v is None: continue
+        m = (v // 1_000_000 + 1) * 1_000_000
         nxt.append({"name": c["name"], "platform": plat, "next_milestone": m, "to_go": m - v, "current": v, "as_of": c.get("ig_as_of") if plat == "Instagram" else latest["date"]})
 nxt.sort(key=lambda r: r["to_go"])
 out["milestones"] = {"crossed": ms, "closest_next": nxt[:5],
                      "note": "Round-million crossings between consecutive dated snapshots. Instagram counts carried forward are not treated as new data."}
 # ---- Closest battles: smallest gaps between adjacent ranks
-def gaps(keyf, plat):
-    s = sorted(L.values(), key=keyf, reverse=True); g = []
+def gaps(keyf, plat, pool=None):
+    s = sorted(pool if pool is not None else L.values(), key=keyf, reverse=True); g = []
     for i in range(len(s) - 1):
         g.append({"platform": plat, "ranks": [i + 1, i + 2], "leader": s[i]["name"], "chaser": s[i + 1]["name"],
                   "gap": keyf(s[i]) - keyf(s[i + 1]), "leader_count": keyf(s[i]), "chaser_count": keyf(s[i + 1])})
     return g
-allg = gaps(combined, "Combined") + gaps(lambda c: c["x_followers"], "X") + gaps(lambda c: c["ig_followers"], "Instagram")
+withig = [c for c in L.values() if has_ig(c)]  # unverified Instagram: X-only battles
+allg = gaps(combined, "Combined", withig) + gaps(lambda c: c["x_followers"], "X") + gaps(lambda c: c["ig_followers"], "Instagram", withig)
 allg.sort(key=lambda g: g["gap"])
 out["closest_battles"] = {"items": allg[:5], "note": "Smallest follower gaps between adjacent ranks, by combined total or a single platform (labeled)."}
 json.dump(out, open("insights.json", "w"), indent=2)
