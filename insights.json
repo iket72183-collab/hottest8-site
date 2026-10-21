@@ -202,6 +202,22 @@
     "crossed": [],
     "closest_next": [
       {
+        "name": "Alexis Fawx",
+        "platform": "X",
+        "next_milestone": 1000000,
+        "to_go": 9590,
+        "current": 990410,
+        "as_of": "2026-10-21"
+      },
+      {
+        "name": "Nikki Benz",
+        "platform": "X",
+        "next_milestone": 1000000,
+        "to_go": 25962,
+        "current": 974038,
+        "as_of": "2026-10-21"
+      },
+      {
         "name": "Corinna Kopf",
         "platform": "X",
         "next_milestone": 3000000,
@@ -224,28 +240,60 @@
         "to_go": 97584,
         "current": 8902416,
         "as_of": "2026-10-20"
-      },
-      {
-        "name": "Mia Khalifa",
-        "platform": "Instagram",
-        "next_milestone": 29000000,
-        "to_go": 169372,
-        "current": 28830628,
-        "as_of": "2026-10-20"
-      },
-      {
-        "name": "Riley Reid",
-        "platform": "Instagram",
-        "next_milestone": 3000000,
-        "to_go": 301947,
-        "current": 2698053,
-        "as_of": "2026-10-20"
       }
     ],
     "note": "Round-million crossings between consecutive dated snapshots. Instagram counts carried forward are not treated as new data."
   },
   "closest_battles": {
     "items": [
+      {
+        "platform": "X",
+        "ranks": [
+          13,
+          14
+        ],
+        "leader": "Adriana Chechik",
+        "chaser": "Brandi Love",
+        "gap": 4792,
+        "leader_count": 1234553,
+        "chaser_count": 1229761
+      },
+      {
+        "platform": "X",
+        "ranks": [
+          9,
+          10
+        ],
+        "leader": "Lena the Plug",
+        "chaser": "Lisa Ann",
+        "gap": 6762,
+        "leader_count": 2087880,
+        "chaser_count": 2081118
+      },
+      {
+        "platform": "X",
+        "ranks": [
+          17,
+          18
+        ],
+        "leader": "Alexis Fawx",
+        "chaser": "Nikki Benz",
+        "gap": 16372,
+        "leader_count": 990410,
+        "chaser_count": 974038
+      },
+      {
+        "platform": "X",
+        "ranks": [
+          15,
+          16
+        ],
+        "leader": "Cherie DeVille",
+        "chaser": "Ava Addams",
+        "gap": 17873,
+        "leader_count": 1110080,
+        "chaser_count": 1092207
+      },
       {
         "platform": "X",
         "ranks": [
@@ -257,54 +305,6 @@
         "gap": 24707,
         "leader_count": 2947843,
         "chaser_count": 2923136
-      },
-      {
-        "platform": "X",
-        "ranks": [
-          2,
-          3
-        ],
-        "leader": "Angela White",
-        "chaser": "Mia Malkova",
-        "gap": 56043,
-        "leader_count": 3641854,
-        "chaser_count": 3585811
-      },
-      {
-        "platform": "Combined",
-        "ranks": [
-          9,
-          10
-        ],
-        "leader": "Riley Reid",
-        "chaser": "Lena the Plug",
-        "gap": 57744,
-        "leader_count": 5176831,
-        "chaser_count": 5119087
-      },
-      {
-        "platform": "X",
-        "ranks": [
-          8,
-          9
-        ],
-        "leader": "Abella Danger",
-        "chaser": "Lena the Plug",
-        "gap": 97639,
-        "leader_count": 2185519,
-        "chaser_count": 2087880
-      },
-      {
-        "platform": "X",
-        "ranks": [
-          3,
-          4
-        ],
-        "leader": "Mia Malkova",
-        "chaser": "Sophie Rain",
-        "gap": 113488,
-        "leader_count": 3585811,
-        "chaser_count": 3472323
       }
     ],
     "note": "Smallest follower gaps between adjacent ranks, by combined total or a single platform (labeled)."
