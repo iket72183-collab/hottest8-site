@@ -2,10 +2,10 @@
   "site": "https://hottest8.com/",
   "name": "Hottest8",
   "description": "Top 8 most-followed women in adult entertainment among tracked creators, ranked by combined public X + Instagram follower counts. SFW, 18+.",
-  "last_updated": "2026-10-20",
-  "as_of_note": "X counts refreshed Oct 20, 2026 ~8:27 PM CT; Instagram counts Oct 20, 2026 ~8:30 PM CT",
+  "last_updated": "2026-10-21",
+  "as_of_note": "X counts refreshed Oct 21, 2026 ~9:10 AM CT; Instagram counts Oct 20, 2026 ~8:30 PM CT",
   "sources": {
-    "x": "X counts via X API, checked Oct 20, 2026 ~8:27 PM CT",
+    "x": "X counts via X API, checked Oct 21, 2026 ~9:10 AM CT",
     "instagram": "Instagram counts via Instagram API, checked Oct 20, 2026 ~8:30 PM CT (Muse research)"
   },
   "method": "combined_followers = x_followers + ig_followers (follows, not unique people). Ranking covers only the creators we track; not a complete census.",
@@ -18,11 +18,12 @@
       "retired": true,
       "x_handle": "miakhalifa",
       "x_url": "https://x.com/miakhalifa",
-      "x_followers": 6340630,
+      "x_followers": 6340363,
       "ig_handle": "miakhalifa",
       "ig_url": "https://instagram.com/miakhalifa",
       "ig_followers": 28830628,
-      "combined_followers": 35171258
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 35170991
     },
     {
       "rank": 2,
@@ -30,11 +31,12 @@
       "retired": false,
       "x_handle": "MiaMalkova",
       "x_url": "https://x.com/MiaMalkova",
-      "x_followers": 3585750,
+      "x_followers": 3585811,
       "ig_handle": "miamalkova",
       "ig_url": "https://instagram.com/miamalkova",
       "ig_followers": 11468763,
-      "combined_followers": 15054513
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 15054574
     },
     {
       "rank": 3,
@@ -42,11 +44,12 @@
       "retired": false,
       "x_handle": "ANGELAWHITE",
       "x_url": "https://x.com/ANGELAWHITE",
-      "x_followers": 3641818,
+      "x_followers": 3641854,
       "ig_handle": "theangelawhite",
       "ig_url": "https://instagram.com/theangelawhite",
       "ig_followers": 10050278,
-      "combined_followers": 13692096
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 13692132
     },
     {
       "rank": 4,
@@ -54,11 +57,12 @@
       "retired": false,
       "x_handle": "sophieraiin",
       "x_url": "https://x.com/sophieraiin",
-      "x_followers": 3472149,
+      "x_followers": 3472323,
       "ig_handle": "sophieraiin",
       "ig_url": "https://instagram.com/sophieraiin",
       "ig_followers": 8902416,
-      "combined_followers": 12374565
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 12374739
     },
     {
       "rank": 5,
@@ -66,11 +70,12 @@
       "retired": false,
       "x_handle": "Abella_Danger",
       "x_url": "https://x.com/Abella_Danger",
-      "x_followers": 2185084,
+      "x_followers": 2185519,
       "ig_handle": "dangershewrote",
       "ig_url": "https://instagram.com/dangershewrote",
       "ig_followers": 9351873,
-      "combined_followers": 11536957
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 11537392
     },
     {
       "rank": 6,
@@ -78,11 +83,12 @@
       "retired": false,
       "x_handle": "KendraLust",
       "x_url": "https://x.com/KendraLust",
-      "x_followers": 1637091,
+      "x_followers": 1637139,
       "ig_handle": "kendralust",
       "ig_url": "https://instagram.com/kendralust",
       "ig_followers": 8309988,
-      "combined_followers": 9947079
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 9947127
     },
     {
       "rank": 7,
@@ -90,11 +96,12 @@
       "retired": false,
       "x_handle": "CorinnaKopf",
       "x_url": "https://x.com/CorinnaKopf",
-      "x_followers": 2948023,
+      "x_followers": 2947843,
       "ig_handle": "corinnakopf",
       "ig_url": "https://instagram.com/corinnakopf",
       "ig_followers": 5438565,
-      "combined_followers": 8386588
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 8386408
     },
     {
       "rank": 8,
@@ -102,11 +109,12 @@
       "retired": false,
       "x_handle": "violetsaucy",
       "x_url": "https://x.com/violetsaucy",
-      "x_followers": 2923002,
+      "x_followers": 2923136,
       "ig_handle": "waifuviolet",
       "ig_url": "https://instagram.com/waifuviolet",
       "ig_followers": 3161593,
-      "combined_followers": 6084595
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 6084729
     }
   ],
   "also_ranked": [
@@ -116,11 +124,12 @@
       "retired": false,
       "x_handle": "rileyreidx3",
       "x_url": "https://x.com/rileyreidx3",
-      "x_followers": 2478694,
+      "x_followers": 2478778,
       "ig_handle": "letrileylive",
       "ig_url": "https://instagram.com/letrileylive",
       "ig_followers": 2698053,
-      "combined_followers": 5176747
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 5176831
     },
     {
       "rank": 10,
@@ -128,11 +137,12 @@
       "retired": false,
       "x_handle": "lenatheplug",
       "x_url": "https://x.com/lenatheplug",
-      "x_followers": 2087879,
+      "x_followers": 2087880,
       "ig_handle": "lenatheplug",
       "ig_url": "https://instagram.com/lenatheplug",
       "ig_followers": 3031207,
-      "combined_followers": 5119086
+      "ig_as_of": "2026-10-20",
+      "combined_followers": 5119087
     }
   ],
   "rising8": {
@@ -143,5 +153,9 @@
   "changes_since_last_week": null,
   "changes_note": "Week-over-week changes publish once a prior weekly snapshot exists (first comparison Oct 27, 2026).",
   "llms_txt": "https://hottest8.com/llms.txt",
-  "newsletter_signup": "https://hottest8.com/#newsletter"
+  "newsletter_signup": "https://hottest8.com/#newsletter",
+  "snapshots": [
+    "https://hottest8.com/snapshots/2026-10-20.json",
+    "https://hottest8.com/snapshots/2026-10-21.json"
+  ]
 }
