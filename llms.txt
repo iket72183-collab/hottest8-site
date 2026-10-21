@@ -11,6 +11,9 @@
 - X counts come from the X API; Instagram counts from Instagram. Each refresh is dated.
 - Updated daily. If a refresh fails, the last verified snapshot and its date stay up.
 - The `last_updated` field in rankings.json gives the data date.
+- Current data: X counts checked Oct 21, 2026 ~9:10 AM CT (X API); Instagram counts checked Oct 20, 2026 ~8:30 PM CT (Muse research), carried forward until the next Instagram check. Exact timestamps are in rankings.json (`as_of_note`, `sources`).
+- Dated daily snapshots: https://hottest8.com/snapshots/YYYY-MM-DD.json (first: 2026-10-20).
+- Combined X + Instagram figures are follower totals summed across two platforms, not unique people.
 
 ## Key URLs
 - Homepage and live rankings: https://hottest8.com/
