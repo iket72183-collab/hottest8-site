@@ -146,9 +146,96 @@
     }
   ],
   "rising8": {
-    "status": "not_published",
-    "items": [],
-    "note": "Rising 8 = 7-day % growth in combined follows; needs 7 days of daily snapshots. Earliest list Oct 27, 2026."
+    "status": "partial_window",
+    "window": {
+      "from": "2026-10-20T20:27:00-05:00",
+      "to": "2026-10-21T09:10:00-05:00",
+      "hours": 12.7,
+      "label": "since Oct 20, 8:27 PM CT (13 hrs)"
+    },
+    "metric": "ranked by % growth; absolute growth shown. X only: Instagram counts were not re-checked in this window, so Instagram growth is unknown, not zero.",
+    "items": [
+      {
+        "name": "Abella Danger",
+        "x_handle": "Abella_Danger",
+        "growth": 435,
+        "growth_pct": 0.0199,
+        "x_growth": 435,
+        "ig_growth": null,
+        "ig_included": false,
+        "rank": 1
+      },
+      {
+        "name": "Sophie Rain",
+        "x_handle": "sophieraiin",
+        "growth": 174,
+        "growth_pct": 0.005,
+        "x_growth": 174,
+        "ig_growth": null,
+        "ig_included": false,
+        "rank": 2
+      },
+      {
+        "name": "Violet Myers",
+        "x_handle": "violetsaucy",
+        "growth": 134,
+        "growth_pct": 0.0046,
+        "x_growth": 134,
+        "ig_growth": null,
+        "ig_included": false,
+        "rank": 3
+      },
+      {
+        "name": "Riley Reid",
+        "x_handle": "rileyreidx3",
+        "growth": 84,
+        "growth_pct": 0.0034,
+        "x_growth": 84,
+        "ig_growth": null,
+        "ig_included": false,
+        "rank": 4
+      },
+      {
+        "name": "Kendra Lust",
+        "x_handle": "KendraLust",
+        "growth": 48,
+        "growth_pct": 0.0029,
+        "x_growth": 48,
+        "ig_growth": null,
+        "ig_included": false,
+        "rank": 5
+      },
+      {
+        "name": "Mia Malkova",
+        "x_handle": "MiaMalkova",
+        "growth": 61,
+        "growth_pct": 0.0017,
+        "x_growth": 61,
+        "ig_growth": null,
+        "ig_included": false,
+        "rank": 6
+      },
+      {
+        "name": "Angela White",
+        "x_handle": "ANGELAWHITE",
+        "growth": 36,
+        "growth_pct": 0.001,
+        "x_growth": 36,
+        "ig_growth": null,
+        "ig_included": false,
+        "rank": 7
+      },
+      {
+        "name": "Lena the Plug",
+        "x_handle": "lenatheplug",
+        "growth": 1,
+        "growth_pct": 0.0,
+        "x_growth": 1,
+        "ig_growth": null,
+        "ig_included": false,
+        "rank": 8
+      }
+    ]
   },
   "changes_since_last_week": null,
   "changes_note": "Week-over-week changes publish once a prior weekly snapshot exists (first comparison Oct 27, 2026).",
@@ -157,5 +244,117 @@
   "snapshots": [
     "https://hottest8.com/snapshots/2026-10-20.json",
     "https://hottest8.com/snapshots/2026-10-21.json"
-  ]
+  ],
+  "milestones": {
+    "crossed": [],
+    "closest_next": [
+      {
+        "name": "Corinna Kopf",
+        "platform": "X",
+        "next_milestone": 3000000,
+        "to_go": 52157,
+        "current": 2947843,
+        "as_of": "2026-10-21"
+      },
+      {
+        "name": "Violet Myers",
+        "platform": "X",
+        "next_milestone": 3000000,
+        "to_go": 76864,
+        "current": 2923136,
+        "as_of": "2026-10-21"
+      },
+      {
+        "name": "Sophie Rain",
+        "platform": "Instagram",
+        "next_milestone": 9000000,
+        "to_go": 97584,
+        "current": 8902416,
+        "as_of": "2026-10-20"
+      },
+      {
+        "name": "Mia Khalifa",
+        "platform": "Instagram",
+        "next_milestone": 29000000,
+        "to_go": 169372,
+        "current": 28830628,
+        "as_of": "2026-10-20"
+      },
+      {
+        "name": "Riley Reid",
+        "platform": "Instagram",
+        "next_milestone": 3000000,
+        "to_go": 301947,
+        "current": 2698053,
+        "as_of": "2026-10-20"
+      }
+    ],
+    "note": "Round-million crossings between consecutive dated snapshots. Instagram counts carried forward are not treated as new data."
+  },
+  "closest_battles": {
+    "items": [
+      {
+        "platform": "X",
+        "ranks": [
+          5,
+          6
+        ],
+        "leader": "Corinna Kopf",
+        "chaser": "Violet Myers",
+        "gap": 24707,
+        "leader_count": 2947843,
+        "chaser_count": 2923136
+      },
+      {
+        "platform": "X",
+        "ranks": [
+          2,
+          3
+        ],
+        "leader": "Angela White",
+        "chaser": "Mia Malkova",
+        "gap": 56043,
+        "leader_count": 3641854,
+        "chaser_count": 3585811
+      },
+      {
+        "platform": "Combined",
+        "ranks": [
+          9,
+          10
+        ],
+        "leader": "Riley Reid",
+        "chaser": "Lena the Plug",
+        "gap": 57744,
+        "leader_count": 5176831,
+        "chaser_count": 5119087
+      },
+      {
+        "platform": "X",
+        "ranks": [
+          8,
+          9
+        ],
+        "leader": "Abella Danger",
+        "chaser": "Lena the Plug",
+        "gap": 97639,
+        "leader_count": 2185519,
+        "chaser_count": 2087880
+      },
+      {
+        "platform": "X",
+        "ranks": [
+          3,
+          4
+        ],
+        "leader": "Mia Malkova",
+        "chaser": "Sophie Rain",
+        "gap": 113488,
+        "leader_count": 3585811,
+        "chaser_count": 3472323
+      }
+    ],
+    "note": "Smallest follower gaps between adjacent ranks, by combined total or a single platform (labeled)."
+  },
+  "insights_url": "https://hottest8.com/insights.json"
 }

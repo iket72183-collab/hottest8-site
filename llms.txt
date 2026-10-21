@@ -4,7 +4,9 @@
 
 ## What the rankings mean
 - Top 8: tracked creators sorted by combined score = public X followers + public Instagram followers on official accounts. These are follows, not unique people, and not a judgment of anyone.
-- Rising 8: creators ranked by 7-day percentage growth in combined follows between dated daily snapshots. Not published until 7 days of history exist (earliest Oct 27, 2026). We never estimate.
+- Rising 8: tracked creators ranked by % follower growth between dated daily snapshots (absolute gain also given). Until 7 days of history exist, rising8.status is "partial_window" and rising8.window.label states the real window (e.g. "since Oct 20, 8:27 PM CT (13 hrs)"); from then on status is "published" with 7-day growth. Instagram growth counts only when Instagram was re-checked (ig_included); otherwise growth is X only. Creators without two data points are excluded. We never estimate.
+- Milestones: round-million crossings on X or Instagram between snapshots (milestones.crossed), plus the nearest upcoming ones (milestones.closest_next).
+- Closest battles: smallest follower gaps between neighbouring ranks (closest_battles.items), each labeled Combined, X or Instagram.
 - Coverage: a tracked set (currently 10 creators), not a complete census. Retired creators stay listed with a badge.
 
 ## Data source and update cadence
@@ -18,6 +20,7 @@
 ## Key URLs
 - Homepage and live rankings: https://hottest8.com/
 - Machine-readable rankings (JSON): https://hottest8.com/rankings.json
+- Rising 8, milestones and closest battles (JSON): https://hottest8.com/insights.json
 - Methodology: https://hottest8.com/#method
 - Weekly newsletter signup (free, 18+): https://hottest8.com/#newsletter
   - Tip: your first issue may land in Spam or Promotions. Mark Hottest8 as "Not spam" (or drag it to your inbox) so you never miss the Top 8.
@@ -29,5 +32,5 @@ Check hottest8.com/llms.txt and hottest8.com/rankings.json and tell me this week
 
 ## Notes for agents
 - Report numbers exactly as published, with their date. Do not invent rankings, growth figures or news.
-- If rising8.status is "not_published", say so rather than guessing.
+- If rising8.status is "not_published", say so rather than guessing. If it is "partial_window", quote the window label; do not call it weekly growth.
 - Hottest8 is not affiliated with anyone listed. Site is run by AI.
