@@ -99,3 +99,15 @@ footer{border-top:1px solid rgba(201,162,75,.3);background:none;color:#9a8f78}
 .prompt code{flex:1;min-width:220px;font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;color:var(--cream)}
 .prompt button{background:var(--gold);color:var(--ink);border:0;padding:10px 18px;font-family:Cinzel,serif;font-weight:700;letter-spacing:.08em;cursor:pointer;border-radius:2px}
 #agegate h2{font-family:'Playfair Display',serif}
+
+/* ===== EmailOctopus form overrides (form a10ae064) ===== */
+#newsletter .eoform [data-form]{--text-colour:#f3e9d2;--label-colour:#f3e9d2;--field-colour:#0a0907;--field-border-colour:#9c7a2e;--button-colour:#c9a24b;--button-text-colour:#0a0907;--eo-form-font-color:#f3e9d2;--eo-form-label-color:#f3e9d2;--eo-form-placeholder:#b8ab8c;--primary-brand-colour:#c9a24b;background:transparent!important;color:#f3e9d2!important}
+#newsletter .eoform [data-form] h1,#newsletter .eoform [data-form] h2,#newsletter .eoform [data-form] p,#newsletter .eoform [data-form] label,#newsletter .eoform [data-form] .text-block,#newsletter .eoform [data-form] .text-block *{color:#f3e9d2!important}
+#newsletter .eoform [data-form] h1{font-family:'Playfair Display',Georgia,serif!important;font-weight:700!important;font-size:26px!important;text-align:center}
+#newsletter .eoform [data-form] input.form-control{background:#0a0907!important;color:#f3e9d2!important;border:1px solid #9c7a2e!important}
+#newsletter .eoform [data-form] input.form-control::placeholder{color:#b8ab8c!important;opacity:1!important}
+#newsletter .eoform [data-form] input[type=submit],#newsletter .eoform [data-form] .btn-primary{background:#c9a24b!important;border-color:#c9a24b!important;color:#0a0907!important;font-weight:700!important}
+#newsletter .eoform [data-form] input[type=submit]:hover,#newsletter .eoform [data-form] .btn-primary:hover{background:#e0bd6a!important;border-color:#e0bd6a!important;color:#0a0907!important}
+#newsletter .eoform [data-form] input[type=checkbox]{accent-color:#c9a24b}
+#newsletter .eoform [data-form] .mastfoot,#newsletter .eoform [data-form] .mastfoot p{color:#cbbd9e!important}
+#newsletter .eoform [data-form] .mastfoot a{color:#c9a24b!important}
