@@ -1,7 +1,7 @@
 {
  "site_name": "Hottest8",
  "as_of": "2026-10-21",
- "as_of_note": "X counts refreshed Oct 21, 2026 ~9:10 AM CT; Instagram counts Oct 20, 2026 ~8:30 PM CT; 10 creators added Oct 21 ~1:07 PM CT (X only, Instagram pending verification)",
+ "as_of_note": "X counts refreshed Oct 21, 2026 ~9:10 AM CT (10 creators added ~1:07 PM CT); Instagram counts Oct 20, 2026 ~8:30 PM CT, plus 8 new creators checked Oct 21, 2026 ~1:15 PM CT (Instagram API, Muse research); 2 still pending Instagram verification",
  "contact_email": "hello@hottest8.com",
  "creators": [
   {
@@ -99,36 +99,45 @@
    "x_handle": "thereallisaann",
    "x_followers": 2081118,
    "x_as_of": "2026-10-21T13:07:00-05:00",
-   "ig_handle": null,
-   "ig_followers": null,
-   "ig_status": "pending_verification",
+   "ig_handle": "thereallisaann",
+   "ig_followers": 4391536,
+   "ig_status": "verified",
    "retired": true,
    "added": "2026-10-21",
-   "avatar": "https://pbs.twimg.com/profile_images/2110467696970342400/2La4mN92_400x400.jpg"
+   "avatar": "https://pbs.twimg.com/profile_images/2110467696970342400/2La4mN92_400x400.jpg",
+   "ig_as_of": "2026-10-21",
+   "ig_checked_at": "2026-10-21T13:15:00-05:00",
+   "ig_source": "Instagram API (Muse research)"
   },
   {
    "name": "Eva Elfie",
    "x_handle": "EvaElfie",
    "x_followers": 1377422,
    "x_as_of": "2026-10-21T13:07:00-05:00",
-   "ig_handle": null,
-   "ig_followers": null,
-   "ig_status": "pending_verification",
+   "ig_handle": "theevaelfie",
+   "ig_followers": 4884228,
+   "ig_status": "verified",
    "retired": false,
    "added": "2026-10-21",
-   "avatar": "https://pbs.twimg.com/profile_images/1400374299492425732/5eRJyXVl_400x400.jpg"
+   "avatar": "https://pbs.twimg.com/profile_images/1400374299492425732/5eRJyXVl_400x400.jpg",
+   "ig_as_of": "2026-10-21",
+   "ig_checked_at": "2026-10-21T13:15:00-05:00",
+   "ig_source": "Instagram API (Muse research)"
   },
   {
    "name": "Adriana Chechik",
    "x_handle": "adrianachechik",
    "x_followers": 1234553,
    "x_as_of": "2026-10-21T13:07:00-05:00",
-   "ig_handle": null,
-   "ig_followers": null,
-   "ig_status": "pending_verification",
+   "ig_handle": "bratnasty69",
+   "ig_followers": 3914456,
+   "ig_status": "verified",
    "retired": false,
    "added": "2026-10-21",
-   "avatar": "https://pbs.twimg.com/profile_images/1346502546668486658/S73iVQ5l_400x400.jpg"
+   "avatar": "https://pbs.twimg.com/profile_images/1346502546668486658/S73iVQ5l_400x400.jpg",
+   "ig_as_of": "2026-10-21",
+   "ig_checked_at": "2026-10-21T13:15:00-05:00",
+   "ig_source": "Instagram API (Muse research)"
   },
   {
    "name": "Brandi Love",
@@ -147,12 +156,15 @@
    "x_handle": "CherieDeVille",
    "x_followers": 1110080,
    "x_as_of": "2026-10-21T13:07:00-05:00",
-   "ig_handle": null,
-   "ig_followers": null,
-   "ig_status": "pending_verification",
+   "ig_handle": "cheriedevillexo",
+   "ig_followers": 4679373,
+   "ig_status": "verified",
    "retired": false,
    "added": "2026-10-21",
-   "avatar": "https://pbs.twimg.com/profile_images/1853137099333292032/mNtF3gEW_400x400.jpg"
+   "avatar": "https://pbs.twimg.com/profile_images/1853137099333292032/mNtF3gEW_400x400.jpg",
+   "ig_as_of": "2026-10-21",
+   "ig_checked_at": "2026-10-21T13:15:00-05:00",
+   "ig_source": "Instagram API (Muse research)"
   },
   {
    "name": "Ava Addams",
@@ -171,50 +183,62 @@
    "x_handle": "AlexisFawx",
    "x_followers": 990410,
    "x_as_of": "2026-10-21T13:07:00-05:00",
-   "ig_handle": null,
-   "ig_followers": null,
-   "ig_status": "pending_verification",
+   "ig_handle": "alexisfawxlive",
+   "ig_followers": 3059045,
+   "ig_status": "verified",
    "retired": false,
    "added": "2026-10-21",
-   "avatar": "https://pbs.twimg.com/profile_images/2030802912411258881/X6RpL3MG_400x400.jpg"
+   "avatar": "https://pbs.twimg.com/profile_images/2030802912411258881/X6RpL3MG_400x400.jpg",
+   "ig_as_of": "2026-10-21",
+   "ig_checked_at": "2026-10-21T13:15:00-05:00",
+   "ig_source": "Instagram API (Muse research)"
   },
   {
    "name": "Nikki Benz",
    "x_handle": "nikkibenz",
    "x_followers": 974038,
    "x_as_of": "2026-10-21T13:07:00-05:00",
-   "ig_handle": null,
-   "ig_followers": null,
-   "ig_status": "pending_verification",
+   "ig_handle": "nikkibenz",
+   "ig_followers": 5335573,
+   "ig_status": "verified",
    "retired": false,
    "added": "2026-10-21",
-   "avatar": "https://pbs.twimg.com/profile_images/2048273146579722241/4EP8PNRn_400x400.jpg"
+   "avatar": "https://pbs.twimg.com/profile_images/2048273146579722241/4EP8PNRn_400x400.jpg",
+   "ig_as_of": "2026-10-21",
+   "ig_checked_at": "2026-10-21T13:15:00-05:00",
+   "ig_source": "Instagram API (Muse research)"
   },
   {
    "name": "Asa Akira",
    "x_handle": "AsaAkira",
    "x_followers": 847040,
    "x_as_of": "2026-10-21T13:07:00-05:00",
-   "ig_handle": null,
-   "ig_followers": null,
-   "ig_status": "pending_verification",
+   "ig_handle": "asahole",
+   "ig_followers": 2074609,
+   "ig_status": "verified",
    "retired": false,
    "added": "2026-10-21",
-   "avatar": "https://pbs.twimg.com/profile_images/2107881945849856001/qtRoAM-s_400x400.jpg"
+   "avatar": "https://pbs.twimg.com/profile_images/2107881945849856001/qtRoAM-s_400x400.jpg",
+   "ig_as_of": "2026-10-21",
+   "ig_checked_at": "2026-10-21T13:15:00-05:00",
+   "ig_source": "Instagram API (Muse research)"
   },
   {
    "name": "Jenna Jameson",
    "x_handle": "jennajameson",
    "x_followers": 669873,
    "x_as_of": "2026-10-21T13:07:00-05:00",
-   "ig_handle": null,
-   "ig_followers": null,
-   "ig_status": "pending_verification",
+   "ig_handle": "jennacantlose",
+   "ig_followers": 557393,
+   "ig_status": "verified",
    "retired": true,
    "added": "2026-10-21",
-   "avatar": "https://pbs.twimg.com/profile_images/1898541003306307584/_jbMy2OH_400x400.jpg"
+   "avatar": "https://pbs.twimg.com/profile_images/1898541003306307584/_jbMy2OH_400x400.jpg",
+   "ig_as_of": "2026-10-21",
+   "ig_checked_at": "2026-10-21T13:15:00-05:00",
+   "ig_source": "Instagram API (Muse research)"
   }
  ],
- "ig_source": "Instagram counts via Instagram API, checked Oct 20, 2026 ~8:30 PM CT (Muse research)",
+ "ig_source": "Instagram counts via Instagram API (Muse research): checked Oct 20, 2026 ~8:30 PM CT; 8 creators added Oct 21 checked Oct 21, 2026 ~1:15 PM CT",
  "x_source": "X counts via X API, checked Oct 21, 2026 ~9:10 AM CT"
 }

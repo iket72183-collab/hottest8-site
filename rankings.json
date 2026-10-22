@@ -3,10 +3,10 @@
   "name": "Hottest8",
   "description": "Top 8 most-followed women in adult entertainment among tracked creators, ranked by combined public X + Instagram follower counts. SFW, 18+.",
   "last_updated": "2026-10-21",
-  "as_of_note": "X counts refreshed Oct 21, 2026 ~9:10 AM CT; Instagram counts Oct 20, 2026 ~8:30 PM CT; 10 creators added Oct 21 ~1:07 PM CT (X only, Instagram pending verification)",
+  "as_of_note": "X counts refreshed Oct 21, 2026 ~9:10 AM CT (10 creators added ~1:07 PM CT); Instagram counts Oct 20, 2026 ~8:30 PM CT, plus 8 new creators checked Oct 21, 2026 ~1:15 PM CT (Instagram API, Muse research); 2 still pending Instagram verification",
   "sources": {
     "x": "X counts via X API, checked Oct 21, 2026 ~9:10 AM CT",
-    "instagram": "Instagram counts via Instagram API, checked Oct 20, 2026 ~8:30 PM CT (Muse research)"
+    "instagram": "Instagram counts via Instagram API (Muse research): checked Oct 20, 2026 ~8:30 PM CT; 8 creators added Oct 21 checked Oct 21, 2026 ~1:15 PM CT"
   },
   "method": "combined_followers = x_followers + ig_followers (follows, not unique people). Ranking covers only the creators we track; not a complete census. Creators whose Instagram count is not yet verified (ig_followers null) are excluded from combined ranks and listed in pending_instagram; they are ranked only in X-only views.",
   "update_cadence": "daily",
@@ -105,6 +105,50 @@
     },
     {
       "rank": 8,
+      "name": "Lisa Ann",
+      "retired": true,
+      "x_handle": "thereallisaann",
+      "x_url": "https://x.com/thereallisaann",
+      "x_followers": 2081118,
+      "ig_handle": "thereallisaann",
+      "ig_url": "https://instagram.com/thereallisaann",
+      "ig_followers": 4391536,
+      "ig_as_of": "2026-10-21",
+      "ig_source": "Instagram API (Muse research)",
+      "combined_followers": 6472654
+    }
+  ],
+  "also_ranked": [
+    {
+      "rank": 9,
+      "name": "Nikki Benz",
+      "retired": false,
+      "x_handle": "nikkibenz",
+      "x_url": "https://x.com/nikkibenz",
+      "x_followers": 974038,
+      "ig_handle": "nikkibenz",
+      "ig_url": "https://instagram.com/nikkibenz",
+      "ig_followers": 5335573,
+      "ig_as_of": "2026-10-21",
+      "ig_source": "Instagram API (Muse research)",
+      "combined_followers": 6309611
+    },
+    {
+      "rank": 10,
+      "name": "Eva Elfie",
+      "retired": false,
+      "x_handle": "EvaElfie",
+      "x_url": "https://x.com/EvaElfie",
+      "x_followers": 1377422,
+      "ig_handle": "theevaelfie",
+      "ig_url": "https://instagram.com/theevaelfie",
+      "ig_followers": 4884228,
+      "ig_as_of": "2026-10-21",
+      "ig_source": "Instagram API (Muse research)",
+      "combined_followers": 6261650
+    },
+    {
+      "rank": 11,
       "name": "Violet Myers",
       "retired": false,
       "x_handle": "violetsaucy",
@@ -115,11 +159,23 @@
       "ig_followers": 3161593,
       "ig_as_of": "2026-10-20",
       "combined_followers": 6084729
-    }
-  ],
-  "also_ranked": [
+    },
     {
-      "rank": 9,
+      "rank": 12,
+      "name": "Cherie DeVille",
+      "retired": false,
+      "x_handle": "CherieDeVille",
+      "x_url": "https://x.com/CherieDeVille",
+      "x_followers": 1110080,
+      "ig_handle": "cheriedevillexo",
+      "ig_url": "https://instagram.com/cheriedevillexo",
+      "ig_followers": 4679373,
+      "ig_as_of": "2026-10-21",
+      "ig_source": "Instagram API (Muse research)",
+      "combined_followers": 5789453
+    },
+    {
+      "rank": 13,
       "name": "Riley Reid",
       "retired": false,
       "x_handle": "rileyreidx3",
@@ -132,7 +188,21 @@
       "combined_followers": 5176831
     },
     {
-      "rank": 10,
+      "rank": 14,
+      "name": "Adriana Chechik",
+      "retired": false,
+      "x_handle": "adrianachechik",
+      "x_url": "https://x.com/adrianachechik",
+      "x_followers": 1234553,
+      "ig_handle": "bratnasty69",
+      "ig_url": "https://instagram.com/bratnasty69",
+      "ig_followers": 3914456,
+      "ig_as_of": "2026-10-21",
+      "ig_source": "Instagram API (Muse research)",
+      "combined_followers": 5149009
+    },
+    {
+      "rank": 15,
       "name": "Lena the Plug",
       "retired": false,
       "x_handle": "lenatheplug",
@@ -143,6 +213,48 @@
       "ig_followers": 3031207,
       "ig_as_of": "2026-10-20",
       "combined_followers": 5119087
+    },
+    {
+      "rank": 16,
+      "name": "Alexis Fawx",
+      "retired": false,
+      "x_handle": "AlexisFawx",
+      "x_url": "https://x.com/AlexisFawx",
+      "x_followers": 990410,
+      "ig_handle": "alexisfawxlive",
+      "ig_url": "https://instagram.com/alexisfawxlive",
+      "ig_followers": 3059045,
+      "ig_as_of": "2026-10-21",
+      "ig_source": "Instagram API (Muse research)",
+      "combined_followers": 4049455
+    },
+    {
+      "rank": 17,
+      "name": "Asa Akira",
+      "retired": false,
+      "x_handle": "AsaAkira",
+      "x_url": "https://x.com/AsaAkira",
+      "x_followers": 847040,
+      "ig_handle": "asahole",
+      "ig_url": "https://instagram.com/asahole",
+      "ig_followers": 2074609,
+      "ig_as_of": "2026-10-21",
+      "ig_source": "Instagram API (Muse research)",
+      "combined_followers": 2921649
+    },
+    {
+      "rank": 18,
+      "name": "Jenna Jameson",
+      "retired": true,
+      "x_handle": "jennajameson",
+      "x_url": "https://x.com/jennajameson",
+      "x_followers": 669873,
+      "ig_handle": "jennacantlose",
+      "ig_url": "https://instagram.com/jennacantlose",
+      "ig_followers": 557393,
+      "ig_as_of": "2026-10-21",
+      "ig_source": "Instagram API (Muse research)",
+      "combined_followers": 1227266
     }
   ],
   "rising8": {
@@ -281,12 +393,12 @@
         "as_of": "2026-10-21"
       },
       {
-        "name": "Sophie Rain",
+        "name": "Adriana Chechik",
         "platform": "Instagram",
-        "next_milestone": 9000000,
-        "to_go": 97584,
-        "current": 8902416,
-        "as_of": "2026-10-20"
+        "next_milestone": 4000000,
+        "to_go": 85544,
+        "current": 3914456,
+        "as_of": "2026-10-21"
       }
     ],
     "note": "Round-million crossings between consecutive dated snapshots. Instagram counts carried forward are not treated as new data."
@@ -357,38 +469,8 @@
     "note": "Smallest follower gaps between adjacent ranks, by combined total or a single platform (labeled)."
   },
   "insights_url": "https://hottest8.com/insights.json",
-  "combined_ranked_count": 10,
+  "combined_ranked_count": 18,
   "pending_instagram": [
-    {
-      "name": "Lisa Ann",
-      "retired": true,
-      "x_handle": "thereallisaann",
-      "x_url": "https://x.com/thereallisaann",
-      "x_followers": 2081118,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
-      "ig_followers": null,
-      "ig_status": "pending_verification"
-    },
-    {
-      "name": "Eva Elfie",
-      "retired": false,
-      "x_handle": "EvaElfie",
-      "x_url": "https://x.com/EvaElfie",
-      "x_followers": 1377422,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
-      "ig_followers": null,
-      "ig_status": "pending_verification"
-    },
-    {
-      "name": "Adriana Chechik",
-      "retired": false,
-      "x_handle": "adrianachechik",
-      "x_url": "https://x.com/adrianachechik",
-      "x_followers": 1234553,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
-      "ig_followers": null,
-      "ig_status": "pending_verification"
-    },
     {
       "name": "Brandi Love",
       "retired": false,
@@ -397,17 +479,8 @@
       "x_followers": 1229761,
       "x_as_of": "2026-10-21T13:07:00-05:00",
       "ig_followers": null,
-      "ig_status": "pending_verification"
-    },
-    {
-      "name": "Cherie DeVille",
-      "retired": false,
-      "x_handle": "CherieDeVille",
-      "x_url": "https://x.com/CherieDeVille",
-      "x_followers": 1110080,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
-      "ig_followers": null,
-      "ig_status": "pending_verification"
+      "ig_status": "pending_verification",
+      "ig_note": "Muse could not confirm an official Instagram account (Oct 21, 2026); not ranked on combined until verified."
     },
     {
       "name": "Ava Addams",
@@ -417,47 +490,8 @@
       "x_followers": 1092207,
       "x_as_of": "2026-10-21T13:07:00-05:00",
       "ig_followers": null,
-      "ig_status": "pending_verification"
-    },
-    {
-      "name": "Alexis Fawx",
-      "retired": false,
-      "x_handle": "AlexisFawx",
-      "x_url": "https://x.com/AlexisFawx",
-      "x_followers": 990410,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
-      "ig_followers": null,
-      "ig_status": "pending_verification"
-    },
-    {
-      "name": "Nikki Benz",
-      "retired": false,
-      "x_handle": "nikkibenz",
-      "x_url": "https://x.com/nikkibenz",
-      "x_followers": 974038,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
-      "ig_followers": null,
-      "ig_status": "pending_verification"
-    },
-    {
-      "name": "Asa Akira",
-      "retired": false,
-      "x_handle": "AsaAkira",
-      "x_url": "https://x.com/AsaAkira",
-      "x_followers": 847040,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
-      "ig_followers": null,
-      "ig_status": "pending_verification"
-    },
-    {
-      "name": "Jenna Jameson",
-      "retired": true,
-      "x_handle": "jennajameson",
-      "x_url": "https://x.com/jennajameson",
-      "x_followers": 669873,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
-      "ig_followers": null,
-      "ig_status": "pending_verification"
+      "ig_status": "pending_verification",
+      "ig_note": "Muse could not confirm an official Instagram account (Oct 21, 2026); not ranked on combined until verified."
     }
   ],
   "x_only_ranking": [
@@ -581,5 +615,6 @@
       "x_handle": "jennajameson",
       "x_followers": 669873
     }
-  ]
+  ],
+  "hero_total_combined": 160724757
 }
