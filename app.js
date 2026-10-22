@@ -11,7 +11,7 @@ function card(c,i){const t=key[mode](c);return `<li class="card"><div class="ran
 function render(){const s=[...pool()].sort((a,b)=>key[mode](b)-key[mode](a));
 const L=document.getElementById('list');if(L)L.innerHTML=s.slice(0,8).map(card).join('');
 const n=D.creators.length,v=D.creators.filter(hasIG).length,P=D.creators.filter(c=>!hasIG(c)).sort((a,b)=>b.x_followers-a.x_followers);
-const tn=document.getElementById('topnote');if(tn)tn.textContent=mode==='x'?`X view ranks all ${n} tracked creators by X followers.`:`${mode==='ig'?'Instagram':'Combined'} view ranks the ${v} creators whose Instagram count is verified; ${n-v} more await Instagram verification.`;
+const tn=document.getElementById('topnote');if(tn)tn.textContent={combined:'Ranked by combined X + Instagram followers',x:'Ranked by X followers',ig:'Ranked by Instagram followers'}[mode];
 const pw=document.getElementById('pending');if(pw){pw.hidden=mode==='x'||!P.length;document.getElementById('pendlist').innerHTML=P.map(c=>`<li class="card"><div class="rank">–</div>${av(c)}<div><div class="nm">${c.name}${c.retired?'<span class="badge">Retired</span>':''}</div><div class="sub"><a href="https://x.com/${c.x_handle}" target="_blank" rel="noopener nofollow">𝕏 @${c.x_handle}</a> <span title="${c.x_followers.toLocaleString('en-US')}">${fmt(c.x_followers)}</span> · <span class="pend">IG pending verification</span></div></div><div class="tot"><b>—</b><small>not ranked</small></div></li>`).join('')}}
 let FB=false;
 fetch('data.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{if(!j||!j.creators||!j.creators.length)throw 0;return j}).catch(()=>{FB=true;return window.TC_DATA}).then(d=>{if(!d)return;D=d;
@@ -20,6 +20,7 @@ const a2=document.getElementById('asof2');if(a2)a2.textContent=d.as_of_note;
 document.querySelectorAll('[data-sitename]').forEach(e=>e.textContent=d.site_name);
 document.querySelectorAll('.adlink').forEach(a=>a.href='mailto:'+d.contact_email);
 const st=document.getElementById("s-total");if(st)st.textContent=fmt(d.creators.filter(hasIG).reduce((a,c)=>a+c.x_followers+c.ig_followers,0));
+const su=document.getElementById("s-upd");if(su)su.textContent=new Date(d.as_of+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 const sd=document.getElementById("s-date");if(sd)sd.textContent=new Date(d.as_of+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 const ao=document.getElementById('asof');if(ao)ao.textContent=d.as_of_note;
 const by=Object.fromEntries(d.creators.map(c=>[c.x_handle,c]));
