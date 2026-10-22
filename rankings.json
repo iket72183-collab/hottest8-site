@@ -2,10 +2,10 @@
   "site": "https://hottest8.com/",
   "name": "Hottest8",
   "description": "Top 8 most-followed women in adult entertainment among tracked creators, ranked by combined public X + Instagram follower counts. SFW, 18+.",
-  "last_updated": "2026-10-21",
-  "as_of_note": "X counts refreshed Oct 21, 2026 ~9:10 AM CT (10 creators added ~1:07 PM CT); Instagram counts Oct 20, 2026 ~8:30 PM CT, plus 8 new creators checked Oct 21, 2026 ~1:15 PM CT (Instagram API, Muse research); 2 still pending Instagram verification",
+  "last_updated": "2026-10-22",
+  "as_of_note": "X counts refreshed Oct 22, 2026 ~7:10 AM CT; Instagram counts Oct 20, 2026 ~8:30 PM CT, plus 8 creators checked Oct 21, 2026 ~1:15 PM CT (Instagram API, Muse research), carried forward; 2 still pending Instagram verification",
   "sources": {
-    "x": "X counts via X API, checked Oct 21, 2026 ~9:10 AM CT",
+    "x": "X counts via X API, checked Oct 22, 2026 ~7:10 AM CT",
     "instagram": "Instagram counts via Instagram API (Muse research): checked Oct 20, 2026 ~8:30 PM CT; 8 creators added Oct 21 checked Oct 21, 2026 ~1:15 PM CT"
   },
   "method": "combined_followers = x_followers + ig_followers (follows, not unique people). Ranking covers only the creators we track; not a complete census. Creators whose Instagram count is not yet verified (ig_followers null) are excluded from combined ranks and listed in pending_instagram; they are ranked only in X-only views.",
@@ -18,12 +18,12 @@
       "retired": true,
       "x_handle": "miakhalifa",
       "x_url": "https://x.com/miakhalifa",
-      "x_followers": 6340363,
+      "x_followers": 6340160,
       "ig_handle": "miakhalifa",
       "ig_url": "https://instagram.com/miakhalifa",
       "ig_followers": 28830628,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 35170991
+      "combined_followers": 35170788
     },
     {
       "rank": 2,
@@ -31,12 +31,12 @@
       "retired": false,
       "x_handle": "MiaMalkova",
       "x_url": "https://x.com/MiaMalkova",
-      "x_followers": 3585811,
+      "x_followers": 3586168,
       "ig_handle": "miamalkova",
       "ig_url": "https://instagram.com/miamalkova",
       "ig_followers": 11468763,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 15054574
+      "combined_followers": 15054931
     },
     {
       "rank": 3,
@@ -44,12 +44,12 @@
       "retired": false,
       "x_handle": "ANGELAWHITE",
       "x_url": "https://x.com/ANGELAWHITE",
-      "x_followers": 3641854,
+      "x_followers": 3642219,
       "ig_handle": "theangelawhite",
       "ig_url": "https://instagram.com/theangelawhite",
       "ig_followers": 10050278,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 13692132
+      "combined_followers": 13692497
     },
     {
       "rank": 4,
@@ -57,12 +57,12 @@
       "retired": false,
       "x_handle": "sophieraiin",
       "x_url": "https://x.com/sophieraiin",
-      "x_followers": 3472323,
+      "x_followers": 3471977,
       "ig_handle": "sophieraiin",
       "ig_url": "https://instagram.com/sophieraiin",
       "ig_followers": 8902416,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 12374739
+      "combined_followers": 12374393
     },
     {
       "rank": 5,
@@ -70,12 +70,12 @@
       "retired": false,
       "x_handle": "Abella_Danger",
       "x_url": "https://x.com/Abella_Danger",
-      "x_followers": 2185519,
+      "x_followers": 2185882,
       "ig_handle": "dangershewrote",
       "ig_url": "https://instagram.com/dangershewrote",
       "ig_followers": 9351873,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 11537392
+      "combined_followers": 11537755
     },
     {
       "rank": 6,
@@ -83,12 +83,12 @@
       "retired": false,
       "x_handle": "KendraLust",
       "x_url": "https://x.com/KendraLust",
-      "x_followers": 1637139,
+      "x_followers": 1637296,
       "ig_handle": "kendralust",
       "ig_url": "https://instagram.com/kendralust",
       "ig_followers": 8309988,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 9947127
+      "combined_followers": 9947284
     },
     {
       "rank": 7,
@@ -96,12 +96,12 @@
       "retired": false,
       "x_handle": "CorinnaKopf",
       "x_url": "https://x.com/CorinnaKopf",
-      "x_followers": 2947843,
+      "x_followers": 2947487,
       "ig_handle": "corinnakopf",
       "ig_url": "https://instagram.com/corinnakopf",
       "ig_followers": 5438565,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 8386408
+      "combined_followers": 8386052
     },
     {
       "rank": 8,
@@ -109,13 +109,13 @@
       "retired": true,
       "x_handle": "thereallisaann",
       "x_url": "https://x.com/thereallisaann",
-      "x_followers": 2081118,
+      "x_followers": 2081189,
       "ig_handle": "thereallisaann",
       "ig_url": "https://instagram.com/thereallisaann",
       "ig_followers": 4391536,
       "ig_as_of": "2026-10-21",
       "ig_source": "Instagram API (Muse research)",
-      "combined_followers": 6472654
+      "combined_followers": 6472725
     }
   ],
   "also_ranked": [
@@ -125,13 +125,13 @@
       "retired": false,
       "x_handle": "nikkibenz",
       "x_url": "https://x.com/nikkibenz",
-      "x_followers": 974038,
+      "x_followers": 974051,
       "ig_handle": "nikkibenz",
       "ig_url": "https://instagram.com/nikkibenz",
       "ig_followers": 5335573,
       "ig_as_of": "2026-10-21",
       "ig_source": "Instagram API (Muse research)",
-      "combined_followers": 6309611
+      "combined_followers": 6309624
     },
     {
       "rank": 10,
@@ -139,13 +139,13 @@
       "retired": false,
       "x_handle": "EvaElfie",
       "x_url": "https://x.com/EvaElfie",
-      "x_followers": 1377422,
+      "x_followers": 1377725,
       "ig_handle": "theevaelfie",
       "ig_url": "https://instagram.com/theevaelfie",
       "ig_followers": 4884228,
       "ig_as_of": "2026-10-21",
       "ig_source": "Instagram API (Muse research)",
-      "combined_followers": 6261650
+      "combined_followers": 6261953
     },
     {
       "rank": 11,
@@ -153,12 +153,12 @@
       "retired": false,
       "x_handle": "violetsaucy",
       "x_url": "https://x.com/violetsaucy",
-      "x_followers": 2923136,
+      "x_followers": 2923150,
       "ig_handle": "waifuviolet",
       "ig_url": "https://instagram.com/waifuviolet",
       "ig_followers": 3161593,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 6084729
+      "combined_followers": 6084743
     },
     {
       "rank": 12,
@@ -166,13 +166,13 @@
       "retired": false,
       "x_handle": "CherieDeVille",
       "x_url": "https://x.com/CherieDeVille",
-      "x_followers": 1110080,
+      "x_followers": 1110088,
       "ig_handle": "cheriedevillexo",
       "ig_url": "https://instagram.com/cheriedevillexo",
       "ig_followers": 4679373,
       "ig_as_of": "2026-10-21",
       "ig_source": "Instagram API (Muse research)",
-      "combined_followers": 5789453
+      "combined_followers": 5789461
     },
     {
       "rank": 13,
@@ -180,12 +180,12 @@
       "retired": false,
       "x_handle": "rileyreidx3",
       "x_url": "https://x.com/rileyreidx3",
-      "x_followers": 2478778,
+      "x_followers": 2478973,
       "ig_handle": "letrileylive",
       "ig_url": "https://instagram.com/letrileylive",
       "ig_followers": 2698053,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 5176831
+      "combined_followers": 5177026
     },
     {
       "rank": 14,
@@ -193,13 +193,13 @@
       "retired": false,
       "x_handle": "adrianachechik",
       "x_url": "https://x.com/adrianachechik",
-      "x_followers": 1234553,
+      "x_followers": 1234811,
       "ig_handle": "bratnasty69",
       "ig_url": "https://instagram.com/bratnasty69",
       "ig_followers": 3914456,
       "ig_as_of": "2026-10-21",
       "ig_source": "Instagram API (Muse research)",
-      "combined_followers": 5149009
+      "combined_followers": 5149267
     },
     {
       "rank": 15,
@@ -207,12 +207,12 @@
       "retired": false,
       "x_handle": "lenatheplug",
       "x_url": "https://x.com/lenatheplug",
-      "x_followers": 2087880,
+      "x_followers": 2088003,
       "ig_handle": "lenatheplug",
       "ig_url": "https://instagram.com/lenatheplug",
       "ig_followers": 3031207,
       "ig_as_of": "2026-10-20",
-      "combined_followers": 5119087
+      "combined_followers": 5119210
     },
     {
       "rank": 16,
@@ -220,13 +220,13 @@
       "retired": false,
       "x_handle": "AlexisFawx",
       "x_url": "https://x.com/AlexisFawx",
-      "x_followers": 990410,
+      "x_followers": 990467,
       "ig_handle": "alexisfawxlive",
       "ig_url": "https://instagram.com/alexisfawxlive",
       "ig_followers": 3059045,
       "ig_as_of": "2026-10-21",
       "ig_source": "Instagram API (Muse research)",
-      "combined_followers": 4049455
+      "combined_followers": 4049512
     },
     {
       "rank": 17,
@@ -234,13 +234,13 @@
       "retired": false,
       "x_handle": "AsaAkira",
       "x_url": "https://x.com/AsaAkira",
-      "x_followers": 847040,
+      "x_followers": 847056,
       "ig_handle": "asahole",
       "ig_url": "https://instagram.com/asahole",
       "ig_followers": 2074609,
       "ig_as_of": "2026-10-21",
       "ig_source": "Instagram API (Muse research)",
-      "combined_followers": 2921649
+      "combined_followers": 2921665
     },
     {
       "rank": 18,
@@ -248,13 +248,13 @@
       "retired": true,
       "x_handle": "jennajameson",
       "x_url": "https://x.com/jennajameson",
-      "x_followers": 669873,
+      "x_followers": 669845,
       "ig_handle": "jennacantlose",
       "ig_url": "https://instagram.com/jennacantlose",
       "ig_followers": 557393,
       "ig_as_of": "2026-10-21",
       "ig_source": "Instagram API (Muse research)",
-      "combined_followers": 1227266
+      "combined_followers": 1227238
     }
   ],
   "rising8": {
@@ -269,7 +269,8 @@
   "newsletter_signup": "https://hottest8.com/#newsletter",
   "snapshots": [
     "https://hottest8.com/snapshots/2026-10-20.json",
-    "https://hottest8.com/snapshots/2026-10-21.json"
+    "https://hottest8.com/snapshots/2026-10-21.json",
+    "https://hottest8.com/snapshots/2026-10-22.json"
   ],
   "milestones": {
     "crossed": [],
@@ -278,33 +279,33 @@
         "name": "Alexis Fawx",
         "platform": "X",
         "next_milestone": 1000000,
-        "to_go": 9590,
-        "current": 990410,
-        "as_of": "2026-10-21"
+        "to_go": 9533,
+        "current": 990467,
+        "as_of": "2026-10-22"
       },
       {
         "name": "Nikki Benz",
         "platform": "X",
         "next_milestone": 1000000,
-        "to_go": 25962,
-        "current": 974038,
-        "as_of": "2026-10-21"
+        "to_go": 25949,
+        "current": 974051,
+        "as_of": "2026-10-22"
       },
       {
         "name": "Corinna Kopf",
         "platform": "X",
         "next_milestone": 3000000,
-        "to_go": 52157,
-        "current": 2947843,
-        "as_of": "2026-10-21"
+        "to_go": 52513,
+        "current": 2947487,
+        "as_of": "2026-10-22"
       },
       {
         "name": "Violet Myers",
         "platform": "X",
         "next_milestone": 3000000,
-        "to_go": 76864,
-        "current": 2923136,
-        "as_of": "2026-10-21"
+        "to_go": 76850,
+        "current": 2923150,
+        "as_of": "2026-10-22"
       },
       {
         "name": "Adriana Chechik",
@@ -327,9 +328,9 @@
         ],
         "leader": "Adriana Chechik",
         "chaser": "Brandi Love",
-        "gap": 4792,
-        "leader_count": 1234553,
-        "chaser_count": 1229761
+        "gap": 4940,
+        "leader_count": 1234811,
+        "chaser_count": 1229871
       },
       {
         "platform": "X",
@@ -339,9 +340,9 @@
         ],
         "leader": "Lena the Plug",
         "chaser": "Lisa Ann",
-        "gap": 6762,
-        "leader_count": 2087880,
-        "chaser_count": 2081118
+        "gap": 6814,
+        "leader_count": 2088003,
+        "chaser_count": 2081189
       },
       {
         "platform": "X",
@@ -351,9 +352,9 @@
         ],
         "leader": "Alexis Fawx",
         "chaser": "Nikki Benz",
-        "gap": 16372,
-        "leader_count": 990410,
-        "chaser_count": 974038
+        "gap": 16416,
+        "leader_count": 990467,
+        "chaser_count": 974051
       },
       {
         "platform": "X",
@@ -363,9 +364,9 @@
         ],
         "leader": "Cherie DeVille",
         "chaser": "Ava Addams",
-        "gap": 17873,
-        "leader_count": 1110080,
-        "chaser_count": 1092207
+        "gap": 17861,
+        "leader_count": 1110088,
+        "chaser_count": 1092227
       },
       {
         "platform": "X",
@@ -375,9 +376,9 @@
         ],
         "leader": "Corinna Kopf",
         "chaser": "Violet Myers",
-        "gap": 24707,
-        "leader_count": 2947843,
-        "chaser_count": 2923136
+        "gap": 24337,
+        "leader_count": 2947487,
+        "chaser_count": 2923150
       }
     ],
     "note": "Smallest follower gaps between adjacent ranks, by combined total or a single platform (labeled)."
@@ -390,8 +391,7 @@
       "retired": false,
       "x_handle": "brandi_love",
       "x_url": "https://x.com/brandi_love",
-      "x_followers": 1229761,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
+      "x_followers": 1229871,
       "ig_followers": null,
       "ig_status": "pending_verification",
       "ig_note": "Muse could not confirm an official Instagram account (Oct 21, 2026); not ranked on combined until verified."
@@ -401,8 +401,7 @@
       "retired": false,
       "x_handle": "AvaAddams",
       "x_url": "https://x.com/AvaAddams",
-      "x_followers": 1092207,
-      "x_as_of": "2026-10-21T13:07:00-05:00",
+      "x_followers": 1092227,
       "ig_followers": null,
       "ig_status": "pending_verification",
       "ig_note": "Muse could not confirm an official Instagram account (Oct 21, 2026); not ranked on combined until verified."
@@ -413,122 +412,122 @@
       "rank": 1,
       "name": "Mia Khalifa",
       "x_handle": "miakhalifa",
-      "x_followers": 6340363
+      "x_followers": 6340160
     },
     {
       "rank": 2,
       "name": "Angela White",
       "x_handle": "ANGELAWHITE",
-      "x_followers": 3641854
+      "x_followers": 3642219
     },
     {
       "rank": 3,
       "name": "Mia Malkova",
       "x_handle": "MiaMalkova",
-      "x_followers": 3585811
+      "x_followers": 3586168
     },
     {
       "rank": 4,
       "name": "Sophie Rain",
       "x_handle": "sophieraiin",
-      "x_followers": 3472323
+      "x_followers": 3471977
     },
     {
       "rank": 5,
       "name": "Corinna Kopf",
       "x_handle": "CorinnaKopf",
-      "x_followers": 2947843
+      "x_followers": 2947487
     },
     {
       "rank": 6,
       "name": "Violet Myers",
       "x_handle": "violetsaucy",
-      "x_followers": 2923136
+      "x_followers": 2923150
     },
     {
       "rank": 7,
       "name": "Riley Reid",
       "x_handle": "rileyreidx3",
-      "x_followers": 2478778
+      "x_followers": 2478973
     },
     {
       "rank": 8,
       "name": "Abella Danger",
       "x_handle": "Abella_Danger",
-      "x_followers": 2185519
+      "x_followers": 2185882
     },
     {
       "rank": 9,
       "name": "Lena the Plug",
       "x_handle": "lenatheplug",
-      "x_followers": 2087880
+      "x_followers": 2088003
     },
     {
       "rank": 10,
       "name": "Lisa Ann",
       "x_handle": "thereallisaann",
-      "x_followers": 2081118
+      "x_followers": 2081189
     },
     {
       "rank": 11,
       "name": "Kendra Lust",
       "x_handle": "KendraLust",
-      "x_followers": 1637139
+      "x_followers": 1637296
     },
     {
       "rank": 12,
       "name": "Eva Elfie",
       "x_handle": "EvaElfie",
-      "x_followers": 1377422
+      "x_followers": 1377725
     },
     {
       "rank": 13,
       "name": "Adriana Chechik",
       "x_handle": "adrianachechik",
-      "x_followers": 1234553
+      "x_followers": 1234811
     },
     {
       "rank": 14,
       "name": "Brandi Love",
       "x_handle": "brandi_love",
-      "x_followers": 1229761
+      "x_followers": 1229871
     },
     {
       "rank": 15,
       "name": "Cherie DeVille",
       "x_handle": "CherieDeVille",
-      "x_followers": 1110080
+      "x_followers": 1110088
     },
     {
       "rank": 16,
       "name": "Ava Addams",
       "x_handle": "AvaAddams",
-      "x_followers": 1092207
+      "x_followers": 1092227
     },
     {
       "rank": 17,
       "name": "Alexis Fawx",
       "x_handle": "AlexisFawx",
-      "x_followers": 990410
+      "x_followers": 990467
     },
     {
       "rank": 18,
       "name": "Nikki Benz",
       "x_handle": "nikkibenz",
-      "x_followers": 974038
+      "x_followers": 974051
     },
     {
       "rank": 19,
       "name": "Asa Akira",
       "x_handle": "AsaAkira",
-      "x_followers": 847040
+      "x_followers": 847056
     },
     {
       "rank": 20,
       "name": "Jenna Jameson",
       "x_handle": "jennajameson",
-      "x_followers": 669873
+      "x_followers": 669845
     }
   ],
-  "hero_total_combined": 160724757
+  "hero_total_combined": 160726124
 }
