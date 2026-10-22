@@ -7,15 +7,15 @@
 - Rising 8: tracked creators ranked by % follower growth between dated daily snapshots (absolute gain also given). Until 7 days of history exist, rising8.status is "partial_window" and rising8.window.label states the real window (e.g. "since Oct 20, 8:27 PM CT (13 hrs)"); from then on status is "published" with 7-day growth. Instagram growth counts only when Instagram was re-checked (ig_included); otherwise growth is X only. Creators without two data points are excluded. We never estimate.
 - Milestones: round-million crossings on X or Instagram between snapshots (milestones.crossed), plus the nearest upcoming ones (milestones.closest_next).
 - Closest battles: smallest follower gaps between neighbouring ranks (closest_battles.items), each labeled Combined, X or Instagram.
-- Coverage: a tracked set (currently 20 creators; 10 ranked on combined, 10 pending Instagram verification), not a complete census. Retired creators stay listed with a badge.
+- Coverage: a tracked set (currently 20 creators; 18 ranked on combined, 2 pending Instagram verification), not a complete census. Retired creators stay listed with a badge.
 
 - Pending Instagram verification: creators with ig_followers null (ig_status "pending_verification") are listed in rankings.json `pending_instagram` and excluded from combined/Instagram ranks, Instagram milestones and combined battles. They are ranked only by X (`x_only_ranking`, X-only battles). Never treat a null Instagram count as zero or estimate it.
 
 ## Data source and update cadence
-- X counts come from the X API; Instagram counts from Instagram. Each refresh is dated.
+- X counts come from the X API; Instagram counts via Instagram API (Muse research). Each refresh is dated.
 - Updated daily. If a refresh fails, the last verified snapshot and its date stay up.
 - The `last_updated` field in rankings.json gives the data date.
-- Current data: X counts checked Oct 21, 2026 ~9:10 AM CT (X API); Instagram counts checked Oct 20, 2026 ~8:30 PM CT (Muse research), carried forward until the next Instagram check. Exact timestamps are in rankings.json (`as_of_note`, `sources`).
+- Current data: X counts checked Oct 21, 2026 ~9:10 AM CT (X API); Instagram counts via Instagram API (Muse research) checked Oct 20, 2026 ~8:30 PM CT, and Oct 21, 2026 ~1:15 PM CT for the 8 creators added Oct 21; carried forward until the next Instagram check. Exact timestamps are in rankings.json (`as_of_note`, `sources`).
 - Dated daily snapshots: https://hottest8.com/snapshots/YYYY-MM-DD.json (first: 2026-10-20).
 - Combined X + Instagram figures are follower totals summed across two platforms, not unique people.
 
