@@ -1,0 +1,301 @@
+{
+ "date": "2026-10-22",
+ "fetched_at": "2026-10-22T03:41:51-05:00",
+ "source": {
+  "x": "X counts via X API, checked Oct 22, 2026 (Rising 8 emerging pool baseline)",
+  "instagram": "Not tracked for the emerging pool yet (pending)"
+ },
+ "note": "Rising 8 emerging-pool baseline. Top 8 tracked creators are refreshed by the 7 AM daily snapshot.",
+ "creators": [
+  {
+   "name": "Emily Willis",
+   "x_handle": "emilywillisxoxo",
+   "x_id": "4756292208",
+   "x_followers": 909481,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Blake Blossom",
+   "x_handle": "blkblssm",
+   "x_id": "1209541374866968576",
+   "x_followers": 799037,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Kayley Gunner",
+   "x_handle": "kayleygunner",
+   "x_id": "1273796821253451776",
+   "x_followers": 733596,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Kenzie Reeves",
+   "x_handle": "ItsKenzieReeves",
+   "x_id": "841128925224943616",
+   "x_followers": 729327,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Jane Wilde",
+   "x_handle": "janewildexxx",
+   "x_id": "791787262992343041",
+   "x_followers": 688752,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Gianna Dior",
+   "x_handle": "TheGiannaDior",
+   "x_id": "991875002864668673",
+   "x_followers": 571802,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Emma Hix",
+   "x_handle": "EMMAHIXOFFICIAL",
+   "x_id": "724019125643698180",
+   "x_followers": 537632,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Eliza Ibarra",
+   "x_handle": "Eliza22Ibarra",
+   "x_id": "973458977945133056",
+   "x_followers": 521661,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Anna Claire Clouds",
+   "x_handle": "annaclairecloud",
+   "x_id": "4811840837",
+   "x_followers": 505783,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Aidra Fox",
+   "x_handle": "xAIDRAFOXx",
+   "x_id": "3322758835",
+   "x_followers": 492126,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Coco Lovelock",
+   "x_handle": "OfficialCocolov",
+   "x_id": "1377434961112752129",
+   "x_followers": 420867,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Alex Coal",
+   "x_handle": "AlexxxCoal",
+   "x_id": "2998568762",
+   "x_followers": 420586,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Lacy Lennon",
+   "x_handle": "MissLacyLennon",
+   "x_id": "1048954438352699392",
+   "x_followers": 419019,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Alexis Tae",
+   "x_handle": "Alexistaex",
+   "x_id": "1084139431957688320",
+   "x_followers": 407586,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Vanna Bardot",
+   "x_handle": "vannabardot",
+   "x_id": "913851815824945155",
+   "x_followers": 404326,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Molly Little",
+   "x_handle": "Maybemollyy",
+   "x_id": "1499749131589464069",
+   "x_followers": 398024,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Sophia Locke",
+   "x_handle": "_SophiaLocke_",
+   "x_id": "1413907463988924418",
+   "x_followers": 387396,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Vina Sky",
+   "x_handle": "VinaSkyy",
+   "x_id": "1018676369751003136",
+   "x_followers": 377740,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Kenna James",
+   "x_handle": "kennajames21",
+   "x_id": "2270856013",
+   "x_followers": 375495,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Violet Starr",
+   "x_handle": "MissVioletStarr",
+   "x_id": "882401123427954689",
+   "x_followers": 370875,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Leana Lovings",
+   "x_handle": "LeanaLovings",
+   "x_id": "886684694468853760",
+   "x_followers": 366447,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Kylie Rocket",
+   "x_handle": "RocketKylie",
+   "x_id": "1190519625202700288",
+   "x_followers": 322522,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Hazel Moore",
+   "x_handle": "HazelnuttMoore",
+   "x_id": "1503542164516573184",
+   "x_followers": 303191,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Hime Marie",
+   "x_handle": "HimexMarie",
+   "x_id": "804619526474059776",
+   "x_followers": 274553,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Haley Spades",
+   "x_handle": "HaleySpades",
+   "x_id": "276138972",
+   "x_followers": 239126,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Kimmy Kimm",
+   "x_handle": "TheKimmyKimm",
+   "x_id": "1533272407326195712",
+   "x_followers": 197004,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Gizelle Blanco",
+   "x_handle": "xogizellexo",
+   "x_id": "1227666488217071616",
+   "x_followers": 195567,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Spencer Bradley",
+   "x_handle": "SpencerBradleyX",
+   "x_id": "1083107387106643969",
+   "x_followers": 117562,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  },
+  {
+   "name": "Freya Parker",
+   "x_handle": "freyasintrouble",
+   "x_id": "1614737189161828354",
+   "x_followers": 89485,
+   "ig_handle": null,
+   "ig_followers": null,
+   "ig_status": "pending",
+   "tier": "emerging"
+  }
+ ]
+}
