@@ -9,20 +9,19 @@ function card(c,i){const t=key[mode](c);return `<li class="card"><div class="ran
 <div class="sub"><a href="https://x.com/${c.x_handle}" target="_blank" rel="noopener nofollow">𝕏 @${c.x_handle}</a> <span title="${c.x_followers.toLocaleString('en-US')}">${fmt(c.x_followers)}</span> · ${hasIG(c)?`<a href="https://instagram.com/${c.ig_handle}" target="_blank" rel="noopener nofollow">IG @${c.ig_handle}</a> <span title="${c.ig_followers.toLocaleString('en-US')}">${fmt(c.ig_followers)}</span>`:'<span class="pend">IG pending verification</span>'}</div></div>
 <div class="tot"><b title="${t.toLocaleString('en-US')} exact">${fmt(t)}</b><small>${{combined:'combined',x:'X followers',ig:'IG followers'}[mode]}</small></div></li>`}
 function render(){const s=[...pool()].sort((a,b)=>key[mode](b)-key[mode](a));
-list.innerHTML=s.slice(0,8).map(card).join('');list2.innerHTML=s.slice(8).map((c,i)=>card(c,i+8)).join('');
+const L=document.getElementById('list');if(L)L.innerHTML=s.slice(0,8).map(card).join('');
 const n=D.creators.length,v=D.creators.filter(hasIG).length,P=D.creators.filter(c=>!hasIG(c)).sort((a,b)=>b.x_followers-a.x_followers);
-const sm=document.getElementById('morecount');if(sm)sm.textContent=`Also ranked (#9–${s.length})`;
-const tn=document.getElementById('topnote');if(tn)tn.textContent=mode==='x'?`X view ranks all ${n} tracked creators by X followers.`:`${mode==='ig'?'Instagram':'Combined'} view ranks the ${v} creators whose Instagram count is verified; ${n-v} more are listed below as pending.`;
-const pw=document.getElementById('pending');if(pw){pw.hidden=mode==='x'||!P.length;pendlist.innerHTML=P.map(c=>`<li class="card"><div class="rank">–</div>${av(c)}<div><div class="nm">${c.name}${c.retired?'<span class="badge">Retired</span>':''}</div><div class="sub"><a href="https://x.com/${c.x_handle}" target="_blank" rel="noopener nofollow">𝕏 @${c.x_handle}</a> <span title="${c.x_followers.toLocaleString('en-US')}">${fmt(c.x_followers)}</span> · <span class="pend">IG pending verification</span></div></div><div class="tot"><b>—</b><small>not ranked</small></div></li>`).join('')}}
+const tn=document.getElementById('topnote');if(tn)tn.textContent=mode==='x'?`X view ranks all ${n} tracked creators by X followers.`:`${mode==='ig'?'Instagram':'Combined'} view ranks the ${v} creators whose Instagram count is verified; ${n-v} more await Instagram verification.`;
+const pw=document.getElementById('pending');if(pw){pw.hidden=mode==='x'||!P.length;document.getElementById('pendlist').innerHTML=P.map(c=>`<li class="card"><div class="rank">–</div>${av(c)}<div><div class="nm">${c.name}${c.retired?'<span class="badge">Retired</span>':''}</div><div class="sub"><a href="https://x.com/${c.x_handle}" target="_blank" rel="noopener nofollow">𝕏 @${c.x_handle}</a> <span title="${c.x_followers.toLocaleString('en-US')}">${fmt(c.x_followers)}</span> · <span class="pend">IG pending verification</span></div></div><div class="tot"><b>—</b><small>not ranked</small></div></li>`).join('')}}
 let FB=false;
 fetch('data.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{if(!j||!j.creators||!j.creators.length)throw 0;return j}).catch(()=>{FB=true;return window.TC_DATA}).then(d=>{if(!d)return;D=d;
 const fbn=document.getElementById('fallback');if(fbn&&FB){fbn.textContent='Showing backup data from '+new Date(d.as_of+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+' ('+d.as_of_note+'); live data unavailable.';fbn.hidden=false}
 const a2=document.getElementById('asof2');if(a2)a2.textContent=d.as_of_note;
 document.querySelectorAll('[data-sitename]').forEach(e=>e.textContent=d.site_name);
 document.querySelectorAll('.adlink').forEach(a=>a.href='mailto:'+d.contact_email);
-document.getElementById("s-total").textContent=fmt(d.creators.filter(hasIG).reduce((a,c)=>a+c.x_followers+c.ig_followers,0));
-document.getElementById("s-date").textContent=new Date(d.as_of+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-asof.textContent=d.as_of_note;
+const st=document.getElementById("s-total");if(st)st.textContent=fmt(d.creators.filter(hasIG).reduce((a,c)=>a+c.x_followers+c.ig_followers,0));
+const sd=document.getElementById("s-date");if(sd)sd.textContent=new Date(d.as_of+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+const ao=document.getElementById('asof');if(ao)ao.textContent=d.as_of_note;
 const by=Object.fromEntries(d.creators.map(c=>[c.x_handle,c]));
 const tc=document.getElementById("s-count");if(tc)tc.textContent=d.creators.length;
 render();});
