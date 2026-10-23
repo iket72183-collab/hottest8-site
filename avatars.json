@@ -1,32 +1,7 @@
 {
   "fetched_at": "2026-10-23T13:46:48-05:00",
-  "source": "X API v2 users/by profile_image_url (_400x400), SFW-reviewed",
-  "sfw_withheld": [
-    "alexisfawx",
-    "alexistaex",
-    "angelawhite",
-    "blkblssm",
-    "brandi_love",
-    "eliza22ibarra",
-    "emilywillisxoxo",
-    "hazelnuttmoore",
-    "himexmarie",
-    "itskenziereeves",
-    "janewildexxx",
-    "kayleygunner",
-    "kennajames21",
-    "leanalovings",
-    "misslacylennon",
-    "officialcocolov",
-    "rileyreidx3",
-    "spencerbradleyx",
-    "thegiannadior",
-    "thekimmykimm",
-    "vannabardot",
-    "vinaskyy",
-    "violetsaucy",
-    "xaidrafoxx"
-  ],
+  "source": "X API v2 users/by profile_image_url (_400x400). Policy: real X photo unless it shows explicit nudity (exposed genitals/nipples) or sexual acts; those go in withheld and render an initial.",
+  "withheld": {},
   "avatars": {
     "_sophialocke_": {
       "x_id": "1413907463988924418",
@@ -40,9 +15,21 @@
       "x_id": "1219304198",
       "url": "https://pbs.twimg.com/profile_images/1346502546668486658/S73iVQ5l_400x400.jpg"
     },
+    "alexisfawx": {
+      "x_id": "177475261",
+      "url": "https://pbs.twimg.com/profile_images/2030802912411258881/X6RpL3MG_400x400.jpg"
+    },
+    "alexistaex": {
+      "x_id": "1084139431957688320",
+      "url": "https://pbs.twimg.com/profile_images/1934088114991136769/yWi2O6qz_400x400.jpg"
+    },
     "alexxxcoal": {
       "x_id": "2998568762",
       "url": "https://pbs.twimg.com/profile_images/1964724298574430209/UlvWYjHw_400x400.jpg"
+    },
+    "angelawhite": {
+      "x_id": "205120642",
+      "url": "https://pbs.twimg.com/profile_images/1523075322500898818/tN551YqS_400x400.jpg"
     },
     "annaclairecloud": {
       "x_id": "4811840837",
@@ -56,6 +43,14 @@
       "x_id": "33225652",
       "url": "https://pbs.twimg.com/profile_images/2105604894027546624/_g2j5oul_400x400.jpg"
     },
+    "blkblssm": {
+      "x_id": "1209541374866968576",
+      "url": "https://pbs.twimg.com/profile_images/2100255467373236224/1M8y_3hB_400x400.jpg"
+    },
+    "brandi_love": {
+      "x_id": "19493645",
+      "url": "https://pbs.twimg.com/profile_images/1815798948625317888/C-J1tKLR_400x400.jpg"
+    },
     "cheriedeville": {
       "x_id": "383481517",
       "url": "https://pbs.twimg.com/profile_images/1853137099333292032/mNtF3gEW_400x400.jpg"
@@ -63,6 +58,14 @@
     "corinnakopf": {
       "x_id": "240884573",
       "url": "https://pbs.twimg.com/profile_images/1406826216317935617/Tsl6R6-N_400x400.jpg"
+    },
+    "eliza22ibarra": {
+      "x_id": "973458977945133056",
+      "url": "https://pbs.twimg.com/profile_images/1207111135675080705/wpTeJzmG_400x400.jpg"
+    },
+    "emilywillisxoxo": {
+      "x_id": "4756292208",
+      "url": "https://pbs.twimg.com/profile_images/1524577155341905920/b2z4t1l2_400x400.jpg"
     },
     "emmahixofficial": {
       "x_id": "724019125643698180",
@@ -80,13 +83,41 @@
       "x_id": "276138972",
       "url": "https://pbs.twimg.com/profile_images/2105724205094641664/0k05NX7V_400x400.jpg"
     },
+    "hazelnuttmoore": {
+      "x_id": "1503542164516573184",
+      "url": "https://pbs.twimg.com/profile_images/1735419640980086784/8fi-zxUR_400x400.jpg"
+    },
+    "himexmarie": {
+      "x_id": "804619526474059776",
+      "url": "https://pbs.twimg.com/profile_images/2064126867226202112/CKOJ59wH_400x400.jpg"
+    },
+    "itskenziereeves": {
+      "x_id": "841128925224943616",
+      "url": "https://pbs.twimg.com/profile_images/2052230825744183306/MoGZWc94_400x400.jpg"
+    },
+    "janewildexxx": {
+      "x_id": "791787262992343041",
+      "url": "https://pbs.twimg.com/profile_images/1963964020240842752/YVQI2ZLS_400x400.jpg"
+    },
     "jennajameson": {
       "x_id": "34900333",
       "url": "https://pbs.twimg.com/profile_images/1898541003306307584/_jbMy2OH_400x400.jpg"
     },
+    "kayleygunner": {
+      "x_id": "1273796821253451776",
+      "url": "https://pbs.twimg.com/profile_images/1976114744613593089/rMdee16f_400x400.jpg"
+    },
     "kendralust": {
       "x_id": "408791027",
       "url": "https://pbs.twimg.com/profile_images/1833688610228588545/G6uFnpTc_400x400.jpg"
+    },
+    "kennajames21": {
+      "x_id": "2270856013",
+      "url": "https://pbs.twimg.com/profile_images/1416887553425166336/gffzW_Ll_400x400.jpg"
+    },
+    "leanalovings": {
+      "x_id": "886684694468853760",
+      "url": "https://pbs.twimg.com/profile_images/1953116204647755776/7sW0Ircw_400x400.jpg"
     },
     "lenatheplug": {
       "x_id": "3015986949",
@@ -104,6 +135,10 @@
       "x_id": "709095240",
       "url": "https://pbs.twimg.com/profile_images/1973281362871459842/Azz8NyXB_400x400.jpg"
     },
+    "misslacylennon": {
+      "x_id": "1048954438352699392",
+      "url": "https://pbs.twimg.com/profile_images/1929959920117657600/6htRclLe_400x400.jpg"
+    },
     "missvioletstarr": {
       "x_id": "882401123427954689",
       "url": "https://pbs.twimg.com/profile_images/1965227797624086528/ioRqr0vf_400x400.jpg"
@@ -111,6 +146,14 @@
     "nikkibenz": {
       "x_id": "17542901",
       "url": "https://pbs.twimg.com/profile_images/2048273146579722241/4EP8PNRn_400x400.jpg"
+    },
+    "officialcocolov": {
+      "x_id": "1377434961112752129",
+      "url": "https://pbs.twimg.com/profile_images/1377436230699245571/iGQDrU1__400x400.jpg"
+    },
+    "rileyreidx3": {
+      "x_id": "301779034",
+      "url": "https://pbs.twimg.com/profile_images/1678047537897566209/Iqs--a9E_400x400.jpg"
     },
     "rocketkylie": {
       "x_id": "1190519625202700288",
@@ -120,9 +163,37 @@
       "x_id": "1642266052158537728",
       "url": "https://pbs.twimg.com/profile_images/1771091617119649792/1WK8yB_C_400x400.jpg"
     },
+    "spencerbradleyx": {
+      "x_id": "1083107387106643969",
+      "url": "https://pbs.twimg.com/profile_images/1663321356124172289/NoVgAEHL_400x400.jpg"
+    },
+    "thegiannadior": {
+      "x_id": "991875002864668673",
+      "url": "https://pbs.twimg.com/profile_images/1733235553167122433/OcYMkJun_400x400.jpg"
+    },
+    "thekimmykimm": {
+      "x_id": "1533272407326195712",
+      "url": "https://pbs.twimg.com/profile_images/1886398185574141952/t2ft3Dw6_400x400.jpg"
+    },
     "thereallisaann": {
       "x_id": "55991693",
       "url": "https://pbs.twimg.com/profile_images/2110467696970342400/2La4mN92_400x400.jpg"
+    },
+    "vannabardot": {
+      "x_id": "913851815824945155",
+      "url": "https://pbs.twimg.com/profile_images/1907597863988891648/u4BzCBoH_400x400.jpg"
+    },
+    "vinaskyy": {
+      "x_id": "1018676369751003136",
+      "url": "https://pbs.twimg.com/profile_images/1560116423963328512/Hb1kXuc7_400x400.jpg"
+    },
+    "violetsaucy": {
+      "x_id": "3732281418",
+      "url": "https://pbs.twimg.com/profile_images/2061652179518373888/cJrYJOYR_400x400.jpg"
+    },
+    "xaidrafoxx": {
+      "x_id": "3322758835",
+      "url": "https://pbs.twimg.com/profile_images/1820056124885770240/jrIcL_0I_400x400.jpg"
     },
     "xogizellexo": {
       "x_id": "1227666488217071616",
