@@ -1,0 +1,64 @@
+{
+  "scope": "http://127.0.0.1:8768 synthetic fixture only",
+  "concurrency": 4,
+  "max_requests": 88,
+  "requests_completed": 88,
+  "stop_conditions": "3 failures, observed p95 > 1000 ms, 20 s wall budget; request timeout 2 s",
+  "stopped_early": false,
+  "successes": 80,
+  "p50_ms": 0.85,
+  "p95_ms": 2.11,
+  "max_ms": 6.09,
+  "elapsed_seconds": 0.052,
+  "abuse_probes": [
+    {
+      "path": "/../package.json",
+      "method": "GET",
+      "status": 404,
+      "ms": 0.29
+    },
+    {
+      "path": "/%2e%2e/package.json",
+      "method": "GET",
+      "status": 404,
+      "ms": 2.6
+    },
+    {
+      "path": "/.env",
+      "method": "GET",
+      "status": 404,
+      "ms": 0.29
+    },
+    {
+      "path": "/.git/config",
+      "method": "GET",
+      "status": 404,
+      "ms": 0.28
+    },
+    {
+      "path": "/newsletter",
+      "method": "POST",
+      "status": 405,
+      "ms": 0.26
+    },
+    {
+      "path": "/verify",
+      "method": "POST",
+      "status": 405,
+      "ms": 0.22
+    },
+    {
+      "path": "/__test__/scenario",
+      "method": "POST",
+      "status": 400,
+      "ms": 0.56
+    },
+    {
+      "path": "/__test__/scenario",
+      "method": "POST",
+      "status": 413,
+      "ms": 0.21
+    }
+  ],
+  "limitation": "Local static-server smoke test only. Does not measure Render capacity or provider signup rate limits."
+}

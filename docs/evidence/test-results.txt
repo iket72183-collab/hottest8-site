@@ -1,0 +1,73 @@
+npm notice run hottest8-site@1.0.0 test
+npm notice run node --test tests/core.test.cjs && python3 -m unittest discover -s tests -v
+✔ combined follows sum without claiming uniqueness (1.055208ms)
+✔ missing is not zero and zero is a valid observation (0.061125ms)
+✔ separate platform membership (0.097833ms)
+✔ competition ties and deterministic boundary order (4.868875ms)
+✔ empty snapshot is a legitimate empty state (0.138125ms)
+✔ reject bad count -1 (0.13975ms)
+✔ reject bad count NaN (0.049416ms)
+✔ reject bad count Infinity (0.03275ms)
+✔ reject bad count 1.5 (0.03825ms)
+✔ reject bad count 100 (0.066708ms)
+✔ reject bad count true (0.052917ms)
+✔ reject bad count 9007199254740992 (0.035959ms)
+✔ reject sum overflow (0.050166ms)
+✔ reject duplicate identity case-insensitively (0.059958ms)
+✔ reject URL/attribute injection in handles (0.059792ms)
+✔ name text can contain markup without becoming a URL (0.042291ms)
+✔ unknown avatars never load, including changed URLs (0.090459ms)
+✔ freshness uses observation time (0.052ms)
+✔ explicit mode validation (0.052625ms)
+✔ format preserves exact count separately (3.392875ms)
+✔ insights reject invented weekly windows and inconsistent percentages (0.49525ms)
+✔ an unknown or rejected Instagram status is not verified (0.037542ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 54.471458
+test_backup_json_cannot_close_script (test_build.BuildTests.test_backup_json_cannot_close_script) ... ok
+test_guard_old_artifacts (test_build.BuildTests.test_guard_old_artifacts) ... ok
+test_internal_links_and_fragments (test_build.BuildTests.test_internal_links_and_fragments) ... ok
+test_no_accuracy_or_scan_claim_on_fakecheck (test_build.BuildTests.test_no_accuracy_or_scan_claim_on_fakecheck) ... ok
+test_no_inline_handlers_or_scripts (test_build.BuildTests.test_no_inline_handlers_or_scripts) ... ok
+test_no_package_runtime_dependencies (test_build.BuildTests.test_no_package_runtime_dependencies) ... ok
+test_platform_dates_enriched_from_snapshots (test_build.BuildTests.test_platform_dates_enriched_from_snapshots) ... ok
+test_prerendered_ranking_matches_json (test_build.BuildTests.test_prerendered_ranking_matches_json) ... ok
+test_static_output_excludes_maintenance_and_dependencies (test_build.BuildTests.test_static_output_excludes_maintenance_and_dependencies) ... ok
+test_bad_counts_rejected (test_insights.InsightsTests.test_bad_counts_rejected) ... ok
+test_cap_and_floor (test_insights.InsightsTests.test_cap_and_floor) ... ok
+test_carried_forward_not_growth (test_insights.InsightsTests.test_carried_forward_not_growth) ... ok
+test_duplicate_observation_rejected (test_insights.InsightsTests.test_duplicate_observation_rejected) ... ok
+test_exact_cap_allowed (test_insights.InsightsTests.test_exact_cap_allowed) ... ok
+test_exact_week (test_insights.InsightsTests.test_exact_week) ... ok
+test_ig_identity_change (test_insights.InsightsTests.test_ig_identity_change) ... ok
+test_ig_timestamp_offsets_compare_actual_time (test_insights.InsightsTests.test_ig_timestamp_offsets_compare_actual_time) ... ok
+test_legacy_name_change_not_joined (test_insights.InsightsTests.test_legacy_name_change_not_joined) ... ok
+test_milestone_boundaries (test_insights.InsightsTests.test_milestone_boundaries) ... ok
+test_missing_instagram_cannot_prove_cap (test_insights.InsightsTests.test_missing_instagram_cannot_prove_cap) ... ok
+test_missing_x (test_insights.InsightsTests.test_missing_x) ... ok
+test_mixed_identity_evidence_not_joined (test_insights.InsightsTests.test_mixed_identity_evidence_not_joined) ... ok
+test_negative_and_zero_retained_but_not_published (test_insights.InsightsTests.test_negative_and_zero_retained_but_not_published) ... ok
+test_new_instagram_coverage_is_not_growth (test_insights.InsightsTests.test_new_instagram_coverage_is_not_growth) ... ok
+test_no_history (test_insights.InsightsTests.test_no_history) ... ok
+test_real_history_recomputes_all_growth (test_insights.InsightsTests.test_real_history_recomputes_all_growth) ... ok
+test_renamed_account_same_id (test_insights.InsightsTests.test_renamed_account_same_id) ... ok
+test_reused_handle_different_id (test_insights.InsightsTests.test_reused_handle_different_id) ... ok
+test_short_window_not_week (test_insights.InsightsTests.test_short_window_not_week) ... ok
+test_sparse_history_not_week (test_insights.InsightsTests.test_sparse_history_not_week) ... ok
+test_ties_deterministic (test_insights.InsightsTests.test_ties_deterministic) ... ok
+test_top8_excluded_from_emerging (test_insights.InsightsTests.test_top8_excluded_from_emerging) ... ok
+test_verified_recheck (test_insights.InsightsTests.test_verified_recheck) ... ok
+test_x_carried_forward_not_growth (test_insights.InsightsTests.test_x_carried_forward_not_growth) ... ok
+test_x_repeated_observation_not_growth (test_insights.InsightsTests.test_x_repeated_observation_not_growth) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.025s
+
+OK
+Built /var/folders/l5/btc_n1n95lvcnhky2r1j38dr0000gn/T/tmp0teigl6a/dist: 20 creators, 8 Rising entries. Offline; no external services called.

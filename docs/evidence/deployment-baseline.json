@@ -1,0 +1,12 @@
+{
+  "verified_at": "2026-10-23",
+  "service": "srv-dbc31ujrjlhs73al9icg",
+  "repository": "https://github.com/iket72183-collab/hottest8-site",
+  "branch": "main",
+  "autoDeployTrigger": "commit",
+  "buildCommand": "echo ok",
+  "publishPath": "./",
+  "pullRequestPreviewsEnabled": "no",
+  "previewsGeneration": "off",
+  "changes_made": false
+}

@@ -1,0 +1,40 @@
+# Audit and release findings — 2026-10-23
+
+> Follow-up status: the original audit below records the first redesign. See [FOLLOWUP.md](FOLLOWUP.md) for the requested restored signup behavior, Fake Check copy/event, minimal homepage, sync script, and current test results.
+
+Baseline: `5f84c2320accc5322e0e93ce36289592e322b25d`. Isaac supplied Grok Bot's confirmation that all work was on main and no uncommitted work existed on Grok's computer. The Mac had no established checkout; work was isolated on `codex/hottest8-redesign-20261023`. No open PRs existed at intake. Six live file hashes (HTML, CSS, data, rankings, insights and Render reference) matched the baseline. Baseline JS/Python syntax checks passed, and the original generator reproduced baseline insights in a temporary directory. There was no automated suite or substantive build (`echo ok`).
+
+## Ranked findings
+
+| Severity | Finding and reproduction | Resolution / remaining work |
+|---|---|---|
+| High release blocker | The verified Render service auto-deploys main with `echo ok` and `./`. This branch's HTML requires the new build. Merging unchanged settings would expose source templates. | Review-only PR. Coordinate approved release with `python3 tools/build_site.py` / `dist`; do not merge first. No settings changed. |
+| Medium | Baseline growth joins only by handle; `ig_as_of !=` can count backwards dates/changed accounts; missing eligibility IG falls back to zero; any old observation >=7 days is labeled “7-day.” Reproduce with identity, sparse-window and missing-IG fixtures in `tests/test_insights.py`. | Stable-ID comparison when available; conservative legacy joins; verified eligibility; positive independently refreshed platform timestamps; actual elapsed-window labels. Current real emerging window is 27.45 hours, not weekly growth. |
+| Medium | Baseline rank/trend templates interpolate source strings into HTML. A future malformed data update can inject markup. This is a data-pipeline trust issue, not a demonstrated anonymous write endpoint. | Runtime DOM uses textContent and validated handles, counts and payloads. Build escapes text/JSON. Synthetic markup-name and javascript-avatar cases rendered safely. No new photos added. |
+| Medium | FakeCheck advertises a test scan without an implementation/evaluation artifact, and its “early access” promise reuses the weekly newsletter form. | Coming Soon, honest proposed workflow; unsupported scan statement and waitlist promise removed. No classifier accuracy claimed. Human evaluation and creator review required. |
+| Medium | Newsletter success metrics previously triggered on a submit event, not provider acceptance; shared embeds could retry/duplicate; consent and stated email purposes were unclear. | Explicit consent-to-load, single insertion, bounded timeout and honest errors; removed inferred conversion success. Local mocks verify frontend states only. Actual double opt-in, unsubscribe, suppression, abuse controls and consent retention require provider-account review and separately authorized test email. |
+| Medium, open | Platform permission/source assertions and image authorization cannot be proven by public counts, a bot identity or a URL allowlist. Existing QA also lists several IG identities relying on Muse research. | No new API integration, scraping, rehosting or imagery. Retain exact approved baseline URLs only; maintainer must verify account-specific permissions, identity provenance and SFW suitability. Stable IDs missing in legacy tracked snapshots limit identity certainty. |
+| Medium, open | Security headers in a repo YAML are not evidence of live enforcement. Baseline QA records only nosniff; repository root is published, including maintenance files. | New build allowlists public assets. Proposed headers documented, not applied. CSP awaits real form/reCAPTCHA dependency validation. Public JSON remains intentionally public; the age gate is an audience acknowledgement, not authentication. |
+| Low | Empty data silently looked like a request failure; stale platform dates were hard to distinguish; ties were ordinal; repeated metadata/legacy exports could drift. | Explicit empty/error/fallback states, per-platform dates and carried-forward labels, competition ties, one generated public artifact and offline consistency checks. |
+| Low | Privacy copy understated analytics/provider processing and made unverified retention claims. | Describes actual third-party flow and identifies retention/account settings requiring verification. No fabricated deletion guarantees. |
+
+Prominent ad placements had already been removed on main (`e6713c2`, `6887fa0`). This redesign preserves that change and one discreet partner footer link to the existing `hello@hottest8.com`. No active advertiser placements/contracts were found in repository content/history; off-repository contracts were not inspected. No new traffic, customers, testimonials, revenue or accuracy claims were introduced.
+
+## Security boundaries and checks
+
+This is a static client, with no private server API, auth endpoint, database or subscriber store in the repository. No production data/credentials were changed. Local preview binds 127.0.0.1, rejects non-test writes, traversal and hidden paths; those results do not establish Render or email-provider rate limits. Local email and analytics integrations are disabled by hostname. Test scenarios replace provider scripts with local mocks only.
+
+No runtime npm packages. The pinned accessibility dev dependency passed `npm audit` with zero reported vulnerabilities on the audit date. A limited common-secret-pattern scan examined reachable Git blobs and current source without printing candidate values; no match was found. This is not an exhaustive secret audit. No subscriber data or credentials were opened.
+
+## Provider requirements checked
+
+- [EmailOctopus acceptable-use policy](https://emailoctopus.com/legal/acceptable-use-policy): permission evidence and prompt unsubscribe handling matter. Its [content guidance](https://help.emailoctopus.com/article/277-is-my-content-allowed) requires additional review for some industries; SFW copy does not by itself establish account approval.
+- [EmailOctopus double opt-in guidance](https://help.emailoctopus.com/article/36-how-to-edit-double-opt-in): account configuration determines confirmation behavior; it was not verified or changed. [Privacy policy](https://emailoctopus.com/legal/privacy) describes technical and engagement data beyond email addresses.
+- [GoatCounter privacy](https://www.goatcounter.com/help/privacy): cookie-free is not “no processing”; its documented visitor mechanism uses IP/user-agent information. This site's account retention settings were not inspected.
+- [X display requirements](https://docs.x.com/developer-terms/display-requirements): platform access does not establish all content rights. Account license, commercial reuse and retention terms need maintainer verification before changing collection/integration.
+- [Meta platform terms](https://developers.facebook.com/terms/) could not be retrieved during this audit; no permission conclusion was made and no new integration was proposed.
+- [Render static sites](https://render.com/docs/static-sites) and [Blueprint specification](https://render.com/docs/blueprint-spec): build/publish settings and preview behavior must match the actual service. Read-only connector verified PR previews disabled; no account configuration changed.
+
+## Unverified protections / release approvals
+
+Production delivery and unsubscribe, provider abuse thresholds, live CAPTCHA accessibility, analytics retention, data licensing, creator/image permissions and screen-reader/device coverage remain open. Production capacity was not stress-tested. Automated accessibility checks are not a conformance certification. FakeCheck has no measured false-positive rate. These are explicit handoff limits, not claims of verified protection.

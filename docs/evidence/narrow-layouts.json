@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/",
+    "h1": 1,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "path": "/rising.html",
+    "h1": 1,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "path": "/about.html",
+    "h1": 1,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "path": "/verify.html",
+    "h1": 1,
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "path": "/",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "path": "404",
+    "scrollWidth": 768,
+    "title": "This page hasleft the stage.",
+    "width": 768
+  }
+]
