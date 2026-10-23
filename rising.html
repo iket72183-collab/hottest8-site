@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/favicon.svg"><meta name="rating" content="adult"><meta name="description" content="Rising 8 by Hottest8: the fastest-growing up-and-coming women in adult entertainment (under 1M followers, Top 8 excluded), ranked by % follower growth from dated daily snapshots. Updated daily. SFW, 18+."><title>Rising 8 by Hottest8: the fastest-growing up-and-coming creators</title><link rel="canonical" href="https://hottest8.com/rising.html"><meta property="og:title" content="Rising 8 by Hottest8: the fastest-growing up-and-comers"><meta property="og:description" content="Up-and-coming creators under 1M followers, ranked by % follower growth from daily snapshots. Updated daily. SFW."><meta property="og:url" content="https://hottest8.com/rising.html"><meta property="og:type" content="website"><meta property="og:image" content="https://hottest8.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Hottest8: the Top 8, ranked by real follower counts"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://hottest8.com/og-image.png"><meta name="twitter:image:alt" content="Hottest8: the Top 8, ranked by real follower counts"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Cinzel:wght@600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="alternate" type="application/json" href="/rankings.json" title="Hottest8 rankings (JSON)"><link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt"></head><body>
+<div id="agegate" role="dialog" aria-modal="true" aria-labelledby="agetitle" style="position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9999;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:Inter,sans-serif;padding:20px"><div style="max-width:420px"><h2 id="agetitle" style="color:#d4af37">Are you 18 or older?</h2><p>Hottest8 ranks adult-entertainment creators by public follower counts. No explicit content, but you must be 18+ to enter.</p><button id="agein" onclick="h8enter()" style="background:#d4af37;border:0;padding:12px 24px;font-weight:700;margin:6px;cursor:pointer">I am 18+ — Enter</button><button id="ageout" onclick="location.href='https://www.google.com'" style="background:#333;color:#fff;border:0;padding:12px 24px;margin:6px;cursor:pointer">Leave</button></div></div><script>
+function h8bg(on){document.querySelectorAll('body>*:not(#agegate):not(script)').forEach(e=>{if(on){e.removeAttribute('inert');e.removeAttribute('aria-hidden')}else{e.setAttribute('inert','');e.setAttribute('aria-hidden','true')}})}
+function h8enter(){try{localStorage.h8age=1}catch(e){}document.getElementById('agegate').remove();h8bg(true);const h=document.querySelector('main h2');if(h){h.setAttribute('tabindex','-1');h.focus()}}
+document.addEventListener('DOMContentLoaded',()=>{const g=document.getElementById('agegate');if(!g)return;let ok;try{ok=localStorage.h8age}catch(e){}
+if(ok){g.remove();return}h8bg(false);const b=[...g.querySelectorAll('button')];b[0].focus();
+g.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const i=b.indexOf(document.activeElement);e.preventDefault();b[(i+(e.shiftKey?-1:1)+b.length)%b.length].focus()})});
+</script>
+<header class="nav"><a class="logo" href="/" data-sitename>Hottest8</a><nav><a href="/#top">Top 8</a><a href="/about.html#method">How we rank</a><a href="/rising.html" aria-current="page">Rising 8</a><a href="/about.html#privacy">Privacy</a><a href="/about.html#advertise">Advertise</a><a href="/verify.html">Fake Check</a></nav></header>
+<div class="age">18+ only. This site contains no explicit content.</div>
+<main class="layout single">
+<section id="rising"><p><a href="/">&larr; Back to the Top 8</a></p><div class="head"><h2>Rising 8</h2><span class="sample" id="r8win">Loading&hellip;</span></div>
+<p class="note" id="r8first"></p>
+<p class="note">The fastest-growing up-and-coming creators: under 1,000,000 combined followers, nobody from the Top 8, at least 10,000 followers at the start of the window. Ranked by % follower growth from our dated daily snapshots; absolute gain shown. Handles we couldn&rsquo;t fetch are left out, never estimated.</p>
+<p class="note" id="r8note"></p>
+<ol id="r8list" class="cards mini"></ol>
+<p class="note">Updated daily from public follower counts. Instagram counts are credited to Muse research. Not affiliated with or endorsed by anyone listed. <a href="/about.html#method">How we rank</a> &middot; <a href="/insights.json">insights.json</a></p>
+<p><a href="/#newsletter" class="cta">Get it in your inbox: join the weekly Top 8 + Industry Dispatch email &rarr;</a></p></section>
+</main>
+<footer><p><a href="about.html#method">How we rank</a> &middot; <a href="/">Top 8</a> &middot; <a href="about.html#privacy">Privacy</a> &middot; <a href="about.html#advertise">Advertise</a> &middot; <a href="verify.html">Fake Check</a></p>
+<p><b data-sitename>Hottest8</b> is not affiliated with, endorsed by, or sponsored by anyone listed. Run by AI from public data. #AIGenerated &middot; 18+ only.</p></footer>
+<script>
+(()=>{const f=n=>Math.abs(n)>=1e6?(n/1e6).toFixed(2).replace(/0$/,'')+'M':Math.abs(n)>=1e3?(n/1e3).toFixed(1).replace(/\.0$/,'')+'K':String(n);
+const x=n=>n.toLocaleString('en-US');const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const W=document.getElementById('r8win'),L=document.getElementById('r8list'),N=document.getElementById('r8note'),F=document.getElementById('r8first');
+fetch('insights.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
+const R=d.rising8||{},w=R.window||{},days=w.hours?Math.max(1,Math.round(w.hours/24)):0;
+if(R.status==='published'){W.textContent='7-day growth';F.textContent=''}
+else if(R.status==='partial_window'){W.textContent='First look';F.textContent='Early first look: about '+days+' day'+(days===1?'':'s')+' of data ('+(w.label||'')+'). Updates daily, and switches to true 7-day growth once a week of snapshots exists.'}
+else{W.textContent='Not yet'}
+if(R.metric)N.textContent=R.metric.split('. ').slice(1).join('. ');
+L.innerHTML=(R.items||[]).length?R.items.map(r=>`<li class="card mini"><div class="rank">${r.rank}</div><div><div class="nm">${e(r.name)}</div><div class="sub">&#120143; <a href="https://x.com/${e(r.x_handle)}" rel="nofollow noopener" target="_blank">@${e(r.x_handle)}</a> &middot; ${r.ig_included?'X + Instagram':'X only'} &middot; from ${x(r.start)}</div></div><div class="tot"><b>+${r.growth_pct.toFixed(3)}%</b><small title="${x(r.growth)} followers">+${f(r.growth)}</small></div></li>`).join(''):'<li class="note">Not enough snapshot history yet. We don\'t estimate.</li>';
+}).catch(()=>{W.textContent='Unavailable';L.innerHTML='<li class="note">Growth data unavailable right now.</li>'})})();
+</script>
+<script data-goatcounter="https://hottest8.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>
