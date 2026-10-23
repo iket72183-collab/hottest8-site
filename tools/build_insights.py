@@ -29,6 +29,7 @@ RULES = POOL["rules"]
 esnaps = sorted((json.load(open(p)) for p in glob.glob("snapshots/emerging/????-??-??.json")), key=lambda s: s["date"])
 top8 = {t.get("x_handle", "").lower() for t in json.load(open("rankings.json")).get("top8", [])}
 pool_h = {c["x_handle"].lower() for c in POOL["creators"]}
+POOL_IG = {c["x_handle"].lower(): c["ig_followers"] for c in POOL["creators"] if c.get("ig_status") == "verified" and c.get("ig_followers") is not None}
 rows = []; excluded = []
 if len(esnaps) >= RULES["min_snapshots"]:
     elatest = esnaps[-1]
@@ -40,7 +41,8 @@ if len(esnaps) >= RULES["min_snapshots"]:
         b = B.get(h)
         if h not in pool_h or not b or b.get("x_followers") is None or c.get("x_followers") is None: continue
         ig_fresh = has_ig(c) and has_ig(b) and c.get("ig_as_of") != b.get("ig_as_of") and not c.get("ig_carried_forward")
-        comb_now = c["x_followers"] + (c.get("ig_followers") or 0)
+        pig = POOL_IG.get(h)  # Muse-verified Instagram from rising_pool.json, used for the 1M cap if the snapshot lacks it
+        comb_now = c["x_followers"] + (c.get("ig_followers") if has_ig(c) else (pig or 0))
         start = b["x_followers"] + (b["ig_followers"] if ig_fresh else 0)
         why = ("in Top 8" if h in top8 else "over 1M combined" if comb_now > RULES["max_combined_followers"]
                else "under 10k floor" if start < RULES["min_followers"] else None)
