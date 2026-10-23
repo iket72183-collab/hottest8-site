@@ -1,9 +1,11 @@
-/* Shared age controls and immediate newsletter loading. No production services in local previews. */
+/* Shared age controls and explicit newsletter loading. No production services in local previews. */
 (() => {
   'use strict';
   const gate=document.getElementById('agegate'), shell=document.getElementById('site-shell');
+  let ageConfirmed=!gate;
   const production=['hottest8.com','www.hottest8.com'].includes(location.hostname);
   function enter() {
+    ageConfirmed=true;
     try {localStorage.setItem('h8age','1');}catch {}
     gate?.remove();shell?.removeAttribute('inert');shell?.removeAttribute('aria-hidden');
     document.body.classList.remove('age-locked');
@@ -23,16 +25,21 @@
       if(!c())setTimeout(c,500)},true);window.h8fcTrack=1;
   }
   const box=document.querySelector('#newsletter .eoform'), fallback=document.getElementById('nlfb');
+  const loadButton=document.querySelector('[data-load-newsletter]');
   if(!box)return;
-  document.querySelector('[data-reload-newsletter]')?.addEventListener('click',()=>location.reload());
-  if(!production){box.textContent='Local preview: email services are disabled. No address is collected or sent.';return;}
+  if(!production){box.textContent='Local preview: email services are disabled. No address is collected or sent.';if(loadButton)loadButton.disabled=true;return;}
   const id='a10ae064-cd08-11f1-b060-c974730c96d2';
   const rendered=()=>!!box.querySelector('form input[type="email"]');
-  function insert(retry=false){const script=document.createElement('script');script.async=true;script.src='https://eomail5.com/form/'+id+'.js'+(retry?'?r='+Date.now():'');script.setAttribute('data-form',id);box.append(script);}
-  insert();
-  setTimeout(()=>{
-    if(rendered())return;
-    insert(true);
-    setTimeout(()=>{if(!rendered()&&fallback)fallback.hidden=false;},7000);
-  },6000);
+  let state='idle';
+  function failed(){state='failed';if(loadButton){loadButton.hidden=false;loadButton.disabled=false;loadButton.textContent='Retry loading signup form';}if(fallback)fallback.hidden=false;}
+  function insert(){
+    if(!ageConfirmed||!production||state==='loading'||state==='loaded')return;
+    state='loading';if(fallback)fallback.hidden=true;
+    if(loadButton){loadButton.disabled=true;loadButton.textContent='Loading signup form…';}
+    const script=document.createElement('script');script.async=true;script.src='https://eomail5.com/form/'+id+'.js';script.setAttribute('data-form',id);
+    script.addEventListener('error',failed,{once:true});
+    script.addEventListener('load',()=>{state='loaded';setTimeout(()=>{if(rendered()){if(loadButton)loadButton.hidden=true;}else failed();},7000);},{once:true});
+    box.append(script);
+  }
+  loadButton?.addEventListener('click',insert);
 })();
