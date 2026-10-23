@@ -24,6 +24,10 @@
       function c(){if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'fakecheck-signup',title:'Fake Check signup',event:true});return true}}
       if(!c())setTimeout(c,500)},true);window.h8fcTrack=1;
   }
+  if(typeof IntersectionObserver==='function'&&typeof document.querySelectorAll==='function'&&!window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches){
+    const io=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){e.target.classList.add('is-revealed');io.unobserve(e.target);}},{threshold:0.06,rootMargin:'0px 0px -20px 0px'});
+    document.querySelectorAll('.rank-card,.method-grid article,.rail-note,.prose,.newsletter,.small-cta').forEach((n,i)=>{n.style?.setProperty('--reveal-idx',String(i%8));io.observe(n);});
+  }
   const box=document.querySelector('#newsletter .eoform'), fallback=document.getElementById('nlfb');
   const loadButton=document.querySelector('[data-load-newsletter]');
   if(!box)return;
