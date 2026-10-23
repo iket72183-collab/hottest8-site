@@ -48,10 +48,32 @@ def prerender(data):
     return ''.join(rows)
 
 
+def favicon_ico(n=32):
+    """32x32 ICO (BMP payload) drawn from favicon.svg colors: dark rounded square, gold 8."""
+    import struct
+    bg=(11,11,11);gold=(55,175,212)
+    rows=[]
+    for y in range(n-1,-1,-1):
+        row=b''
+        for x in range(n):
+            cx,cy=x+.5,y+.5;r=6
+            dx=max(r-cx,0,cx-(n-r));dy=max(r-cy,0,cy-(n-r))
+            if dx*dx+dy*dy>r*r:row+=bytes((0,0,0,0));continue
+            ink=False
+            for oy,ry in ((10.5,6),(21.5,7)):
+                ex=(cx-16)/(ry-.5);ey=(cy-oy)/ry;d=(ex*ex+ey*ey)**.5
+                if .55<=d<=1.05:ink=True
+            row+=bytes(gold if ink else bg)+b'\xff'
+        rows.append(row)
+    xor=b''.join(rows);mask=b'\x00'*(4*n)
+    bmp=struct.pack('<IiiHHIIiiII',40,n,2*n,1,32,0,len(xor)+len(mask),0,0,0,0)+xor+mask
+    return struct.pack('<HHH',0,1,1)+struct.pack('<BBBBHHII',n,n,0,0,1,32,len(bmp),22)+bmp
+
+
 def build(root,output):
     if output.resolve()==root.resolve():raise ValueError('Build output must not overwrite the source root')
     data=enrich(root);insights=build_insights(read_snapshots(root),read_snapshots(root,'emerging'),json.loads((root/'rising_pool.json').read_text()))
-    expected=set(FILES+['data.json','data.js','insights.json','rankings.json']) | {str(p.relative_to(root)) for p in (root/'snapshots').rglob('*.json')}
+    expected=set(FILES+['data.json','data.js','insights.json','rankings.json','favicon.ico']) | {str(p.relative_to(root)) for p in (root/'snapshots').rglob('*.json')}
     if output.exists():
         unexpected=[str(p.relative_to(output)) for p in output.rglob('*') if (p.is_file() or p.is_symlink()) and (p.is_symlink() or str(p.relative_to(output)) not in expected)]
         if unexpected:raise ValueError('Unexpected files in build output; use a new empty output directory: '+', '.join(unexpected))
@@ -70,6 +92,7 @@ def build(root,output):
     for f in FILES:
         if f in rendered:(output/f).write_text(rendered[f])
         else:shutil.copyfile(root/f,output/f)
+    (output/'favicon.ico').write_bytes(favicon_ico())
     (output/'data.json').write_text(json.dumps(data,indent=2)+'\n')
     avatars=json.loads((root/'approved-avatars.json').read_text())
     (output/'data.js').write_text('window.TC_DATA='+safe_json(data)+';\nwindow.H8_AVATARS='+safe_json(avatars)+';\n')
