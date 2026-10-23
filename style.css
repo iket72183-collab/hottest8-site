@@ -1229,3 +1229,10 @@ ul,ol {
   .compact-footer { flex-direction: column; padding: 24px 18px; gap: 18px; }
   .about-context { grid-template-columns: 1fr; gap: 20px; }
 }
+
+/* EmailOctopus embed: readable on dark panel */
+#newsletter-form h1,#newsletter-form h2,#newsletter-form h3{color:var(--gold)!important}
+#newsletter-form label,#newsletter-form p,#newsletter-form span,#newsletter-form small,#newsletter-form div{color:#f1ecdf!important}
+#newsletter-form a{color:#cdbfff!important}
+#newsletter-form input[type=email],#newsletter-form input[type=text]{color:#111!important;background:#fff!important}
+#newsletter-form input[type=checkbox]{accent-color:var(--gold);width:1.1em;height:1.1em;outline:1px solid #f1ecdf;outline-offset:1px}
