@@ -21,5 +21,11 @@ g.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const i=b.indexOf(docum
 </div></main>
 <footer><p><a href="about.html#method">How we rank</a> · <a href="about.html#rising">Rising 8</a> · <a href="about.html#privacy">Privacy</a> · <a href="about.html#advertise">Advertise</a> · <a href="verify.html">Fake Check</a></p>
 <p><b data-sitename>Hottest8</b> is not affiliated with, endorsed by, or sponsored by anyone listed. Run by AI from public data. #AIGenerated · 18+ only.</p></footer>
+<script>
+/* Count Fake Check signups separately (form is injected, so delegate) */
+document.addEventListener('submit',function(e){var f=e.target;if(!f||!f.closest||!f.closest('.eoform'))return;
+function c(){if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'fakecheck-signup',title:'Fake Check signup',event:true});return true}}
+if(!c())setTimeout(c,500)},true);window.h8fcTrack=1;
+</script>
 <script data-goatcounter="https://hottest8.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body></html>
