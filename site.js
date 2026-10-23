@@ -1,4 +1,4 @@
-/* Shared age controls and explicit newsletter loading. No production services in local previews. */
+/* Shared age controls and newsletter loading right after age confirmation. No production services in local previews. */
 (() => {
   'use strict';
   const gate=document.getElementById('agegate'), shell=document.getElementById('site-shell');
@@ -34,6 +34,7 @@
   function failed(){state='failed';if(loadButton){loadButton.hidden=false;loadButton.disabled=false;loadButton.textContent='Retry loading signup form';}if(fallback)fallback.hidden=false;}
   function insert(){
     if(!ageConfirmed||!production||state==='loading'||state==='loaded')return;
+    box.replaceChildren();
     state='loading';if(fallback)fallback.hidden=true;
     if(loadButton){loadButton.disabled=true;loadButton.textContent='Loading signup form…';}
     const script=document.createElement('script');script.async=true;script.src='https://eomail5.com/form/'+id+'.js';script.setAttribute('data-form',id);
@@ -42,4 +43,5 @@
     box.append(script);
   }
   loadButton?.addEventListener('click',insert);
+  if(ageConfirmed)insert();else window.addEventListener('h8:entered',insert,{once:true});
 })();
