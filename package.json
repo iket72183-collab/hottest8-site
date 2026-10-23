@@ -1,0 +1,11 @@
+{
+  "name": "hottest8-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs && python3 -m unittest discover -s tests -v",
+    "build": "python3 tools/build_site.py",
+    "preview": "python3 tools/preview.py"
+  },
+  "devDependencies": {"axe-core": "4.14.0"}
+}

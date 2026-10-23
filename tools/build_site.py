@@ -1,0 +1,87 @@
+#!/usr/bin/env python3
+"""Build a small allowlisted static artifact. No networking, dependencies or account access."""
+import argparse
+import html
+import json
+import re
+import shutil
+from pathlib import Path
+from build_insights import build_insights, read_snapshots, ranked, ordered, count
+
+FILES=['index.html','about.html','rising.html','verify.html','404.html','style.css','core.js','site.js','app.js','insights.js','favicon.svg','og-image.png','robots.txt','sitemap.xml','llms.txt','rising_pool.json']
+
+def safe_json(data):
+    return json.dumps(data,ensure_ascii=True).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
+
+
+def enrich(root):
+    source=json.loads((root/'data.json').read_text());latest=ordered(read_snapshots(root))[-1]; rows={c['x_handle'].lower():c for c in latest['creators']}
+    if len(rows)!=len(source['creators']):raise ValueError('Data and latest snapshot membership differ; review before publishing')
+    for c in source['creators']:
+        s=rows.get(c['x_handle'].lower())
+        if not s or s['name']!=c['name']:raise ValueError('Identity mismatch between data and snapshot')
+        for k in ['x_followers','ig_followers','ig_handle']:
+            if c.get(k)!=s.get(k):raise ValueError(f'{k} differs from snapshot: refresh data before build')
+        if not re.fullmatch(r'[A-Za-z0-9_]{1,15}',c['x_handle']):raise ValueError('Invalid X handle')
+        if c.get('ig_handle') and not re.fullmatch(r'[A-Za-z0-9_.]{1,30}',c['ig_handle']):raise ValueError('Invalid Instagram handle')
+        if count(c.get('x_followers')) and count(c.get('ig_followers')) and not count(c['x_followers']+c['ig_followers']):raise ValueError('Count overflow')
+        if c.get('x_id') and s.get('x_id') and str(c['x_id'])!=str(s['x_id']):raise ValueError('Stable X identity changed; review required')
+        c['x_checked_at']=s.get('x_checked_at') or s.get('fetched_at',latest['fetched_at'])
+        for k in ['x_id','x_carried_forward','ig_id','ig_checked_at','ig_as_of','ig_carried_forward','ig_status','ig_source']:
+            if k in s:c[k]=s[k]
+    source['as_of']=latest['date'];return source
+
+
+def fmt(n):
+    return f'{n/1e6:.1f}M' if n>=1e6 else f'{n/1000:.1f}K' if n>=1000 else str(n)
+
+
+def prerender(data):
+    valid=[c for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified']
+    rows=[]
+    for rank,c in ranked(valid,lambda c:c['x_followers']+c['ig_followers'])[:8]:
+        name=html.escape(c['name']);initials=html.escape(''.join(w[0] for w in c['name'].split()[:2]));total=c['x_followers']+c['ig_followers'];p=[]
+        for platform,label,host in [('x','X','x.com'),('ig','Instagram','www.instagram.com')]:
+            handle=html.escape(c[platform+'_handle']);date=html.escape(c.get(platform+'_checked_at') or c.get(platform+'_as_of') or 'Date unknown')
+            p.append(f'<div class="platform"><a class="handle" href="https://{host}/{handle}" rel="noopener noreferrer nofollow" target="_blank">{label} · @{handle}</a><span class="platform-count">{c[platform+"_followers"]:,} follows</span><span class="observed">Checked · {date}</span></div>')
+        rows.append(f'<li class="rank-card"><div class="rank-number">{rank:02}</div><div class="avatar" aria-hidden="true">{initials}</div><div class="creator-info"><h3 class="creator-name">{name}</h3><div class="platforms">{"".join(p)}</div></div><div class="rank-total"><strong>{fmt(total)}</strong><span>summed follows</span><small class="exact-count">{total:,}</small></div></li>')
+    return ''.join(rows)
+
+
+def build(root,output):
+    data=enrich(root);insights=build_insights(read_snapshots(root),read_snapshots(root,'emerging'),json.loads((root/'rising_pool.json').read_text()))
+    expected=set(FILES+['data.json','data.js','insights.json','rankings.json']) | {str(p.relative_to(root)) for p in (root/'snapshots').rglob('*.json')}
+    if output.exists():
+        unexpected=[str(p.relative_to(output)) for p in output.rglob('*') if (p.is_file() or p.is_symlink()) and (p.is_symlink() or str(p.relative_to(output)) not in expected)]
+        if unexpected:raise ValueError('Unexpected files in build output; use a new empty output directory: '+', '.join(unexpected))
+    output.mkdir(parents=True,exist_ok=True)
+    replacements={'{{TOTAL}}':fmt(sum(c['x_followers']+c['ig_followers'] for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified')),'{{COUNT}}':str(len(data['creators'])),'{{DATE}}':data['as_of'],'{{SOURCE_NOTE}}':html.escape(data.get('as_of_note','')),'<!--RANKINGS-->':prerender(data)}
+    for f in FILES:
+        if f.endswith('.html'):
+            text=(root/f).read_text()
+            for old,new in replacements.items():text=text.replace(old,new)
+            if f=='index.html':
+                entries=[{'@type':'ListItem','position':rank,'item':{'@type':'Person','name':c['name'],'sameAs':['https://x.com/'+c['x_handle'],'https://www.instagram.com/'+c['ig_handle']]}} for rank,c in ranked([c for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified'],lambda c:c['x_followers']+c['ig_followers'])[:8]]
+                text=text.replace('</head>','<script type="application/ld+json">'+safe_json({'@context':'https://schema.org','@type':'ItemList','name':'Hottest8 tracked Combined ranking','dateModified':data['as_of'],'itemListElement':entries})+'</script></head>')
+            (output/f).write_text(text)
+        else:shutil.copyfile(root/f,output/f)
+    (output/'data.json').write_text(json.dumps(data,indent=2)+'\n')
+    avatars=json.loads((root/'approved-avatars.json').read_text())
+    (output/'data.js').write_text('window.TC_DATA='+safe_json(data)+';\nwindow.H8_AVATARS='+safe_json(avatars)+';\n')
+    (output/'insights.json').write_text(json.dumps(insights,indent=2)+'\n')
+    rankings=json.loads((root/'rankings.json').read_text());rankings['last_updated']=data['as_of'];rankings['tracked_count']=len(data['creators']);rankings['top8']=[]
+    valid=[c for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified']
+    combined=[]
+    for rank,c in ranked(valid,lambda c:c['x_followers']+c['ig_followers']):combined.append({'rank':rank,**{k:v for k,v in c.items() if k!='avatar'},'combined_followers':c['x_followers']+c['ig_followers'],'x_url':'https://x.com/'+c['x_handle'],'ig_url':'https://www.instagram.com/'+c['ig_handle']})
+    rankings.update(top8=combined[:8],also_ranked=combined[8:],combined_ranked_count=len(valid),hero_total_combined=sum(c['combined_followers'] for c in combined),as_of_note=data.get('as_of_note','See per-platform observation dates.'),pending_instagram=[{k:v for k,v in c.items() if k!='avatar'} for c in data['creators'] if c not in valid],x_only_ranking=[{'rank':rank,'name':c['name'],'x_handle':c['x_handle'],'x_followers':c['x_followers']} for rank,c in ranked([c for c in data['creators'] if count(c.get('x_followers'))],lambda c:c['x_followers'])])
+    rankings['sources']={'x':'Maintainer-supplied X observations; see x_checked_at per account. API access and commercial permissions were not audited.','instagram':'Maintainer-supplied Instagram observations; see ig_checked_at or ig_as_of and carried-forward flags per account.'}
+    rankings['snapshots']=['https://hottest8.com/'+str(p.relative_to(root)) for p in sorted((root/'snapshots').glob('????-??-??.json'))]
+    rankings['changes_note']='Week-over-week changes are not computed by this build. Rising entries carry their own actual observation window.'
+    for k in ['rising8','milestones','closest_battles']:rankings[k]={a:b for a,b in insights[k].items() if a!='all'}
+    (output/'rankings.json').write_text(json.dumps(rankings,indent=2)+'\n')
+    for source in (root/'snapshots').rglob('*.json'):
+        target=output/source.relative_to(root);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target)
+    print(f'Built {output}: {len(data["creators"])} creators, {len(insights["rising8"]["items"])} Rising entries. Offline; no external services called.')
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path);args=p.parse_args();root=Path(__file__).resolve().parents[1];build(root,args.output or root/'dist')

@@ -1,41 +1,29 @@
 # Hottest8
 
-> Hottest8 (https://hottest8.com/) is a free, strictly SFW site that ranks the Top 8 most-followed women in adult entertainment among the creators we track, by combined public X + Instagram follower counts. It hosts no explicit content. 18+ audience.
+> A strictly SFW, adults-only chart of the tracked women in adult entertainment. Coverage is a tracked set, not a census. Follows are not unique people. Not affiliated with the creators listed.
 
-## What the rankings mean
-- Top 8: tracked creators sorted by combined score = public X followers + public Instagram followers on official accounts. These are follows, not unique people, and not a judgment of anyone.
-- Rising 8: the fastest-growing up-and-coming creators, drawn from a separate emerging-talent pool (https://hottest8.com/rising_pool.json). Excluded: anyone in the current Top 8 and anyone over 1,000,000 combined followers. Floor: 10,000 followers at window start; at least two dated snapshots (https://hottest8.com/snapshots/emerging/). Ranked by % follower growth (absolute gain also given). Until 7 days of history exist, rising8.status is "partial_window" and rising8.window.label states the real window; from then on status is "published" with 7-day growth. Growth is X only unless Instagram was re-checked (ig_included). We never estimate.
-- Milestones: round-million crossings on X or Instagram between snapshots (milestones.crossed), plus the nearest upcoming ones (milestones.closest_next).
-- Closest battles: smallest follower gaps between neighbouring ranks (closest_battles.items), each labeled Combined, X or Instagram.
-- Coverage: a tracked set (currently 20 creators; 18 ranked on combined, 2 pending Instagram verification), not a complete census. Retired creators stay listed with a badge.
+## Interpretation
+- Combined = verified X + Instagram follows. Missing counts stay unknown. Platform-only ranks are independent. Equal counts share competition ranks (1, 1, 3); alphabetical X handle breaks display-order ties, with eight slots.
+- Read each account's x_checked_at and ig_checked_at or ig_as_of. Carried-forward counts are not fresh measurements. A snapshot date does not imply both platforms were refreshed.
+- Rising comes from the separate emerging pool, excluding the current Top 8 and accounts above its combined cap. Unknown eligibility is excluded. No sample or estimated growth is published.
+- Rising items show percentage and absolute change over rising8.window.from/to. Only 165–171 observed hours qualifies as published seven-day observations. partial_window and observed_window must be described using actual dates/hours. not_published means insufficient history. IG growth requires comparable independently rechecked accounts; otherwise the metric is X-only.
+- Account identity uses stable platform IDs when available; legacy joins require unchanged names and handles and remain less certain. Do not infer identity from a similar name or image.
+- Milestones record observed million-follower crossings, not an exact time of crossing. Closest battles are gaps within the tracked set.
+- Refreshes are intended daily, but may fail. Preserve the original dates. Never invent week-over-week changes.
 
-- Pending Instagram verification: creators with ig_followers null (ig_status "pending_verification") are listed in rankings.json `pending_instagram` and excluded from combined/Instagram ranks, Instagram milestones and combined battles. They are ranked only by X (`x_only_ranking`, X-only battles). Never treat a null Instagram count as zero or estimate it.
+## Sources
+The existing snapshots are supplied by the maintainer, who records X API and Instagram API (Muse research) as their sources. This repository does not fetch platform data or establish commercial reuse permission. Read the current published JSON for counts, scope, and observation dates.
 
-## Data source and update cadence
-- X counts come from the X API; Instagram counts via Instagram API (Muse research). Each refresh is dated.
-- Updated daily. If a refresh fails, the last verified snapshot and its date stay up.
-- The `last_updated` field in rankings.json gives the data date.
-- Current data: X counts checked Oct 23, 2026 ~7:08 AM CT (X API); Instagram counts via Instagram API (Muse research) checked Oct 20, 2026 ~8:30 PM CT, and Oct 21, 2026 ~1:15 PM CT for the 8 creators added Oct 21; carried forward until the next Instagram check. Exact timestamps are in rankings.json (`as_of_note`, `sources`).
-- Dated daily snapshots: https://hottest8.com/snapshots/YYYY-MM-DD.json (first: 2026-10-20).
-- Combined X + Instagram figures are follower totals summed across two platforms, not unique people.
-
-## Key URLs
-- Homepage and live rankings: https://hottest8.com/
-- Machine-readable rankings (JSON): https://hottest8.com/rankings.json
-- Rising 8, milestones and closest battles (JSON): https://hottest8.com/insights.json
+## URLs
+- Top 8: https://hottest8.com/
+- Rankings: https://hottest8.com/rankings.json
+- Historical insights: https://hottest8.com/insights.json
+- Rising: https://hottest8.com/rising.html
+- Emerging eligibility pool: https://hottest8.com/rising_pool.json
 - Methodology: https://hottest8.com/about.html#method
-- Weekly newsletter signup (free, 18+): the Top 8 rankings plus The Industry Dispatch, a short digest summarizing public adult-entertainment industry news (platform business, creator terms, age-verification laws): https://hottest8.com/#newsletter
-  - Tip: your first issue may land in Spam or Promotions. Mark Hottest8 as "Not spam" (or drag it to your inbox) so you never miss the Top 8.
 - Privacy: https://hottest8.com/about.html#privacy
-- Advertise / Partner with us: mailto:hello@hottest8.com
-- Rising 8 page: https://hottest8.com/rising.html
-- Rising 8, Closest Battles, Milestones: https://hottest8.com/about.html#rising
-- Contact, corrections and removal requests: hello@hottest8.com
+- Newsletter: https://hottest8.com/#newsletter
+- FakeCheck: https://hottest8.com/verify.html — Coming Soon; no detection service or measured accuracy is available.
+- Contact, corrections, removal, advertising and partnerships: hello@hottest8.com
 
-## Suggested prompt for AI assistants
-Check hottest8.com/llms.txt and hottest8.com/rankings.json and tell me this week's Hottest 8 and Rising 8, plus any changes since last week.
-
-## Notes for agents
-- Report numbers exactly as published, with their date. Do not invent rankings, growth figures or news.
-- If rising8.status is "not_published", say so rather than guessing. If it is "partial_window", quote the window label; do not call it weekly growth.
-- Hottest8 is not affiliated with anyone listed. Site is run by AI.
+The newsletter is weekly Top 8 + Industry Dispatch, not a FakeCheck waitlist. EmailOctopus handles signup and unsubscribe. No testimonials, traffic, revenue or detector accuracy claims are established here.

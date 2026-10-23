@@ -1,0 +1,46 @@
+{
+  "commit": "5f84c2320accc5322e0e93ce36289592e322b25d",
+  "live_files": [
+    {
+      "file": "index.html",
+      "curl_exit": 0,
+      "matches_baseline": true,
+      "sha256": "55105cf03d6b9b84df3f93887ee7a873c941c90f843f8baf48dace0eb662d044"
+    },
+    {
+      "file": "style.css",
+      "curl_exit": 0,
+      "matches_baseline": true,
+      "sha256": "4754ff0e8bc2bf4d8c6ca25841a8f20cbbfb14670b8d009fc9dda15c6530bc0f"
+    },
+    {
+      "file": "data.json",
+      "curl_exit": 0,
+      "matches_baseline": true,
+      "sha256": "aa276110b217c0b50718ae0e23521426f106dce7aa959cf21879f782f16d48d9"
+    },
+    {
+      "file": "rankings.json",
+      "curl_exit": 0,
+      "matches_baseline": true,
+      "sha256": "12221390b957b8d75527106d42f029fbf2ec5bd5852cb9e0b96967c3dfea4f07"
+    },
+    {
+      "file": "insights.json",
+      "curl_exit": 0,
+      "matches_baseline": true,
+      "sha256": "348e459868a77598945c1a8df740f3147b775b6abe2d18a79dd48b8c576ffff3"
+    },
+    {
+      "file": "render.yaml",
+      "curl_exit": 0,
+      "matches_baseline": true,
+      "sha256": "02cf8372df86c50c5a6aab2f3318652fb68a8c45fb058711856a27acf647412f"
+    }
+  ],
+  "tests": "No test suite or package manifest. node --check app.js; node --check insights.js; python3 -m py_compile tools/build_insights.py passed.",
+  "build": "Render echo ok; no bundler.",
+  "open_prs": 0,
+  "local_checkout": "No preexisting checkout found in bounded Mac scan; remote Grok workspace unverified.",
+  "maintainer_confirmation": "Grok Bot via Isaac confirms no uncommitted work; remote workstation contains nothing beyond main at 5f84c23. Daily data refresh pushes around 07:00 America/Chicago; recheck main before integration."
+}
