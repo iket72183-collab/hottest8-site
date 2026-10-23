@@ -34,3 +34,4 @@ test('insights reject invented weekly windows and inconsistent percentages',()=>
 });
 
 test('an unknown or rejected Instagram status is not verified',()=>{for(const status of [undefined,'rejected','unknown']){const c={...creator('fixture',2,3),ig_status:status};assert.equal(H.score(c,'combined'),null);assert.equal(H.score(c,'ig'),null);}});
+test('avatarFor only returns SFW-reviewed pbs.twimg.com 400x400 URLs by lowercase handle',()=>{const u='https://pbs.twimg.com/profile_images/123/AbC_d-1_400x400.jpg';assert.equal(H.avatarFor('MiaX',{miax:u}),u);assert.equal(H.avatarFor('nobody',{miax:u}),null);for(const bad of ['https://evil.test/profile_images/1/a_400x400.jpg','https://pbs.twimg.com/profile_images/1/a_normal.jpg','https://pbs.twimg.com/profile_images/1/a_400x400.jpg?x=1','javascript:1'])assert.equal(H.avatarFor('a',{a:bad}),null,bad);assert.equal(H.avatarFor('__proto__',{}),null);});

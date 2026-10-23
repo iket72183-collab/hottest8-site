@@ -32,11 +32,33 @@ def enrich(root):
     source['as_of']=latest['date'];return source
 
 
+AVATAR_RE=re.compile(r'^https://pbs\.twimg\.com/profile_images/[0-9]+/[A-Za-z0-9_-]+_400x400\.(?:jpg|jpeg|png|webp)$')
+
+
+def load_avatars(root):
+    """avatars.json -> {lowercase x handle: url}. Only SFW-reviewed pbs.twimg.com _400x400 URLs survive."""
+    path=root/'avatars.json'
+    if not path.exists():return {}
+    doc=json.loads(path.read_text());out={}
+    for h,v in (doc.get('avatars') or {}).items():
+        url=v.get('url') if isinstance(v,dict) else None
+        if isinstance(url,str) and AVATAR_RE.match(url) and re.fullmatch(r'[a-z0-9_]{1,15}',h):out[h]=url
+    return out
+
+
+def avatar_html(c,avatars):
+    initials=html.escape(''.join(w[0] for w in c['name'].split()[:2]))
+    url=avatars.get(c['x_handle'].lower())
+    if not url:return f'<div class="avatar" aria-hidden="true">{initials}</div>'
+    alt=html.escape(c['name']+' on X')
+    return f'<div class="avatar">{initials}<img src="{html.escape(url)}" alt="{alt}" width="64" height="64" loading="lazy" decoding="async" referrerpolicy="no-referrer"></div>'
+
+
 def fmt(n):
     return f'{n/1e6:.1f}M' if n>=1e6 else f'{n/1000:.1f}K' if n>=1000 else str(n)
 
 
-def prerender(data):
+def prerender(data,avatars={}):
     valid=[c for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified']
     rows=[]
     for rank,c in ranked(valid,lambda c:c['x_followers']+c['ig_followers'])[:8]:
@@ -44,7 +66,7 @@ def prerender(data):
         for platform,label,host in [('x','X','x.com'),('ig','Instagram','www.instagram.com')]:
             handle=html.escape(c[platform+'_handle']);date=html.escape(c.get(platform+'_checked_at') or c.get(platform+'_as_of') or 'Date unknown')
             p.append(f'<div class="platform"><a class="handle" href="https://{host}/{handle}" rel="noopener noreferrer nofollow" target="_blank">{label} · @{handle}</a><span class="platform-count">{c[platform+"_followers"]:,} follows</span><span class="observed">Checked · {date}</span></div>')
-        rows.append(f'<li class="rank-card"><div class="rank-number">{rank:02}</div><div class="avatar" aria-hidden="true">{initials}</div><div class="creator-info"><h3 class="creator-name">{name}</h3><div class="platforms">{"".join(p)}</div></div><div class="rank-total"><strong>{fmt(total)}</strong><span>summed follows</span><small class="exact-count">{total:,}</small></div></li>')
+        rows.append(f'<li class="rank-card"><div class="rank-number">{rank:02}</div>{avatar_html(c,avatars)}<div class="creator-info"><h3 class="creator-name">{name}</h3><div class="platforms">{"".join(p)}</div></div><div class="rank-total"><strong>{fmt(total)}</strong><span>summed follows</span><small class="exact-count">{total:,}</small></div></li>')
     return ''.join(rows)
 
 
@@ -73,12 +95,12 @@ def favicon_ico(n=32):
 def build(root,output):
     if output.resolve()==root.resolve():raise ValueError('Build output must not overwrite the source root')
     data=enrich(root);insights=build_insights(read_snapshots(root),read_snapshots(root,'emerging'),json.loads((root/'rising_pool.json').read_text()))
-    expected=set(FILES+['data.json','data.js','insights.json','rankings.json','favicon.ico']) | {str(p.relative_to(root)) for p in (root/'snapshots').rglob('*.json')}
+    expected=set(FILES+['data.json','data.js','insights.json','rankings.json','favicon.ico','avatars.js']) | {str(p.relative_to(root)) for p in (root/'snapshots').rglob('*.json')}
     if output.exists():
         unexpected=[str(p.relative_to(output)) for p in output.rglob('*') if (p.is_file() or p.is_symlink()) and (p.is_symlink() or str(p.relative_to(output)) not in expected)]
         if unexpected:raise ValueError('Unexpected files in build output; use a new empty output directory: '+', '.join(unexpected))
     output.mkdir(parents=True,exist_ok=True)
-    replacements={'{{TOTAL}}':fmt(sum(c['x_followers']+c['ig_followers'] for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified')),'{{COUNT}}':str(len(data['creators'])),'{{DATE}}':data['as_of'],'{{SOURCE_NOTE}}':html.escape(data.get('as_of_note','')),'<!--RANKINGS-->':prerender(data)}
+    replacements={'{{TOTAL}}':fmt(sum(c['x_followers']+c['ig_followers'] for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified')),'{{COUNT}}':str(len(data['creators'])),'{{DATE}}':data['as_of'],'{{SOURCE_NOTE}}':html.escape(data.get('as_of_note','')),'<!--RANKINGS-->':prerender(data,load_avatars(root))}
     rendered={}
     for f in FILES:
         if f.endswith('.html'):
@@ -93,6 +115,7 @@ def build(root,output):
         if f in rendered:(output/f).write_text(rendered[f])
         else:shutil.copyfile(root/f,output/f)
     (output/'favicon.ico').write_bytes(favicon_ico())
+    (output/'avatars.js').write_text('window.H8_AVATARS='+safe_json(load_avatars(root))+';\n')
     (output/'data.json').write_text(json.dumps(data,indent=2)+'\n')
     avatars=json.loads((root/'approved-avatars.json').read_text())
     (output/'data.js').write_text('window.TC_DATA='+safe_json(data)+';\nwindow.H8_AVATARS='+safe_json(avatars)+';\n')

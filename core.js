@@ -61,5 +61,17 @@
     const url = new URL(c.avatar);
     return url.protocol === 'https:' && url.hostname === 'pbs.twimg.com' && !url.username && !url.password && !url.search && !url.hash ? c.avatar : null;
   }
-  return {count,handle,profileUrl,date,validateData,validateInsights,score,rank,format,exact,stale,approvedAvatar};
+  function avatarFor(xHandle, map) {
+    const key=typeof xHandle==='string'?xHandle.toLowerCase():'';const url=map&&Object.prototype.hasOwnProperty.call(map,key)?map[key]:null;
+    if (typeof url!=='string'||!/^https:\/\/pbs\.twimg\.com\/profile_images\/[0-9]+\/[A-Za-z0-9_-]+_400x400\.(?:jpg|jpeg|png|webp)$/.test(url)) return null;
+    return url;
+  }
+  function avatarEl(make, c) {
+    const box=make('div','avatar',c.name.trim().split(/\s+/).slice(0,2).map(s=>Array.from(s)[0]).join(''));
+    const src=avatarFor(c.x_handle,(typeof window!=='undefined'&&window.H8_AVATARS)||{});
+    if(!src){box.setAttribute('aria-hidden','true');return box;}
+    const img=make('img');img.src=src;img.alt=c.name+' on X';img.width=64;img.height=64;img.loading='lazy';img.decoding='async';img.referrerPolicy='no-referrer';
+    img.addEventListener('error',()=>{img.remove();box.setAttribute('aria-hidden','true');},{once:true});box.append(img);return box;
+  }
+  return {avatarEl,count,handle,profileUrl,date,validateData,validateInsights,score,rank,format,exact,stale,approvedAvatar,avatarFor};
 });
