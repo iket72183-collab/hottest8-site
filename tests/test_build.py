@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from urllib.parse import urlsplit,unquote
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
-from build_site import build, enrich, safe_json
+from build_site import build, enrich, prerender, safe_json
 ROOT=Path(__file__).resolve().parents[1]
 
 class Document(HTMLParser):
@@ -57,6 +57,15 @@ class BuildTests(unittest.TestCase):
         self.assertTrue(all(c.get('ig_as_of') for c in data['creators'] if c['ig_followers'] is not None))
     def test_backup_json_cannot_close_script(self):
         self.assertNotIn('</script>',safe_json({'name':'</script><script>evil</script>'}))
+    def test_prerender_escapes_synthetic_names_and_observation_attributes(self):
+        name='<img src=x onerror=alert(1)> "Fixture"'
+        creator={'name':name,'x_handle':'fixture_1','ig_handle':'fixture.1','x_followers':2,'ig_followers':3,'ig_status':'verified','x_checked_at':'2026-10-23" onmouseover="x'}
+        markup=prerender({'creators':[creator]})
+        doc=Document(markup)
+        self.assertNotIn('<img',markup)
+        self.assertIn('&lt;img',markup)
+        self.assertFalse(doc.inline_events)
+        self.assertEqual(doc.links,['https://x.com/fixture_1','https://www.instagram.com/fixture.1'])
     def test_no_package_runtime_dependencies(self):
         d=json.loads((ROOT/'package.json').read_text());self.assertFalse(d.get('dependencies'))
     def test_requested_fakecheck_copy_and_signup(self):

@@ -7,8 +7,9 @@
   let data, mode='combined', loading=false;
   function platform(c, p) {
     const box=el('div','platform'); const n=c[p+'_followers'], h=c[p+'_handle'];
-    if (H8.count(n) && H8.handle(h,p) && (p==='x'||c.ig_status==='verified')) {
-      const a=el('a','handle',(p==='x'?'X':'Instagram')+' · @'+h);a.href='https://'+(p==='x'?'x.com/':'www.instagram.com/')+encodeURIComponent(h);a.target='_blank';a.rel='noopener noreferrer nofollow';box.append(a);
+    const href=H8.profileUrl(p,h);
+    if (H8.count(n) && href && (p==='x'||c.ig_status==='verified')) {
+      const a=el('a','handle',(p==='x'?'X':'Instagram')+' · @'+h);a.href=href;a.target='_blank';a.rel='noopener noreferrer nofollow';box.append(a);
       box.append(el('span','platform-count',H8.exact(n)+' follows'));
       const stamp=c[p+'_checked_at'] || c[p+'_as_of'];
       box.append(el('span','observed',(c[p+'_carried_forward']?'Carried forward · ':'Checked · ')+dateText(stamp)));
