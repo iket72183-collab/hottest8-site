@@ -1243,3 +1243,12 @@ ul,ol {
 .rising-card{grid-template-columns:40px 54px minmax(0,1fr) auto}
 @media(max-width:760px){.rising-card{grid-template-columns:26px 45px minmax(0,1fr) auto}}
 @media(max-width:390px){.logo{font-size:28px}.rank-card{grid-template-columns:22px 40px minmax(0,1fr) 83px}.rank-card .avatar{display:flex;width:40px;height:40px;font-size:15px}.rising-card{grid-template-columns:22px 40px minmax(0,1fr) 83px}}
+/* Centered gothic wordmark, ~1.15x the page title (60px desktop / 40px mobile) */
+.site-header{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:14px;text-align:center}
+.site-header .logo{font-size:clamp(46px,5.4vw,69px)!important;margin:0 auto;padding:4px 0}
+.site-header nav{justify-content:center!important}
+/* Mobile-first tuning */
+.site-header nav a{min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:760px){.site-header nav{flex-wrap:nowrap!important;overflow-x:auto;max-width:100%;gap:0 18px!important;-webkit-overflow-scrolling:touch;scrollbar-width:none}.site-header nav::-webkit-scrollbar{display:none}.site-header nav a{flex:0 0 auto;min-height:44px}}
+@media(max-width:390px){.rank-card,.rising-card{grid-template-columns:20px 48px minmax(0,1fr) 78px!important;gap:9px!important}.rank-card .avatar{width:48px!important;height:48px!important;font-size:16px}.creator-name{overflow-wrap:anywhere}}
+html,body{overflow-x:hidden}
