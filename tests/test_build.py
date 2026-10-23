@@ -96,7 +96,7 @@ class BuildTests(unittest.TestCase):
     def test_minimal_home_and_complete_about(self):
         home=(self.output/'index.html').read_text().split('<main',1)[1].split('</main>')[0]
         self.assertNotIn('class="hero"',home);self.assertNotIn('class="stats"',home);self.assertNotIn('editorial-rail',home);self.assertIn('Retry loading signup form',home)
-        self.assertIn('Muse research',home);self.assertIn('class="hero"',(self.output/'about.html').read_text())
+        self.assertNotIn('Muse research',home);self.assertNotIn('id="asof"',home);self.assertNotIn('id="coverage"',home);about=(self.output/'about.html').read_text();self.assertIn('Data sources &amp; freshness',about);self.assertIn('Muse research',about);self.assertIn('id="coverage"',about);self.assertIn('class="hero"',(self.output/'about.html').read_text())
     def test_render_build_and_publish_match_allowlisted_artifact(self):
         text=(ROOT/'render.yaml').read_text()
         self.assertIn('buildCommand: python3 tools/build_site.py',text)
