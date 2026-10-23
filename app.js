@@ -19,10 +19,7 @@
   function card(row) {
     const c=row.creator, li=el('li','rank-card'), num=el('div','rank-number',String(row.rank).padStart(2,'0'));
     li.append(num);
-    const avatar=el('div','avatar',c.name.trim().split(/\s+/).slice(0,2).map(s=>Array.from(s)[0]).join(''));avatar.setAttribute('aria-hidden','true');
-    const src=H8.approvedAvatar(c,window.H8_AVATARS||{});
-    if(src) {const img=el('img');img.src=src;img.alt='';img.width=64;img.height=64;img.loading='lazy';img.decoding='async';img.referrerPolicy='no-referrer';img.addEventListener('error',()=>img.remove(),{once:true});avatar.append(img);}
-    li.append(avatar);
+    li.append(H8.avatarEl(el,c));
     const info=el('div','creator-info'), heading=el('h3','creator-name',c.name);if(c.retired)heading.append(el('span','badge','Retired'));info.append(heading);
     const platforms=el('div','platforms');platforms.append(platform(c,'x'),platform(c,'ig'));info.append(platforms);li.append(info);
     const total=el('div','rank-total');total.append(el('strong','',H8.format(row.value)),el('span','',mode==='combined'?'summed follows':mode==='x'?'X follows':'Instagram follows'),el('small','exact-count',H8.exact(row.value)+(row.tied?' · tied':'')));li.append(total);return li;

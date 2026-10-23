@@ -1236,3 +1236,10 @@ ul,ol {
 #newsletter-form a{color:#cdbfff!important}
 #newsletter-form input[type=email],#newsletter-form input[type=text]{color:#111!important;background:#fff!important}
 #newsletter-form input[type=checkbox]{accent-color:var(--gold)!important;box-sizing:border-box!important;width:18px!important;height:18px!important;min-width:18px!important;min-height:18px!important;max-height:18px!important;flex:0 0 18px!important;padding:0!important;margin:0 8px 0 0!important;vertical-align:middle!important;outline:none!important;border:0!important;box-shadow:0 0 0 1px #f1ecdf!important;border-radius:3px!important}
+/* Gothic wordmark (restored from the original Hottest8 design: UnifrakturMaguntia, gold gradient) */
+.logo{font-family:'UnifrakturMaguntia','Old English Text MT',serif!important;font-weight:400;font-size:34px;letter-spacing:.02em;line-height:1;background:linear-gradient(180deg,#fff6d8,#e8c46a 45%,#8a6418 55%,#f3d88b);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 6px rgba(232,196,106,.35))}
+.logo span{font-family:inherit;font-size:1.15em;margin-left:2px;color:transparent;background:inherit;-webkit-background-clip:text;background-clip:text}
+/* X profile pictures on Top 8 and Rising 8 cards */
+.rising-card{grid-template-columns:40px 54px minmax(0,1fr) auto}
+@media(max-width:760px){.rising-card{grid-template-columns:26px 45px minmax(0,1fr) auto}}
+@media(max-width:390px){.logo{font-size:28px}.rank-card{grid-template-columns:22px 40px minmax(0,1fr) 83px}.rank-card .avatar{display:flex;width:40px;height:40px;font-size:15px}.rising-card{grid-template-columns:22px 40px minmax(0,1fr) 83px}}
