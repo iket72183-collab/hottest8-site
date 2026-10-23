@@ -148,3 +148,5 @@ footer{border-top:1px solid rgba(201,162,75,.3);background:none;color:#9a8f78}
 .fc-card{border:1px solid rgba(212,175,55,.5);border-radius:12px;padding:18px;background:linear-gradient(180deg,#161208,#0b0b0b)}
 .fc-card span{display:inline-block;width:30px;height:30px;line-height:30px;text-align:center;border-radius:50%;background:#d4af37;color:#000;font-weight:700}
 .fc-card h3{font-family:Cinzel,serif;color:#d4af37;margin:.5em 0 .3em}.fc-card p{color:#ccc;line-height:1.5;margin:0}
+
+.nlfb{max-width:520px;margin:12px auto 0;text-align:center;font-size:14px}.nlfb a{color:#c9a24b}
