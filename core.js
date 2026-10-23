@@ -7,6 +7,11 @@
   'use strict';
   const count = n => Number.isSafeInteger(n) && n >= 0;
   const handle = (s, platform) => typeof s === 'string' && (platform === 'x' ? /^[A-Za-z0-9_]{1,15}$/ : /^[A-Za-z0-9_.]{1,30}$/).test(s);
+  function profileUrl(platform, value) {
+    if ((platform !== 'x' && platform !== 'ig') || !handle(value, platform)) return null;
+    const host = platform === 'x' ? 'x.com' : 'www.instagram.com';
+    return 'https://' + host + '/' + encodeURIComponent(value);
+  }
   const date = s => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}(T.*)?$/.test(s) && Number.isFinite(Date.parse(s));
   function validateData(data) {
     if (!data || !date(data.as_of) || !Array.isArray(data.creators) || data.creators.length > 500) throw new Error('Invalid ranking snapshot');
@@ -51,7 +56,10 @@
   const exact = n => count(n) ? n.toLocaleString('en-US') : 'Unknown';
   function stale(s, now=Date.now(), days=3) { return !date(s) || now-Date.parse(s) > days*86400000; }
   function approvedAvatar(c, allowlist) {
-    return typeof c.avatar === 'string' && allowlist[c.x_handle.toLowerCase()] === c.avatar && /^https:\/\/pbs\.twimg\.com\/profile_images\/[^?#]+\.(jpg|png|webp)$/.test(c.avatar) ? c.avatar : null;
+    if (!c || !handle(c.x_handle, 'x') || typeof c.avatar !== 'string' || !allowlist || allowlist[c.x_handle.toLowerCase()] !== c.avatar) return null;
+    if (!/^https:\/\/pbs\.twimg\.com\/profile_images\/[A-Za-z0-9/_-]+\.(?:jpg|png|webp)$/.test(c.avatar)) return null;
+    const url = new URL(c.avatar);
+    return url.protocol === 'https:' && url.hostname === 'pbs.twimg.com' && !url.username && !url.password && !url.search && !url.hash ? c.avatar : null;
   }
-  return {count,handle,date,validateData,validateInsights,score,rank,format,exact,stale,approvedAvatar};
+  return {count,handle,profileUrl,date,validateData,validateInsights,score,rank,format,exact,stale,approvedAvatar};
 });

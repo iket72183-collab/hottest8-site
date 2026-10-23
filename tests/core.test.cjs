@@ -10,8 +10,19 @@ for(const value of [-1,NaN,Infinity,1.5,'100',true,Number.MAX_SAFE_INTEGER+1])te
 test('reject sum overflow',()=>assert.throws(()=>H.validateData(data([creator('a',Number.MAX_SAFE_INTEGER,1)]))));
 test('reject duplicate identity case-insensitively',()=>assert.throws(()=>H.validateData(data([creator('a',1,1),creator('A',2,2)]))));
 test('reject URL/attribute injection in handles',()=>{for(const h of ['a/../../b','a" onmouseover="x','javascript:foo','a?token=x'])assert.throws(()=>H.validateData(data([creator(h,1,1)])));});
+test('profile links require a known platform and a valid handle',()=>{
+ assert.equal(H.profileUrl('x','Fixture_1'),'https://x.com/Fixture_1');
+ assert.equal(H.profileUrl('ig','fixture.1'),'https://www.instagram.com/fixture.1');
+ for(const [platform,value] of [['x','javascript:alert(1)'],['x','a" onclick="x'],['ig','a/b'],['ig','a?next=evil'],['other','fixture']])assert.equal(H.profileUrl(platform,value),null);
+});
 test('name text can contain markup without becoming a URL',()=>{const c=creator('fixture',1,1);c.name='<img src=x onerror=alert(1)>';assert.equal(H.validateData(data([c])).creators[0].name,c.name);});
 test('unknown avatars never load, including changed URLs',()=>{const c=creator('a',1,1);c.avatar='https://pbs.twimg.com/profile_images/1/a.jpg';assert.equal(H.approvedAvatar(c,{a:c.avatar}),c.avatar);assert.equal(H.approvedAvatar(c,{}),null);c.avatar='javascript:alert(1)';assert.equal(H.approvedAvatar(c,{a:c.avatar}),null);});
+test('avatar URLs reject changed scheme, host, credentials, controls and attributes even if allowlisted',()=>{
+ const c=creator('a',1,1);
+ for(const avatar of ['http://pbs.twimg.com/profile_images/1/a.jpg','https://pbs.twimg.com.evil.test/profile_images/1/a.jpg','https://user@pbs.twimg.com/profile_images/1/a.jpg','https://pbs.twimg.com/profile_images/1/a.jpg?x=1','https://pbs.twimg.com/profile_images/1/a.jpg#part','https://pbs.twimg.com/profile_images/1/a.jpg\n','https://pbs.twimg.com/profile_images/1/a.jpg" onerror="x']){
+   c.avatar=avatar;assert.equal(H.approvedAvatar(c,{a:avatar}),null,avatar);
+ }
+});
 test('freshness uses observation time',()=>{assert.equal(H.stale('2026-10-20',Date.parse('2026-10-24')),true);assert.equal(H.stale('2026-10-23',Date.parse('2026-10-24')),false);assert.equal(H.stale('bad'),true);});
 test('explicit mode validation',()=>assert.throws(()=>H.rank([creator('a',1,1)],'bad')));
 test('format preserves exact count separately',()=>{assert.equal(H.format(35170639),'35.2M');assert.equal(H.exact(35170639),'35,170,639');assert.equal(H.format(null),'Unknown');});
