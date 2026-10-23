@@ -1235,4 +1235,4 @@ ul,ol {
 #newsletter-form label,#newsletter-form p,#newsletter-form span,#newsletter-form small,#newsletter-form div{color:#f1ecdf!important}
 #newsletter-form a{color:#cdbfff!important}
 #newsletter-form input[type=email],#newsletter-form input[type=text]{color:#111!important;background:#fff!important}
-#newsletter-form input[type=checkbox]{accent-color:var(--gold)!important;box-sizing:border-box!important;width:18px!important;height:18px!important;min-width:18px!important;max-height:18px!important;flex:0 0 18px!important;padding:0!important;margin:0 8px 0 0!important;vertical-align:middle!important;outline:none!important;border:0!important;box-shadow:0 0 0 1px #f1ecdf!important;border-radius:3px!important}
+#newsletter-form input[type=checkbox]{accent-color:var(--gold)!important;box-sizing:border-box!important;width:18px!important;height:18px!important;min-width:18px!important;min-height:18px!important;max-height:18px!important;flex:0 0 18px!important;padding:0!important;margin:0 8px 0 0!important;vertical-align:middle!important;outline:none!important;border:0!important;box-shadow:0 0 0 1px #f1ecdf!important;border-radius:3px!important}
