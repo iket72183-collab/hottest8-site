@@ -8,7 +8,7 @@ import shutil
 from pathlib import Path
 from build_insights import build_insights, read_snapshots, ranked, ordered, count
 
-FILES=['index.html','about.html','rising.html','verify.html','404.html','style.css','core.js','site.js','app.js','insights.js','favicon.svg','og-image.png','robots.txt','sitemap.xml','llms.txt','rising_pool.json']
+FILES=['index.html','about.html','rising.html','verify.html','404.html','style.css','core.js','site.js','app.js','insights.js','favicon.svg','og-image.png','robots.txt','sitemap.xml','llms.txt']
 
 def safe_json(data):
     return json.dumps(data,ensure_ascii=True).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
@@ -95,7 +95,10 @@ def favicon_ico(n=32):
 def build(root,output):
     if output.resolve()==root.resolve():raise ValueError('Build output must not overwrite the source root')
     data=enrich(root);insights=build_insights(read_snapshots(root),read_snapshots(root,'emerging'),json.loads((root/'rising_pool.json').read_text()))
-    expected=set(FILES+['data.json','data.js','insights.json','rankings.json','favicon.ico','avatars.js']) | {str(p.relative_to(root)) for p in (root/'snapshots').rglob('*.json')}
+    # Standard dated snapshots are a documented public data export linked from
+    # rankings.json. Emerging snapshots and the pool are build inputs only.
+    public_snapshots=sorted((root/'snapshots').glob('????-??-??.json'))
+    expected=set(FILES+['data.json','data.js','insights.json','rankings.json','favicon.ico','avatars.js']) | {str(p.relative_to(root)) for p in public_snapshots}
     if output.exists():
         unexpected=[str(p.relative_to(output)) for p in output.rglob('*') if (p.is_file() or p.is_symlink()) and (p.is_symlink() or str(p.relative_to(output)) not in expected)]
         if unexpected:raise ValueError('Unexpected files in build output; use a new empty output directory: '+', '.join(unexpected))
@@ -130,7 +133,7 @@ def build(root,output):
     rankings['changes_note']='Week-over-week changes are not computed by this build. Rising entries carry their own actual observation window.'
     for k in ['rising8','milestones','closest_battles']:rankings[k]={a:b for a,b in insights[k].items() if a!='all'}
     (output/'rankings.json').write_text(json.dumps(rankings,indent=2)+'\n')
-    for source in (root/'snapshots').rglob('*.json'):
+    for source in public_snapshots:
         target=output/source.relative_to(root);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target)
     print(f'Built {output}: {len(data["creators"])} creators, {len(insights["rising8"]["items"])} Rising entries. Offline; no external services called.')
 

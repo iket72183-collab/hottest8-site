@@ -26,14 +26,15 @@ class Handler(BaseHTTPRequestHandler):
             scenario=json.loads(self.rfile.read(n))['scenario']
             if scenario not in SCENARIOS:raise ValueError()
         except (ValueError,KeyError):return self.respond(400,b'Invalid fixture')
-        self.server.scenario=scenario;self.respond(200,b'Fixture selected')
+        self.server.scenario=scenario;self.server.mock_requests=0;self.respond(200,b'Fixture selected')
     def do_HEAD(self):self.do_GET()
     def do_GET(self):
         raw=unquote(urlsplit(self.path).path)
-        if raw=='/__test__/state' and self.server.scenarios:return self.respond(200,json.dumps({'scenario':self.server.scenario}).encode(),'application/json')
+        if raw=='/__test__/state' and self.server.scenarios:return self.respond(200,json.dumps({'scenario':self.server.scenario,'mock_requests':self.server.mock_requests}).encode(),'application/json')
         if raw=='/__mock__/analytics.js':return self.respond(200,b'window.fixtureEvents=[];window.goatcounter={count:function(e){window.fixtureEvents.push(e)}};','text/javascript')
         if raw=='/__mock__/a10ae064-cd08-11f1-b060-c974730c96d2.js':
-            if self.server.scenario=='newsletter-outage' or (self.server.scenario=='newsletter-retry' and not urlsplit(self.path).query):return self.respond(503,b'Fixture provider outage')
+            self.server.mock_requests+=1
+            if self.server.scenario=='newsletter-outage' or (self.server.scenario=='newsletter-retry' and self.server.mock_requests==1):return self.respond(503,b'Fixture provider outage')
             script=b'''const f=document.createElement('form'); f.innerHTML='<label>Fixture email<input type="email" required name="email"></label><button>Test subscription</button>';f.addEventListener('submit',e=>{e.preventDefault();f.setAttribute('data-submitted','local-only');});document.getElementById('newsletter-form').append(f);'''
             return self.respond(200,script,'text/javascript')
         path=(self.server.root/raw.lstrip('/')).resolve()
@@ -64,5 +65,5 @@ class Handler(BaseHTTPRequestHandler):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8768);parser.add_argument('--test-scenarios',action='store_true');parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]/'dist');args=parser.parse_args()
-    server=ThreadingHTTPServer(('127.0.0.1',args.port),Handler);server.root=args.root.resolve();server.scenarios=args.test_scenarios;server.scenario='normal';server.daemon_threads=True
+    server=ThreadingHTTPServer(('127.0.0.1',args.port),Handler);server.root=args.root.resolve();server.scenarios=args.test_scenarios;server.scenario='normal';server.mock_requests=0;server.daemon_threads=True
     print(f'Hottest8 local preview: http://127.0.0.1:{args.port} (test scenarios: {args.test_scenarios}; no live email)',flush=True);server.serve_forever()

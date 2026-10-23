@@ -63,7 +63,7 @@ Combined follows are summed platform counts, not unique people. Ties use competi
 
 ## Newsletter and privacy
 
-The pre-existing public EmailOctopus form loads immediately on production pages with signup (`index.html` and `verify.html`), without a separate checkbox or continue button. At six seconds, absence of `form input[type=email]` triggers exactly one cache-busted retry; seven seconds later, a still-missing form reveals the reload/mailto-subscribe fallback. Local previews disable production scripts; test scenarios substitute local mocks.
+On the homepage and Fake Check page, the EmailOctopus form loads automatically right after 18+ age confirmation (or on page load when age was already confirmed). Before age confirmation, the site does not insert the provider script or create a newsletter-provider request. A failed or non-rendering embed shows a retry button (which clears the previous embed before reinserting) and a mailto fallback. Local previews disable production scripts; test scenarios substitute local mocks.
 
 Fake Check retains its early-access signup and main's exact `fakecheck-signup` payload (`title: 'Fake Check signup', event: true`), delegated from `.eoform` submissions with a single 500 ms retry if GoatCounter is late. **This event measures an attempted submission, not accepted subscription or delivery.** It carries no email/name. The existing GoatCounter is the only analytics integration; no additional trackers were added.
 
@@ -71,9 +71,9 @@ The weekly newsletter remains Top 8 + Industry Dispatch; the restored Fake Check
 
 ## Release and rollback — approval required
 
-Read-only Render verification on 2026-10-23 confirmed service `srv-dbc31ujrjlhs73al9icg`, repo `iket72183-collab/hottest8-site`, branch `main`, automatic deploy on commit, build `echo ok`, publish `./`, and **PR previews disabled**. Opening a PR does not enable previews. `render.yaml` is a proposed reference; editing it alone does not establish that dashboard settings will change.
+Read-only Render verification on 2026-10-23 confirmed service `srv-dbc31ujrjlhs73al9icg`, repo `iket72183-collab/hottest8-site`, branch `main`, automatic deploy on commit, build `python3 tools/build_site.py`, publish `dist`, and **PR previews disabled**. These settings already match the allowlisted build; no hosting setting change is required for this patch. Opening a PR does not enable previews. `render.yaml` is a proposed reference; editing it alone does not establish that dashboard settings will change.
 
-**Do not merge this branch into the current auto-deploy configuration.** After Isaac approves a release, coordinate build command `python3 tools/build_site.py` and publish directory `dist` with the merge. Recheck main first because the daily job may have moved it. Mirror the exact dashboard settings below; stage the real provider form before enforcing CSP. No account setting was changed during this task.
+**Do not merge this branch without Isaac’s release approval.** The live service already reports build command `python3 tools/build_site.py` and publish directory `dist`; verify both remain unchanged immediately before release. Recheck main first because the daily job may have moved it. Mirror the exact dashboard settings below; stage the real provider form before enforcing CSP. No account setting was changed during this task.
 
 ### Exact Render dashboard settings for the owner
 

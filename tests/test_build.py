@@ -42,8 +42,18 @@ class BuildTests(unittest.TestCase):
                 self.assertTrue(path.is_file(),f'{name}: {href}')
                 if url.fragment:self.assertIn(unquote(url.fragment),pages[target].ids,f'{name}: {href}')
     def test_static_output_excludes_maintenance_and_dependencies(self):
-        for forbidden in ['tools','tests','node_modules','package.json','render.yaml','.git','docs']:
+        for forbidden in ['tools','tests','node_modules','package.json','package-lock.json','render.yaml','README.md','.git','docs','rising_pool.json','snapshots/emerging']:
             self.assertFalse((self.output/forbidden).exists(),forbidden)
+    def test_allowlisted_public_artifact_preserves_required_assets_only(self):
+        required=['index.html','about.html','rising.html','verify.html','404.html','style.css','core.js','site.js','app.js','insights.js','data.json','data.js','avatars.js','rankings.json','insights.json','favicon.svg','favicon.ico','og-image.png','robots.txt','sitemap.xml','llms.txt']
+        for name in required:self.assertTrue((self.output/name).is_file(),name)
+        rankings=json.loads((self.output/'rankings.json').read_text())
+        self.assertTrue(rankings['snapshots'])
+        for url in rankings['snapshots']:
+            path=urlsplit(url).path.lstrip('/')
+            self.assertTrue((self.output/path).is_file(),path)
+        self.assertTrue(list((self.output/'snapshots').glob('????-??-??.json')))
+        self.assertFalse((self.output/'snapshots'/'emerging').exists())
     def test_no_inline_handlers_or_scripts(self):
         for p in self.output.glob('*.html'):
             doc=Document(p.read_text());self.assertFalse(doc.inline_events,p.name);self.assertTrue(all(doc.scripts),p.name)
@@ -69,7 +79,15 @@ class BuildTests(unittest.TestCase):
     def test_no_package_runtime_dependencies(self):
         d=json.loads((ROOT/'package.json').read_text());self.assertFalse(d.get('dependencies'))
     def test_requested_fakecheck_copy_and_signup(self):
-        text=(self.output/'verify.html').read_text();self.assertIn('Coming Soon',text);self.assertIn('100+ accounts',text);self.assertIn('our AI algorithm',text);self.assertIn('privately to the creator only',text);self.assertIn('id="newsletter-form"',text)
+        text=(self.output/'verify.html').read_text();self.assertIn('Coming Soon',text);self.assertIn('100+ accounts',text);self.assertIn('our AI algorithm',text);self.assertIn('privately to the creator only',text);self.assertIn('id="newsletter-form"',text);self.assertIn('Retry loading signup form',text);self.assertIn('data-load-newsletter',text)
+    def test_signup_pages_have_no_provider_markup_or_preconnect(self):
+        for name in ['index.html','verify.html']:
+            text=(self.output/name).read_text()
+            self.assertIn('Retry loading signup form',text)
+            self.assertNotIn('eomail5.com',text)
+            doc=Document(text)
+            self.assertFalse(any(x=='https://eomail5.com' for x in re.findall(r'<link[^>]+href="([^"]+)',text)))
+            self.assertFalse(any('emailoctopus' in (x or '').lower() for x in doc.scripts))
     def test_all_navs_match_requested_order(self):
         for p in self.output.glob('*.html'):
             nav=re.search(r'<nav aria-label="Main navigation">(.*?)</nav>',p.read_text()).group(1)
@@ -77,8 +95,12 @@ class BuildTests(unittest.TestCase):
             self.assertIn('href="/about.html"',nav)
     def test_minimal_home_and_complete_about(self):
         home=(self.output/'index.html').read_text().split('<main',1)[1].split('</main>')[0]
-        self.assertNotIn('class="hero"',home);self.assertNotIn('class="stats"',home);self.assertNotIn('editorial-rail',home);self.assertNotIn('newsletter-consent',home)
+        self.assertNotIn('class="hero"',home);self.assertNotIn('class="stats"',home);self.assertNotIn('editorial-rail',home);self.assertIn('Retry loading signup form',home)
         self.assertIn('Muse research',home);self.assertIn('class="hero"',(self.output/'about.html').read_text())
+    def test_render_build_and_publish_match_allowlisted_artifact(self):
+        text=(ROOT/'render.yaml').read_text()
+        self.assertIn('buildCommand: python3 tools/build_site.py',text)
+        self.assertIn('staticPublishPath: dist',text)
     def test_no_placeholders_in_any_public_html(self):
         for p in self.output.glob('*.html'):self.assertNotRegex(p.read_text(),r'\{\{[^{}]+\}\}|<!--RANKINGS-->')
     def test_unknown_placeholder_fails_closed(self):
