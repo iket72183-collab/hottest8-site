@@ -10,7 +10,7 @@ services:
     headers:
       - path: /*
         name: Strict-Transport-Security
-        value: max-age=31536000
+        value: max-age=31536000; includeSubDomains
       - path: /*
         name: X-Content-Type-Options
         value: nosniff
@@ -23,6 +23,10 @@ services:
       - path: /*
         name: Permissions-Policy
         value: camera=(), microphone=(), geolocation=()
-# Render uses the root 404.html automatically for missing static paths.
-# No wildcard rewrite: unknown addresses must return a real 404.
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /404.html
+# Reference only: mirror these settings in the dashboard; not Blueprint-synced.
+# Retains main's existing catch-all route. Confirm missing-path HTTP semantics on release.
 # A CSP must be staged against the provider form/reCAPTCHA before enforcement.

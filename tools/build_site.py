@@ -49,6 +49,7 @@ def prerender(data):
 
 
 def build(root,output):
+    if output.resolve()==root.resolve():raise ValueError('Build output must not overwrite the source root')
     data=enrich(root);insights=build_insights(read_snapshots(root),read_snapshots(root,'emerging'),json.loads((root/'rising_pool.json').read_text()))
     expected=set(FILES+['data.json','data.js','insights.json','rankings.json']) | {str(p.relative_to(root)) for p in (root/'snapshots').rglob('*.json')}
     if output.exists():
@@ -56,6 +57,7 @@ def build(root,output):
         if unexpected:raise ValueError('Unexpected files in build output; use a new empty output directory: '+', '.join(unexpected))
     output.mkdir(parents=True,exist_ok=True)
     replacements={'{{TOTAL}}':fmt(sum(c['x_followers']+c['ig_followers'] for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified')),'{{COUNT}}':str(len(data['creators'])),'{{DATE}}':data['as_of'],'{{SOURCE_NOTE}}':html.escape(data.get('as_of_note','')),'<!--RANKINGS-->':prerender(data)}
+    rendered={}
     for f in FILES:
         if f.endswith('.html'):
             text=(root/f).read_text()
@@ -63,7 +65,10 @@ def build(root,output):
             if f=='index.html':
                 entries=[{'@type':'ListItem','position':rank,'item':{'@type':'Person','name':c['name'],'sameAs':['https://x.com/'+c['x_handle'],'https://www.instagram.com/'+c['ig_handle']]}} for rank,c in ranked([c for c in data['creators'] if count(c.get('x_followers')) and count(c.get('ig_followers')) and c.get('ig_status')=='verified'],lambda c:c['x_followers']+c['ig_followers'])[:8]]
                 text=text.replace('</head>','<script type="application/ld+json">'+safe_json({'@context':'https://schema.org','@type':'ItemList','name':'Hottest8 tracked Combined ranking','dateModified':data['as_of'],'itemListElement':entries})+'</script></head>')
-            (output/f).write_text(text)
+            if re.search(r'\{\{[^{}]+\}\}|<!--RANKINGS-->',text):raise ValueError('Unresolved template marker in '+f)
+            rendered[f]=text
+    for f in FILES:
+        if f in rendered:(output/f).write_text(rendered[f])
         else:shutil.copyfile(root/f,output/f)
     (output/'data.json').write_text(json.dumps(data,indent=2)+'\n')
     avatars=json.loads((root/'approved-avatars.json').read_text())
@@ -74,7 +79,7 @@ def build(root,output):
     combined=[]
     for rank,c in ranked(valid,lambda c:c['x_followers']+c['ig_followers']):combined.append({'rank':rank,**{k:v for k,v in c.items() if k!='avatar'},'combined_followers':c['x_followers']+c['ig_followers'],'x_url':'https://x.com/'+c['x_handle'],'ig_url':'https://www.instagram.com/'+c['ig_handle']})
     rankings.update(top8=combined[:8],also_ranked=combined[8:],combined_ranked_count=len(valid),hero_total_combined=sum(c['combined_followers'] for c in combined),as_of_note=data.get('as_of_note','See per-platform observation dates.'),pending_instagram=[{k:v for k,v in c.items() if k!='avatar'} for c in data['creators'] if c not in valid],x_only_ranking=[{'rank':rank,'name':c['name'],'x_handle':c['x_handle'],'x_followers':c['x_followers']} for rank,c in ranked([c for c in data['creators'] if count(c.get('x_followers'))],lambda c:c['x_followers'])])
-    rankings['sources']={'x':'Maintainer-supplied X observations; see x_checked_at per account. API access and commercial permissions were not audited.','instagram':'Maintainer-supplied Instagram observations; see ig_checked_at or ig_as_of and carried-forward flags per account.'}
+    rankings['sources']={'x':data.get('x_source','See x_checked_at per account.'),'instagram':data.get('ig_source','Instagram API (Muse research); see per-account observation dates.')}
     rankings['snapshots']=['https://hottest8.com/'+str(p.relative_to(root)) for p in sorted((root/'snapshots').glob('????-??-??.json'))]
     rankings['changes_note']='Week-over-week changes are not computed by this build. Rising entries carry their own actual observation window.'
     for k in ['rising8','milestones','closest_battles']:rankings[k]={a:b for a,b in insights[k].items() if a!='all'}

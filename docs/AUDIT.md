@@ -1,5 +1,7 @@
 # Audit and release findings — 2026-10-23
 
+> Follow-up status: the original audit below records the first redesign. See [FOLLOWUP.md](FOLLOWUP.md) for the requested restored signup behavior, Fake Check copy/event, minimal homepage, sync script, and current test results.
+
 Baseline: `5f84c2320accc5322e0e93ce36289592e322b25d`. Isaac supplied Grok Bot's confirmation that all work was on main and no uncommitted work existed on Grok's computer. The Mac had no established checkout; work was isolated on `codex/hottest8-redesign-20261023`. No open PRs existed at intake. Six live file hashes (HTML, CSS, data, rankings, insights and Render reference) matched the baseline. Baseline JS/Python syntax checks passed, and the original generator reproduced baseline insights in a temporary directory. There was no automated suite or substantive build (`echo ok`).
 
 ## Ranked findings

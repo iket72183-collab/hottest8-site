@@ -1,5 +1,7 @@
 # Reproducible test record
 
+> Follow-up status: the original audit below records the first redesign. See [FOLLOWUP.md](FOLLOWUP.md) for the requested restored signup behavior, Fake Check copy/event, minimal homepage, sync script, and current test results.
+
 Executed on 2026-10-23, macOS, Node v24.22.1, Python 3.14.3, Chrome via the connected browser. No production signups, messages, accounts, paid scans, API load or deployments occurred.
 
 ## Commands and results

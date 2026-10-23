@@ -1,5 +1,7 @@
 # FakeCheck: evaluation gate, not an implemented detector
 
+> Follow-up status: the original audit below records the first redesign. See [FOLLOWUP.md](FOLLOWUP.md) for the requested restored signup behavior, Fake Check copy/event, minimal homepage, sync script, and current test results.
+
 The baseline contains a marketing page and shared newsletter embed. There is no classifier, scan backend, evidence store, platform-report integration, labeled evaluation set or reproducible proof for the old “100+ accounts” statement. The page remains **Coming Soon**. No creators were contacted, scans purchased, accounts reported or takedowns attempted.
 
 These **synthetic offline scenarios** define expected handling; they are not human-labeled evaluation results or proof of accuracy:

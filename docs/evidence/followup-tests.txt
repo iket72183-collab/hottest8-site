@@ -1,0 +1,91 @@
+npm notice run hottest8-site@1.0.0 test
+npm notice run node --test tests/*.test.cjs && python3 -m unittest discover -s tests -v
+✔ combined follows sum without claiming uniqueness (0.877917ms)
+✔ missing is not zero and zero is a valid observation (0.157959ms)
+✔ separate platform membership (0.173875ms)
+✔ competition ties and deterministic boundary order (5.762ms)
+✔ empty snapshot is a legitimate empty state (0.158667ms)
+✔ reject bad count -1 (0.164541ms)
+✔ reject bad count NaN (0.056875ms)
+✔ reject bad count Infinity (0.079416ms)
+✔ reject bad count 1.5 (0.155792ms)
+✔ reject bad count 100 (0.124625ms)
+✔ reject bad count true (0.069ms)
+✔ reject bad count 9007199254740992 (0.045167ms)
+✔ reject sum overflow (0.091ms)
+✔ reject duplicate identity case-insensitively (0.206542ms)
+✔ reject URL/attribute injection in handles (0.290791ms)
+✔ name text can contain markup without becoming a URL (0.129042ms)
+✔ unknown avatars never load, including changed URLs (0.121083ms)
+✔ freshness uses observation time (0.044625ms)
+✔ explicit mode validation (0.052958ms)
+✔ format preserves exact count separately (17.867291ms)
+✔ insights reject invented weekly windows and inconsistent percentages (0.680084ms)
+✔ an unknown or rejected Instagram status is not verified (0.047458ms)
+✔ production signup loads immediately without a checkbox or click (1.35025ms)
+✔ a rendered form suppresses retry and fallback (0.3315ms)
+✔ blocked form retries once after 6s then shows fallback after 7s (1.00425ms)
+✔ successful retry suppresses fallback (0.438375ms)
+✔ localhost never loads production email (0.300625ms)
+✔ Fake Check restores exact delegated submission event payload (0.687792ms)
+✔ Fake Check retries the event once after 500ms when analytics is late (0.359875ms)
+✔ unrelated forms and other pages do not emit Fake Check event (0.517292ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.242917
+test_all_navs_match_requested_order (test_build.BuildTests.test_all_navs_match_requested_order) ... ok
+test_backup_json_cannot_close_script (test_build.BuildTests.test_backup_json_cannot_close_script) ... ok
+test_guard_old_artifacts (test_build.BuildTests.test_guard_old_artifacts) ... ok
+test_internal_links_and_fragments (test_build.BuildTests.test_internal_links_and_fragments) ... ok
+test_minimal_home_and_complete_about (test_build.BuildTests.test_minimal_home_and_complete_about) ... ok
+test_no_inline_handlers_or_scripts (test_build.BuildTests.test_no_inline_handlers_or_scripts) ... ok
+test_no_package_runtime_dependencies (test_build.BuildTests.test_no_package_runtime_dependencies) ... ok
+test_no_placeholders_in_any_public_html (test_build.BuildTests.test_no_placeholders_in_any_public_html) ... ok
+test_platform_dates_enriched_from_snapshots (test_build.BuildTests.test_platform_dates_enriched_from_snapshots) ... ok
+test_prerendered_ranking_matches_json (test_build.BuildTests.test_prerendered_ranking_matches_json) ... ok
+test_requested_fakecheck_copy_and_signup (test_build.BuildTests.test_requested_fakecheck_copy_and_signup) ... ok
+test_static_output_excludes_maintenance_and_dependencies (test_build.BuildTests.test_static_output_excludes_maintenance_and_dependencies) ... ok
+test_unknown_placeholder_fails_closed (test_build.BuildTests.test_unknown_placeholder_fails_closed) ... ok
+test_bad_counts_rejected (test_insights.InsightsTests.test_bad_counts_rejected) ... ok
+test_cap_and_floor (test_insights.InsightsTests.test_cap_and_floor) ... ok
+test_carried_forward_not_growth (test_insights.InsightsTests.test_carried_forward_not_growth) ... ok
+test_duplicate_observation_rejected (test_insights.InsightsTests.test_duplicate_observation_rejected) ... ok
+test_exact_cap_allowed (test_insights.InsightsTests.test_exact_cap_allowed) ... ok
+test_exact_week (test_insights.InsightsTests.test_exact_week) ... ok
+test_ig_identity_change (test_insights.InsightsTests.test_ig_identity_change) ... ok
+test_ig_timestamp_offsets_compare_actual_time (test_insights.InsightsTests.test_ig_timestamp_offsets_compare_actual_time) ... ok
+test_legacy_name_change_not_joined (test_insights.InsightsTests.test_legacy_name_change_not_joined) ... ok
+test_milestone_boundaries (test_insights.InsightsTests.test_milestone_boundaries) ... ok
+test_missing_instagram_cannot_prove_cap (test_insights.InsightsTests.test_missing_instagram_cannot_prove_cap) ... ok
+test_missing_x (test_insights.InsightsTests.test_missing_x) ... ok
+test_mixed_identity_evidence_not_joined (test_insights.InsightsTests.test_mixed_identity_evidence_not_joined) ... ok
+test_negative_and_zero_retained_but_not_published (test_insights.InsightsTests.test_negative_and_zero_retained_but_not_published) ... ok
+test_new_instagram_coverage_is_not_growth (test_insights.InsightsTests.test_new_instagram_coverage_is_not_growth) ... ok
+test_no_history (test_insights.InsightsTests.test_no_history) ... ok
+test_real_history_recomputes_all_growth (test_insights.InsightsTests.test_real_history_recomputes_all_growth) ... ok
+test_renamed_account_same_id (test_insights.InsightsTests.test_renamed_account_same_id) ... ok
+test_reused_handle_different_id (test_insights.InsightsTests.test_reused_handle_different_id) ... ok
+test_short_window_not_week (test_insights.InsightsTests.test_short_window_not_week) ... ok
+test_sparse_history_not_week (test_insights.InsightsTests.test_sparse_history_not_week) ... ok
+test_ties_deterministic (test_insights.InsightsTests.test_ties_deterministic) ... ok
+test_top8_excluded_from_emerging (test_insights.InsightsTests.test_top8_excluded_from_emerging) ... ok
+test_verified_recheck (test_insights.InsightsTests.test_verified_recheck) ... ok
+test_x_carried_forward_not_growth (test_insights.InsightsTests.test_x_carried_forward_not_growth) ... ok
+test_x_repeated_observation_not_growth (test_insights.InsightsTests.test_x_repeated_observation_not_growth) ... ok
+test_changed_legacy_identity_fails_without_partial_write (test_sync.SyncTests.test_changed_legacy_identity_fails_without_partial_write) ... ok
+test_data_js_matches_json (test_sync.SyncTests.test_data_js_matches_json) ... ok
+test_editorial_fields_preserved_but_observation_metadata_replaced (test_sync.SyncTests.test_editorial_fields_preserved_but_observation_metadata_replaced) ... ok
+test_idempotent_exports_and_muse_credit (test_sync.SyncTests.test_idempotent_exports_and_muse_credit) ... ok
+test_latest_snapshot_wins_and_guard_requires_sync (test_sync.SyncTests.test_latest_snapshot_wins_and_guard_requires_sync) ... ok
+test_pending_counts_remain_unknown (test_sync.SyncTests.test_pending_counts_remain_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 0.061s
+
+OK
+Built /var/folders/l5/btc_n1n95lvcnhky2r1j38dr0000gn/T/tmptei9z7cw/dist: 20 creators, 8 Rising entries. Offline; no external services called.

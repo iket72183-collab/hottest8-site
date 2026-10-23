@@ -1201,3 +1201,31 @@ ul,ol {
 .platform-count {
   font-size:12px
 }
+
+/* Minimal home and shared, ungated signup. */
+.home-minimal { max-width: 1040px; padding-top: 42px; }
+.home-minimal .section-heading { margin-bottom: 24px; }
+.home-minimal h1 { font-size: clamp(40px, 5vw, 60px); margin-bottom: 0; }
+.home-minimal .cards { margin-top: 12px; }
+.source-note { margin-top: 24px; max-width: 80ch; }
+.compact-newsletter { padding: 36px 0; margin-top: 38px; gap: 36px; }
+.compact-newsletter h2 { font-size: 30px; margin-bottom: 12px; }
+.compact-newsletter p { font-size: 13px; margin-bottom: 10px; }
+.compact-newsletter .newsletter-panel { padding: 24px; }
+.compact-footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px 36px; }
+.compact-footer nav { margin: 0; }
+.compact-footer .footer-fine { margin: 0; }
+.inline-button { border: 0; background: none; color: var(--gold); padding: 0; text-decoration: underline; text-underline-offset: 4px; }
+.eoform input:not([type=checkbox]):not([type=radio]) { max-width: 100%; }
+.about-context { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 48px 0; }
+.about-context .external-note { grid-column: 1 / -1; }
+.about-newsletter-copy { border-top: 1px solid var(--line); padding-top: 40px; max-width: 720px; }
+.scan-note { border-left: 2px solid var(--gold); padding-left: 20px; max-width: 66ch; }
+@media(max-width: 760px) {
+  .site-header { gap: 20px; padding-top: 20px; padding-bottom: 20px; }
+  .site-header nav { gap: 8px 22px; }
+  .home-minimal { padding-top: 30px; }
+  .compact-newsletter { grid-template-columns: 1fr; gap: 12px; }
+  .compact-footer { flex-direction: column; padding: 24px 18px; gap: 18px; }
+  .about-context { grid-template-columns: 1fr; gap: 20px; }
+}

@@ -59,8 +59,26 @@ class BuildTests(unittest.TestCase):
         self.assertNotIn('</script>',safe_json({'name':'</script><script>evil</script>'}))
     def test_no_package_runtime_dependencies(self):
         d=json.loads((ROOT/'package.json').read_text());self.assertFalse(d.get('dependencies'))
-    def test_no_accuracy_or_scan_claim_on_fakecheck(self):
-        text=(self.output/'verify.html').read_text();self.assertIn('Coming Soon',text);self.assertNotIn('100+ accounts',text);self.assertNotIn('data-form=',text)
+    def test_requested_fakecheck_copy_and_signup(self):
+        text=(self.output/'verify.html').read_text();self.assertIn('Coming Soon',text);self.assertIn('100+ accounts',text);self.assertIn('our AI algorithm',text);self.assertIn('privately to the creator only',text);self.assertIn('id="newsletter-form"',text)
+    def test_all_navs_match_requested_order(self):
+        for p in self.output.glob('*.html'):
+            nav=re.search(r'<nav aria-label="Main navigation">(.*?)</nav>',p.read_text()).group(1)
+            self.assertEqual(re.findall(r'>([^<]+)</a>',nav),['Top 8','Rising 8','Fake Check','Newsletter','About'])
+            self.assertIn('href="/about.html"',nav)
+    def test_minimal_home_and_complete_about(self):
+        home=(self.output/'index.html').read_text().split('<main',1)[1].split('</main>')[0]
+        self.assertNotIn('class="hero"',home);self.assertNotIn('class="stats"',home);self.assertNotIn('editorial-rail',home);self.assertNotIn('newsletter-consent',home)
+        self.assertIn('Muse research',home);self.assertIn('class="hero"',(self.output/'about.html').read_text())
+    def test_no_placeholders_in_any_public_html(self):
+        for p in self.output.glob('*.html'):self.assertNotRegex(p.read_text(),r'\{\{[^{}]+\}\}|<!--RANKINGS-->')
+    def test_unknown_placeholder_fails_closed(self):
+        with tempfile.TemporaryDirectory() as temp:
+            fixture=Path(temp)/'source'
+            shutil.copytree(ROOT,fixture,ignore=shutil.ignore_patterns('node_modules','dist','.git','docs','__pycache__'))
+            with (fixture/'index.html').open('a') as f:f.write('{{UNRECOGNIZED}}')
+            with self.assertRaisesRegex(ValueError,'Unresolved template'):build(fixture,Path(temp)/'dist')
+            self.assertFalse((Path(temp)/'dist'/'index.html').exists())
     def test_guard_old_artifacts(self):
         extra=self.output/'unexpected.txt';extra.write_text('should fail closed')
         try:

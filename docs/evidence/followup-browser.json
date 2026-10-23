@@ -1,0 +1,170 @@
+[
+  {
+    "layout": {
+      "h1": 1,
+      "nav": [
+        "Top 8",
+        "Rising 8",
+        "Fake Check",
+        "Newsletter",
+        "About"
+      ],
+      "path": "/",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "audit": {
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  },
+  {
+    "layout": {
+      "h1": 1,
+      "nav": [
+        "Top 8",
+        "Rising 8",
+        "Fake Check",
+        "Newsletter",
+        "About"
+      ],
+      "path": "/rising.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "audit": {
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  },
+  {
+    "layout": {
+      "h1": 1,
+      "nav": [
+        "Top 8",
+        "Rising 8",
+        "Fake Check",
+        "Newsletter",
+        "About"
+      ],
+      "path": "/about.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "audit": {
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  },
+  {
+    "layout": {
+      "h1": 1,
+      "nav": [
+        "Top 8",
+        "Rising 8",
+        "Fake Check",
+        "Newsletter",
+        "About"
+      ],
+      "path": "/verify.html",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    "audit": {
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  },
+  {
+    "layout": {
+      "h1": 1,
+      "nav": [
+        "Top 8",
+        "Rising 8",
+        "Fake Check",
+        "Newsletter",
+        "About"
+      ],
+      "path": "/",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    "audit": {
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  },
+  {
+    "layout": {
+      "h1": 1,
+      "nav": [
+        "Top 8",
+        "Rising 8",
+        "Fake Check",
+        "Newsletter",
+        "About"
+      ],
+      "path": "/rising.html",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    "audit": {
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  },
+  {
+    "layout": {
+      "h1": 1,
+      "nav": [
+        "Top 8",
+        "Rising 8",
+        "Fake Check",
+        "Newsletter",
+        "About"
+      ],
+      "path": "/about.html",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    "audit": {
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  },
+  {
+    "layout": {
+      "h1": 1,
+      "nav": [
+        "Top 8",
+        "Rising 8",
+        "Fake Check",
+        "Newsletter",
+        "About"
+      ],
+      "path": "/verify.html",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    "audit": {
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  }
+]

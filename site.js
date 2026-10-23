@@ -1,4 +1,4 @@
-/* Shared age controls and opt-in third-party loading. No production services in local previews. */
+/* Shared age controls and immediate newsletter loading. No production services in local previews. */
 (() => {
   'use strict';
   const gate=document.getElementById('agegate'), shell=document.getElementById('site-shell');
@@ -16,17 +16,23 @@
   document.getElementById('agein')?.addEventListener('click',enter);
   gate?.addEventListener('keydown',e=>{if(e.key==='Tab'){const buttons=[...gate.querySelectorAll('button,a')];e.preventDefault();const i=buttons.indexOf(document.activeElement);buttons[(i+(e.shiftKey?-1:1)+buttons.length)%buttons.length].focus();}if(e.key==='Escape')e.preventDefault();});
   document.getElementById('copyprompt')?.addEventListener('click',async e=>{try{await navigator.clipboard.writeText(document.getElementById('aiprompt').textContent);e.target.textContent='Copied';}catch{e.target.textContent='Select and copy the text';}});
-  const button=document.getElementById('load-newsletter'), consent=document.getElementById('newsletter-consent'), box=document.getElementById('newsletter-form'), status=document.getElementById('newsletter-status');
-  if(!button)return;
-  consent.addEventListener('change',()=>{button.disabled=!consent.checked;});
-  let started=false;
-  button.addEventListener('click',()=>{
-    if(started||!consent.checked)return;
-    if(!production){status.textContent='Local preview: email services are disabled. No address is collected or sent.';return;}
-    started=true;button.disabled=true;consent.disabled=true;status.textContent='Loading the secure signup form…';
-    const script=document.createElement('script');script.src='https://eomail5.com/form/a10ae064-cd08-11f1-b060-c974730c96d2.js';script.async=true;script.dataset.form='a10ae064-cd08-11f1-b060-c974730c96d2';
-    const fail=()=>{status.textContent='The signup provider did not load. You can reload this page to try again, or contact hello@hottest8.com for help. Nothing has been submitted here.';};
-    const observer=new MutationObserver(()=>{if(box.querySelector('input[type="email"]')){status.textContent='Complete the provider’s form below to subscribe.';clearTimeout(timer);observer.disconnect();}});
-    const timer=setTimeout(()=>{observer.disconnect();fail();},10000);observer.observe(box,{childList:true,subtree:true});script.addEventListener('error',()=>{clearTimeout(timer);observer.disconnect();fail();},{once:true});box.append(script);
-  });
+  // Preserve main's delegated submission event: an attempt, not provider acceptance.
+  if(location.pathname.endsWith('/verify.html')) {
+    document.addEventListener('submit',function(e){var f=e.target;if(!f||!f.closest||!f.closest('.eoform'))return;
+      function c(){if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'fakecheck-signup',title:'Fake Check signup',event:true});return true}}
+      if(!c())setTimeout(c,500)},true);window.h8fcTrack=1;
+  }
+  const box=document.querySelector('#newsletter .eoform'), fallback=document.getElementById('nlfb');
+  if(!box)return;
+  document.querySelector('[data-reload-newsletter]')?.addEventListener('click',()=>location.reload());
+  if(!production){box.textContent='Local preview: email services are disabled. No address is collected or sent.';return;}
+  const id='a10ae064-cd08-11f1-b060-c974730c96d2';
+  const rendered=()=>!!box.querySelector('form input[type="email"]');
+  function insert(retry=false){const script=document.createElement('script');script.async=true;script.src='https://eomail5.com/form/'+id+'.js'+(retry?'?r='+Date.now():'');script.setAttribute('data-form',id);box.append(script);}
+  insert();
+  setTimeout(()=>{
+    if(rendered())return;
+    insert(true);
+    setTimeout(()=>{if(!rendered()&&fallback)fallback.hidden=false;},7000);
+  },6000);
 })();
