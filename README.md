@@ -63,7 +63,7 @@ Combined follows are summed platform counts, not unique people. Ties use competi
 
 ## Newsletter and privacy
 
-On the homepage and Fake Check page, the EmailOctopus form is requested only after a visitor chooses **Load signup form**. Before that choice, the site does not insert the provider script or create a newsletter-provider request. The button is inside the age-gated page shell; the loader also checks age confirmation. A failed or non-rendering embed offers an explicit retry and mailto fallback. Local previews disable production scripts; test scenarios substitute local mocks.
+On the homepage and Fake Check page, the EmailOctopus form loads automatically right after 18+ age confirmation (or on page load when age was already confirmed). Before age confirmation, the site does not insert the provider script or create a newsletter-provider request. A failed or non-rendering embed shows a retry button (which clears the previous embed before reinserting) and a mailto fallback. Local previews disable production scripts; test scenarios substitute local mocks.
 
 Fake Check retains its early-access signup and main's exact `fakecheck-signup` payload (`title: 'Fake Check signup', event: true`), delegated from `.eoform` submissions with a single 500 ms retry if GoatCounter is late. **This event measures an attempted submission, not accepted subscription or delivery.** It carries no email/name. The existing GoatCounter is the only analytics integration; no additional trackers were added.
 

@@ -79,11 +79,11 @@ class BuildTests(unittest.TestCase):
     def test_no_package_runtime_dependencies(self):
         d=json.loads((ROOT/'package.json').read_text());self.assertFalse(d.get('dependencies'))
     def test_requested_fakecheck_copy_and_signup(self):
-        text=(self.output/'verify.html').read_text();self.assertIn('Coming Soon',text);self.assertIn('100+ accounts',text);self.assertIn('our AI algorithm',text);self.assertIn('privately to the creator only',text);self.assertIn('id="newsletter-form"',text);self.assertIn('Load signup form',text);self.assertIn('data-load-newsletter',text)
+        text=(self.output/'verify.html').read_text();self.assertIn('Coming Soon',text);self.assertIn('100+ accounts',text);self.assertIn('our AI algorithm',text);self.assertIn('privately to the creator only',text);self.assertIn('id="newsletter-form"',text);self.assertIn('Retry loading signup form',text);self.assertIn('data-load-newsletter',text)
     def test_signup_pages_have_no_provider_markup_or_preconnect(self):
         for name in ['index.html','verify.html']:
             text=(self.output/name).read_text()
-            self.assertIn('Load signup form',text)
+            self.assertIn('Retry loading signup form',text)
             self.assertNotIn('eomail5.com',text)
             doc=Document(text)
             self.assertFalse(any(x=='https://eomail5.com' for x in re.findall(r'<link[^>]+href="([^"]+)',text)))
@@ -95,7 +95,7 @@ class BuildTests(unittest.TestCase):
             self.assertIn('href="/about.html"',nav)
     def test_minimal_home_and_complete_about(self):
         home=(self.output/'index.html').read_text().split('<main',1)[1].split('</main>')[0]
-        self.assertNotIn('class="hero"',home);self.assertNotIn('class="stats"',home);self.assertNotIn('editorial-rail',home);self.assertIn('Load signup form',home)
+        self.assertNotIn('class="hero"',home);self.assertNotIn('class="stats"',home);self.assertNotIn('editorial-rail',home);self.assertIn('Retry loading signup form',home)
         self.assertIn('Muse research',home);self.assertIn('class="hero"',(self.output/'about.html').read_text())
     def test_render_build_and_publish_match_allowlisted_artifact(self):
         text=(ROOT/'render.yaml').read_text()
