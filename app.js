@@ -6,14 +6,17 @@
   const dateText = value => H8.date(value) ? new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'America/Chicago'}).format(new Date(value.length===10?value+'T12:00:00Z':value)) : 'Date unknown';
   let data, mode='combined', loading=false;
   function platform(c, p) {
-    const box=el('div','platform'); const n=c[p+'_followers'], h=c[p+'_handle'];
+    const n=c[p+'_followers'], h=c[p+'_handle'], label=p==='x'?'X':'Instagram';
     const href=H8.profileUrl(p,h);
     if (H8.count(n) && href && (p==='x'||c.ig_status==='verified')) {
-      const a=el('a','handle',(p==='x'?'X':'Instagram')+' · @'+h);a.href=href;a.target='_blank';a.rel='noopener noreferrer nofollow';box.append(a);
+      const box=el('a','platform platform-link');box.href=href;box.target='_blank';box.rel='noopener noreferrer nofollow';box.setAttribute('aria-label','Open @'+h+' on '+label);
+      box.append(el('span','handle',label+' · @'+h));
       box.append(el('span','platform-count',H8.exact(n)+' follows'));
       const stamp=c[p+'_checked_at'] || c[p+'_as_of'];
       box.append(el('span','observed',(c[p+'_carried_forward']?'Carried forward · ':'Checked · ')+dateText(stamp)));
-    } else box.append(el('span','observed',(p==='x'?'X':'Instagram')+' · not verified'));
+      return box;
+    }
+    const box=el('div','platform');box.append(el('span','observed',label+' · not verified'));
     return box;
   }
   function card(row) {
