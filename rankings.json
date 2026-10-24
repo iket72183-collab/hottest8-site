@@ -259,102 +259,141 @@
   ],
   "rising8": {
     "status": "partial_window",
-    "pool": "emerging creators (10k to 1M combined followers, not in the Top 8)",
-    "pool_size": 29,
-    "window": {
-      "from": "2026-10-22T03:41:51-05:00",
-      "to": "2026-10-23T07:08:35-05:00",
-      "hours": 27.4,
-      "label": "since Oct 22, 3:41 AM CT (27 hrs)"
-    },
-    "metric": "ranked by % follower growth; absolute gain shown. X only unless Instagram was re-checked in the window (Instagram growth unknown, not zero).",
     "items": [
       {
         "name": "Vina Sky",
         "x_handle": "VinaSkyy",
+        "x_id": "1018676369751003136",
         "start": 377740,
-        "growth": 275,
-        "growth_pct": 0.0728,
-        "x_growth": 275,
+        "growth": 1722,
+        "growth_pct": 0.45586911632339705,
+        "x_growth": 1722,
         "ig_growth": null,
         "ig_included": false,
+        "identity_basis": "stable X ID",
+        "x_from": "2026-10-22T03:41:51-05:00",
+        "x_to": "2026-10-24T07:09:38-05:00",
+        "ig_from": null,
+        "ig_to": null,
         "rank": 1
-      },
-      {
-        "name": "Hazel Moore",
-        "x_handle": "HazelnuttMoore",
-        "start": 303191,
-        "growth": 183,
-        "growth_pct": 0.0604,
-        "x_growth": 183,
-        "ig_growth": null,
-        "ig_included": false,
-        "rank": 2
       },
       {
         "name": "Leana Lovings",
         "x_handle": "LeanaLovings",
+        "x_id": "886684694468853760",
         "start": 366447,
-        "growth": 204,
-        "growth_pct": 0.0557,
-        "x_growth": 204,
+        "growth": 541,
+        "growth_pct": 0.1476339006732215,
+        "x_growth": 541,
         "ig_growth": null,
         "ig_included": false,
-        "rank": 3
-      },
-      {
-        "name": "Haley Spades",
-        "x_handle": "HaleySpades",
-        "start": 239126,
-        "growth": 120,
-        "growth_pct": 0.0502,
-        "x_growth": 120,
-        "ig_growth": null,
-        "ig_included": false,
-        "rank": 4
-      },
-      {
-        "name": "Sophia Locke",
-        "x_handle": "_SophiaLocke_",
-        "start": 387396,
-        "growth": 179,
-        "growth_pct": 0.0462,
-        "x_growth": 179,
-        "ig_growth": null,
-        "ig_included": false,
-        "rank": 5
-      },
-      {
-        "name": "Freya Parker",
-        "x_handle": "freyasintrouble",
-        "start": 89485,
-        "growth": 30,
-        "growth_pct": 0.0335,
-        "x_growth": 30,
-        "ig_growth": null,
-        "ig_included": false,
-        "rank": 6
+        "identity_basis": "stable X ID",
+        "x_from": "2026-10-22T03:41:51-05:00",
+        "x_to": "2026-10-24T07:09:38-05:00",
+        "ig_from": null,
+        "ig_to": null,
+        "rank": 2
       },
       {
         "name": "Spencer Bradley",
         "x_handle": "SpencerBradleyX",
+        "x_id": "1083107387106643969",
         "start": 117562,
-        "growth": 38,
-        "growth_pct": 0.0323,
-        "x_growth": 38,
+        "growth": 32,
+        "growth_pct": 0.027219679828516016,
+        "x_growth": 32,
         "ig_growth": null,
         "ig_included": false,
-        "rank": 7
+        "identity_basis": "stable X ID",
+        "x_from": "2026-10-22T03:41:51-05:00",
+        "x_to": "2026-10-24T07:09:38-05:00",
+        "ig_from": null,
+        "ig_to": null,
+        "rank": 3
       },
       {
         "name": "Kylie Rocket",
         "x_handle": "RocketKylie",
+        "x_id": "1190519625202700288",
         "start": 322522,
-        "growth": 77,
-        "growth_pct": 0.0239,
-        "x_growth": 77,
+        "growth": 79,
+        "growth_pct": 0.024494453091572048,
+        "x_growth": 79,
         "ig_growth": null,
         "ig_included": false,
+        "identity_basis": "stable X ID",
+        "x_from": "2026-10-22T03:41:51-05:00",
+        "x_to": "2026-10-24T07:09:38-05:00",
+        "ig_from": null,
+        "ig_to": null,
+        "rank": 4
+      },
+      {
+        "name": "Eliza Ibarra",
+        "x_handle": "Eliza22Ibarra",
+        "x_id": "973458977945133056",
+        "start": 521661,
+        "growth": 113,
+        "growth_pct": 0.02166157715451222,
+        "x_growth": 113,
+        "ig_growth": null,
+        "ig_included": false,
+        "identity_basis": "stable X ID",
+        "x_from": "2026-10-22T03:41:51-05:00",
+        "x_to": "2026-10-24T07:09:38-05:00",
+        "ig_from": null,
+        "ig_to": null,
+        "rank": 5
+      },
+      {
+        "name": "Gizelle Blanco",
+        "x_handle": "xogizellexo",
+        "x_id": "1227666488217071616",
+        "start": 195567,
+        "growth": 28,
+        "growth_pct": 0.014317343928167841,
+        "x_growth": 28,
+        "ig_growth": null,
+        "ig_included": false,
+        "identity_basis": "stable X ID",
+        "x_from": "2026-10-22T03:41:51-05:00",
+        "x_to": "2026-10-24T07:09:38-05:00",
+        "ig_from": null,
+        "ig_to": null,
+        "rank": 6
+      },
+      {
+        "name": "Violet Starr",
+        "x_handle": "MissVioletStarr",
+        "x_id": "882401123427954689",
+        "start": 370875,
+        "growth": 51,
+        "growth_pct": 0.013751263902932255,
+        "x_growth": 51,
+        "ig_growth": null,
+        "ig_included": false,
+        "identity_basis": "stable X ID",
+        "x_from": "2026-10-22T03:41:51-05:00",
+        "x_to": "2026-10-24T07:09:38-05:00",
+        "ig_from": null,
+        "ig_to": null,
+        "rank": 7
+      },
+      {
+        "name": "Jane Wilde",
+        "x_handle": "janewildexxx",
+        "x_id": "791787262992343041",
+        "start": 688752,
+        "growth": 71,
+        "growth_pct": 0.01030850001161521,
+        "x_growth": 71,
+        "ig_growth": null,
+        "ig_included": false,
+        "identity_basis": "stable X ID",
+        "x_from": "2026-10-22T03:41:51-05:00",
+        "x_to": "2026-10-24T07:09:38-05:00",
+        "ig_from": null,
+        "ig_to": null,
         "rank": 8
       }
     ],
@@ -362,49 +401,108 @@
       {
         "name": "Emily Willis",
         "x_handle": "emilywillisxoxo",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
       },
       {
         "name": "Blake Blossom",
         "x_handle": "blkblssm",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
       },
       {
         "name": "Kayley Gunner",
         "x_handle": "kayleygunner",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
       },
       {
         "name": "Kenzie Reeves",
         "x_handle": "ItsKenzieReeves",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
       },
       {
         "name": "Emma Hix",
         "x_handle": "EMMAHIXOFFICIAL",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
       },
       {
         "name": "Anna Claire Clouds",
         "x_handle": "annaclairecloud",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
+      },
+      {
+        "name": "Aidra Fox",
+        "x_handle": "xAIDRAFOXx",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
       },
       {
         "name": "Coco Lovelock",
         "x_handle": "OfficialCocolov",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
+      },
+      {
+        "name": "Alex Coal",
+        "x_handle": "AlexxxCoal",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
+      },
+      {
+        "name": "Lacy Lennon",
+        "x_handle": "MissLacyLennon",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
+      },
+      {
+        "name": "Alexis Tae",
+        "x_handle": "Alexistaex",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
       },
       {
         "name": "Vanna Bardot",
         "x_handle": "vannabardot",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
+      },
+      {
+        "name": "Sophia Locke",
+        "x_handle": "_SophiaLocke_",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
       },
       {
         "name": "Kenna James",
         "x_handle": "kennajames21",
-        "reason": "over 1M combined"
+        "reason": "Over combined follower cap"
+      },
+      {
+        "name": "Hazel Moore",
+        "x_handle": "HazelnuttMoore",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
+      },
+      {
+        "name": "Hime Marie",
+        "x_handle": "HimexMarie",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
+      },
+      {
+        "name": "Haley Spades",
+        "x_handle": "HaleySpades",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
+      },
+      {
+        "name": "Kimmy Kimm",
+        "x_handle": "TheKimmyKimm",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
+      },
+      {
+        "name": "Freya Parker",
+        "x_handle": "freyasintrouble",
+        "reason": "Combined-cap eligibility unknown: Instagram unverified"
       }
-    ]
+    ],
+    "pool_size": 29,
+    "note": "Two real, dated observations are required. No growth is estimated.",
+    "window": {
+      "from": "2026-10-22T03:41:51-05:00",
+      "to": "2026-10-24T07:09:38-05:00",
+      "hours": 51.46,
+      "label": "51.5-hour observed window"
+    },
+    "metric": "Percentage growth over the stated observations. X only unless the same Instagram account was independently rechecked at both ends; unknown Instagram growth is not zero."
   },
   "changes_since_last_week": null,
   "changes_note": "Week-over-week changes publish once a prior weekly snapshot exists (first comparison Oct 27, 2026).",
@@ -423,33 +521,33 @@
         "name": "Alexis Fawx",
         "platform": "X",
         "next_milestone": 1000000,
-        "to_go": 9557,
-        "current": 990443,
-        "as_of": "2026-10-23"
+        "to_go": 9384,
+        "current": 990616,
+        "as_of": "2026-10-24T07:09:38-05:00"
       },
       {
         "name": "Nikki Benz",
         "platform": "X",
         "next_milestone": 1000000,
-        "to_go": 25949,
-        "current": 974051,
-        "as_of": "2026-10-23"
+        "to_go": 25902,
+        "current": 974098,
+        "as_of": "2026-10-24T07:09:38-05:00"
       },
       {
         "name": "Corinna Kopf",
         "platform": "X",
         "next_milestone": 3000000,
-        "to_go": 52809,
-        "current": 2947191,
-        "as_of": "2026-10-23"
+        "to_go": 53103,
+        "current": 2946897,
+        "as_of": "2026-10-24T07:09:38-05:00"
       },
       {
         "name": "Violet Myers",
         "platform": "X",
         "next_milestone": 3000000,
-        "to_go": 76707,
-        "current": 2923293,
-        "as_of": "2026-10-23"
+        "to_go": 76493,
+        "current": 2923507,
+        "as_of": "2026-10-24T07:09:38-05:00"
       },
       {
         "name": "Adriana Chechik",
@@ -459,8 +557,7 @@
         "current": 3914456,
         "as_of": "2026-10-21"
       }
-    ],
-    "note": "Round-million crossings between consecutive dated snapshots. Instagram counts carried forward are not treated as new data."
+    ]
   },
   "closest_battles": {
     "items": [
@@ -472,9 +569,9 @@
         ],
         "leader": "Adriana Chechik",
         "chaser": "Brandi Love",
-        "gap": 5145,
-        "leader_count": 1235067,
-        "chaser_count": 1229922
+        "gap": 5345,
+        "leader_count": 1235394,
+        "chaser_count": 1230049
       },
       {
         "platform": "X",
@@ -484,9 +581,9 @@
         ],
         "leader": "Lena the Plug",
         "chaser": "Lisa Ann",
-        "gap": 6821,
-        "leader_count": 2088127,
-        "chaser_count": 2081306
+        "gap": 6824,
+        "leader_count": 2088213,
+        "chaser_count": 2081389
       },
       {
         "platform": "X",
@@ -496,9 +593,9 @@
         ],
         "leader": "Alexis Fawx",
         "chaser": "Nikki Benz",
-        "gap": 16392,
-        "leader_count": 990443,
-        "chaser_count": 974051
+        "gap": 16518,
+        "leader_count": 990616,
+        "chaser_count": 974098
       },
       {
         "platform": "X",
@@ -508,9 +605,9 @@
         ],
         "leader": "Cherie DeVille",
         "chaser": "Ava Addams",
-        "gap": 17995,
-        "leader_count": 1110187,
-        "chaser_count": 1092192
+        "gap": 18073,
+        "leader_count": 1110234,
+        "chaser_count": 1092161
       },
       {
         "platform": "X",
@@ -520,12 +617,11 @@
         ],
         "leader": "Corinna Kopf",
         "chaser": "Violet Myers",
-        "gap": 23898,
-        "leader_count": 2947191,
-        "chaser_count": 2923293
+        "gap": 23390,
+        "leader_count": 2946897,
+        "chaser_count": 2923507
       }
-    ],
-    "note": "Smallest follower gaps between adjacent ranks, by combined total or a single platform (labeled)."
+    ]
   },
   "insights_url": "https://hottest8.com/insights.json",
   "combined_ranked_count": 18,
