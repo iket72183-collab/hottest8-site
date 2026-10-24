@@ -45,7 +45,7 @@ class BuildTests(unittest.TestCase):
         for forbidden in ['tools','tests','node_modules','package.json','package-lock.json','render.yaml','README.md','.git','docs','rising_pool.json','snapshots/emerging']:
             self.assertFalse((self.output/forbidden).exists(),forbidden)
     def test_allowlisted_public_artifact_preserves_required_assets_only(self):
-        required=['index.html','about.html','rising.html','verify.html','404.html','style.css','core.js','site.js','app.js','insights.js','data.json','data.js','avatars.js','rankings.json','insights.json','favicon.svg','favicon.ico','og-image.png','robots.txt','sitemap.xml','llms.txt']
+        required=['newsletter.html','index.html','about.html','rising.html','verify.html','404.html','style.css','core.js','site.js','app.js','insights.js','data.json','data.js','avatars.js','rankings.json','insights.json','favicon.svg','favicon.ico','og-image.png','robots.txt','sitemap.xml','llms.txt']
         for name in required:self.assertTrue((self.output/name).is_file(),name)
         rankings=json.loads((self.output/'rankings.json').read_text())
         self.assertTrue(rankings['snapshots'])
@@ -93,6 +93,19 @@ class BuildTests(unittest.TestCase):
             nav=re.search(r'<nav aria-label="Main navigation">(.*?)</nav>',p.read_text()).group(1)
             self.assertEqual(re.findall(r'>([^<]+)</a>',nav),['Top 8','Rising 8','Fake Check','Newsletter','About'])
             self.assertIn('href="/about.html"',nav)
+    def test_newsletter_page_builds_and_navs_point_to_it(self):
+        page=(self.output/'newsletter.html').read_text()
+        self.assertIn('id="newsletter"',page);self.assertIn('class="eoform"',page);self.assertIn('data-load-newsletter',page);self.assertIn('mailto:hello@hottest8.com',page)
+        self.assertNotIn('eomail',page);self.assertIn('href="/newsletter.html" aria-current="page"',page)
+        self.assertLess(page.index('id="newsletter"'),page.index('What you'))
+        self.assertIn('https://hottest8.com/newsletter.html',(self.output/'sitemap.xml').read_text())
+        for p in self.output.glob('*.html'):
+            nav=re.search(r'<nav aria-label="Main navigation">(.*?)</nav>',p.read_text()).group(1)
+            self.assertIn('href="/newsletter.html"',nav,p.name);self.assertNotIn('/#newsletter',nav,p.name)
+    def test_about_ai_prompt_near_top_with_copy(self):
+        about=(self.output/'about.html').read_text()
+        self.assertLess(about.index('id="aiprompt"'),about.index('id="method"'));self.assertIn('For AI agents: copy this prompt',about)
+        self.assertIn('id="copystatus"',about);self.assertIn('aria-live="polite"',about)
     def test_minimal_home_and_complete_about(self):
         home=(self.output/'index.html').read_text().split('<main',1)[1].split('</main>')[0]
         self.assertNotIn('class="hero"',home);self.assertNotIn('class="stats"',home);self.assertNotIn('editorial-rail',home);self.assertIn('Retry loading signup form',home)

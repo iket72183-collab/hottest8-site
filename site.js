@@ -17,7 +17,9 @@
   if(accepted)enter();else if(gate){document.body.classList.add('age-locked');document.getElementById('agein').focus();}
   document.getElementById('agein')?.addEventListener('click',enter);
   gate?.addEventListener('keydown',e=>{if(e.key==='Tab'){const buttons=[...gate.querySelectorAll('button,a')];e.preventDefault();const i=buttons.indexOf(document.activeElement);buttons[(i+(e.shiftKey?-1:1)+buttons.length)%buttons.length].focus();}if(e.key==='Escape')e.preventDefault();});
-  document.getElementById('copyprompt')?.addEventListener('click',async e=>{try{await navigator.clipboard.writeText(document.getElementById('aiprompt').textContent);e.target.textContent='Copied';}catch{e.target.textContent='Select and copy the text';}});
+  document.getElementById('copyprompt')?.addEventListener('click',async()=>{const src=document.getElementById('aiprompt'),st=document.getElementById('copystatus');if(!src)return;const say=m=>{if(st)st.textContent=m;};
+    try{if(!navigator.clipboard||!window.isSecureContext)throw new Error('no clipboard');await navigator.clipboard.writeText(src.textContent);say('Copied');}
+    catch{try{const r=document.createRange();r.selectNodeContents(src);const s=window.getSelection();s.removeAllRanges();s.addRange(r);say(document.execCommand&&document.execCommand('copy')?'Copied':'Text selected. Press Ctrl+C or ⌘C to copy.');}catch{say('Select the text above and copy it.');}}});
   // Preserve main's delegated submission event: an attempt, not provider acceptance.
   if(location.pathname.endsWith('/verify.html')) {
     document.addEventListener('submit',function(e){var f=e.target;if(!f||!f.closest||!f.closest('.eoform'))return;
