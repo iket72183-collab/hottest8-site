@@ -8,7 +8,7 @@ import shutil
 from pathlib import Path
 from build_insights import build_insights, read_snapshots, ranked, ordered, count
 
-FILES=['index.html','about.html','rising.html','verify.html','404.html','style.css','core.js','site.js','app.js','insights.js','favicon.svg','og-image.png','robots.txt','sitemap.xml','llms.txt']
+FILES=['index.html','about.html','rising.html','verify.html','404.html','newsletter.html','style.css','core.js','site.js','app.js','insights.js','favicon.svg','og-image.png','robots.txt','sitemap.xml','llms.txt']
 
 def safe_json(data):
     return json.dumps(data,ensure_ascii=True).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')

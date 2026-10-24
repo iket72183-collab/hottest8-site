@@ -1700,3 +1700,13 @@ ol {
     transition: none !important;
   }
 }
+
+/* Newsletter page + About AI prompt */
+.newsletter-page{margin-top:8px}
+.newsletter-perks{margin:0;padding-left:1.2em;display:grid;gap:10px}
+.newsletter-perks li::marker{color:var(--gold)}
+.ai-prompt{margin:4px 0 24px;padding:16px;border:1px solid rgba(216,188,125,.45);border-radius:12px;background:rgba(16,17,13,.6);max-width:100%}
+.ai-prompt .eyebrow{margin:0 0 8px}
+.ai-prompt-text{margin:0 0 12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.55;overflow-wrap:anywhere;user-select:all}
+.ai-prompt-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.ai-prompt-actions .note{margin:0}
