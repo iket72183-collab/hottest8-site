@@ -65,7 +65,9 @@ def prerender(data,avatars={}):
         name=html.escape(c['name']);initials=html.escape(''.join(w[0] for w in c['name'].split()[:2]));total=c['x_followers']+c['ig_followers'];p=[]
         for platform,label,host in [('x','X','x.com'),('ig','Instagram','www.instagram.com')]:
             handle=html.escape(c[platform+'_handle']);date=html.escape(c.get(platform+'_checked_at') or c.get(platform+'_as_of') or 'Date unknown')
-            p.append(f'<div class="platform"><a class="handle" href="https://{host}/{handle}" rel="noopener noreferrer nofollow" target="_blank">{label} · @{handle}</a><span class="platform-count">{c[platform+"_followers"]:,} follows</span><span class="observed">Checked · {date}</span></div>')
+            inner=f'<span class="handle">{label} · @{handle}</span><span class="platform-count">{c[platform+"_followers"]:,} follows</span><span class="observed">Checked · {date}</span>'
+            ok=re.fullmatch(r'[A-Za-z0-9_]{1,15}' if platform=='x' else r'[A-Za-z0-9_.]{1,30}',c[platform+'_handle'])
+            p.append(f'<a class="platform platform-link" href="https://{host}/{handle}" rel="noopener noreferrer nofollow" target="_blank" aria-label="Open @{handle} on {label}">{inner}</a>' if ok else f'<div class="platform">{inner}</div>')
         rows.append(f'<li class="rank-card"><div class="rank-number">{rank:02}</div>{avatar_html(c,avatars)}<div class="creator-info"><h3 class="creator-name">{name}</h3><div class="platforms">{"".join(p)}</div></div><div class="rank-total"><strong>{fmt(total)}</strong><span>summed follows</span><small class="exact-count">{total:,}</small></div></li>')
     return ''.join(rows)
 

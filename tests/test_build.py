@@ -129,4 +129,30 @@ class BuildTests(unittest.TestCase):
             with self.assertRaises(ValueError):build(ROOT,self.output)
         finally:extra.unlink()
 
+class TileLinkTests(unittest.TestCase):
+    def test_platform_tiles_are_single_links(self):
+        with tempfile.TemporaryDirectory() as d:
+            out=Path(d)/'dist';build(ROOT,out);page=(out/'index.html').read_text()
+        class P(HTMLParser):
+            def __init__(s):super().__init__();s.depth=0;s.nested=0;s.tiles=[]
+            def handle_starttag(s,tag,attrs):
+                if tag=='a':
+                    if s.depth:s.nested+=1
+                    s.depth+=1;a=dict(attrs)
+                    if 'platform-link' in a.get('class',''):s.tiles.append(a)
+            def handle_endtag(s,tag):
+                if tag=='a':s.depth-=1
+        p=P();p.feed(page)
+        self.assertEqual(p.nested,0);self.assertEqual(len(p.tiles),16)
+        for a in p.tiles:
+            u=urlsplit(a['href']);self.assertEqual(u.scheme,'https');self.assertIn(u.netloc,{'x.com','www.instagram.com'})
+            self.assertEqual(a['target'],'_blank');self.assertIn('noopener',a['rel']);self.assertIn('noreferrer',a['rel'])
+            self.assertTrue(a['aria-label'].startswith('Open @'))
+    def test_edition_mark_removed(self):
+        for f in ['index.html','style.css','app.js','insights.js']:
+            s=(ROOT/f).read_text();self.assertNotIn('NO. 08',s);self.assertNotIn('edition-mark',s)
+    def test_tile_builders_use_dom_apis(self):
+        for f in ['app.js','insights.js']:
+            s=(ROOT/f).read_text();self.assertNotIn('innerHTML',s);self.assertIn('platform-link',s)
+
 if __name__=='__main__':unittest.main()
